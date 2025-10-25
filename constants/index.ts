@@ -5,27 +5,27 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter } from "react-icons/
 export const months = generateDynamicMonths();
 export const popularCategories = [
   {
-    slug: "leadership-strategic-management",
+    slug: "القيادة-والإدارة-الاستراتيجية",
     name: "القيادة والإدارة الاستراتيجية",
   },
   {
-    slug: "financial-management-investment-analysis",
+    slug: "الإدارة-المالية-وتحليل-الاستثمار",
     name: "الإدارة المالية وتحليل الاستثمار",
   },
   {
-    slug: "project-management-planning",
+    slug: "إدارة-المشاريع-والتخطيط",
     name: "إدارة المشاريع والتخطيط",
   },
   {
-    slug: "human-resources-management-training",
+    slug: "إدارة-الموارد-البشرية-والتدريب",
     name: "إدارة الموارد البشرية والتدريب",
   },
   {
-    slug: "public-relations-corporate-communication",
+    slug: "العلاقات-العامة-والاتصال-المؤسسي",
     name: "العلاقات العامة والاتصال المؤسسي",
   },
   {
-    slug: "data-analytics-ai-decision-making",
+    slug: "تحليل-البيانات-والذكاء-الاصطناعي-واتخاذ-القرار",
     name: "تحليل البيانات والذكاء الاصطناعي واتخاذ القرار",
   },
 ];
