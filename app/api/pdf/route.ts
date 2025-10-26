@@ -954,7 +954,9 @@ function generateBrochureHTML(course: any, timing: any): string {
                   </div>
            <div class="cover-detail-item">
              <span class="cover-detail-label">المدينة</span>
-             <span class="cover-detail-value">${timing.city?.title}</span>
+             <span class="cover-detail-value">${
+               timing.city?.title || timing.city.name
+             }</span>
                   </div>
            <div class="cover-detail-item">
              <span class="cover-detail-label">الرسوم</span>
