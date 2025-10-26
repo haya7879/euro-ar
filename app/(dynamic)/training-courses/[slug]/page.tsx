@@ -215,7 +215,7 @@ export default async function Page({
         <HeroBanner
           backgroundImage="/assets/images/hero-about.webp"
           title={category?.h1 || category?.title || "التخصصات"}
-          description={category?.description || "جاري تحميل تفاصيل الفئة..."}
+          description={category?.description || "جاري تحميل تفاصيل التخصص..."}
           breadcrumbs={breadcrumbs}
           enableTypewriter={true}
           typewriterSpeed={100}

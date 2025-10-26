@@ -63,7 +63,7 @@ const createDefaultFields = (
   {
     name: "category_slug",
     type: "select",
-    placeholder: "اختر الفئة",
+    placeholder: "اختر التخصص",
     options: [
       ...categories.map((cat) => ({
         id: cat.slug,

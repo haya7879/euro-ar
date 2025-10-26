@@ -167,7 +167,7 @@ export default function SearchBannerHome() {
               <CustomSelect
                 value={formData.category_id ? Number(formData.category_id) : ""}
                 onValueChange={(value) => setFormData(prev => ({ ...prev, category_id: value.toString() }))}
-                placeholder="اختر الفئة"
+                placeholder="اختر التخصص"
                 size="lg"
                 className="h-[45px] text-sm min-w-[calc(100%/6)]"
                 options={

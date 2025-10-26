@@ -122,7 +122,7 @@ export default function JoinPopup() {
       newErrors.message = "الرسالة مطلوبة";
     }
     if (!formData.category_id) {
-      newErrors.category_id = "الفئة مطلوبة";
+      newErrors.category_id = "التخصص مطلوبة";
     }
 
     setErrors(newErrors);
