@@ -87,15 +87,14 @@ export async function POST(request: NextRequest) {
 
     await browser.close();
 
-    // Generate filename from course slug or use provided filename
-    const pdfFilename = filename || `${course.slug || "brochure"}.pdf`;
-
     // Return PDF as response
     return new NextResponse(pdfBuffer as any, {
       status: 200,
       headers: {
         "Content-Type": "application/pdf",
-        "Content-Disposition": `attachment; filename="${pdfFilename}"`,
+        "Content-Disposition": `attachment; filename="${
+          filename || "brochure.pdf"
+        }"`,
         "Content-Length": pdfBuffer.length.toString(),
       },
     });
@@ -1105,3 +1104,4 @@ function generateBrochureHTML(course: any, timing: any): string {
 </html>
 `;
 }
+
