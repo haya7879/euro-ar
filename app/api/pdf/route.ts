@@ -936,25 +936,25 @@ function generateBrochureHTML(course: any, timing: any): string {
             </svg>
           </div>
         
-        <h1 class="cover-title">${course.title || "Training Course"}</h1>
-        <p class="cover-subtitle">${
-          course.category?.title || "برنامج التطوير المهني"
-        }</p>
+        <h1 class="cover-title">${course.title}</h1>
+        <p class="cover-subtitle">${course.category?.title}</p>
         
          <div class="cover-details">
            <div class="cover-detail-item">
              <span class="cover-detail-label">تاريخ البداية</span>
-             <span class="cover-detail-value">${formatDate(timing.start_date)}</span>
+             <span class="cover-detail-value">${formatDate(
+               timing.start_date
+             )}</span>
                   </div>
            <div class="cover-detail-item">
              <span class="cover-detail-label">تاريخ النهاية</span>
-             <span class="cover-detail-value">${formatDate(timing.end_date)}</span>
+             <span class="cover-detail-value">${formatDate(
+               timing.end_date
+             )}</span>
                   </div>
            <div class="cover-detail-item">
              <span class="cover-detail-label">المدينة</span>
-             <span class="cover-detail-value">${
-               timing.city?.title || timing.city?.name || "دبي"
-             }</span>
+             <span class="cover-detail-value">${timing.city?.title}</span>
                   </div>
            <div class="cover-detail-item">
              <span class="cover-detail-label">الرسوم</span>
@@ -969,9 +969,7 @@ function generateBrochureHTML(course: any, timing: any): string {
         <div class="contact-info">
           <span>info@euroqst.com</span>
           <span>•</span>
-          <span>${
-            course.contactPhone || timing.contactPhone || "+421 911 803 183"
-          }</span>
+          <span>${"+421 911 803 183"}</span>
         </div>
       </div>
     </div>
@@ -1104,4 +1102,3 @@ function generateBrochureHTML(course: any, timing: any): string {
 </html>
 `;
 }
-
