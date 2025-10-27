@@ -26,7 +26,7 @@ build:
     - cp -r .next/standalone out_artifact/
     - mkdir -p out_artifact/.next
     - cp -r .next/static out_artifact/.next/static
-    - [ -d public ] && cp -r public out_artifact/public || true
+    - '[ -d public ] && cp -r public out_artifact/public || true'
     - cp package.json out_artifact/package.json
     - tar -czf app.tgz -C out_artifact .
   artifacts:
