@@ -1,4 +1,5 @@
 stages:
+  - build
   - deploy
 
 variables:
@@ -6,53 +7,83 @@ variables:
   APP_PORT: "3001"
   PM2_APP_NAME: "EuroQuest-Next-Ar"
   BRANCH: "master"
+  NEXT_TELEMETRY_DISABLE: "1"
+  NODE_OPTIONS: "--max-old-space-size=1024"
 
-before_script:
-  - apt-get update -y && apt-get install -y openssh-client git
-  - eval "$(ssh-agent -s)"
-  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
-  - mkdir -p ~/.ssh && chmod 700 ~/.ssh
-  - ssh-keyscan -p 7822 -v "$VPS_HOST" >> ~/.ssh/known_hosts
-  - chmod 644 ~/.ssh/known_hosts
-  - set -e
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .next/cache
+    - .npm
+
+build:
+  stage: build
+  image: node:20-bullseye
+  script:
+    - npm ci
+    - npm run build
+    - mkdir -p out_artifact/.next
+    - cp -r .next/standalone out_artifact/
+    - mkdir -p out_artifact/.next
+    - cp -r .next/static out_artifact/.next/static
+    - [ -d public ] && cp -r public out_artifact/public || true
+    - cp package.json out_artifact/package.json
+    - tar -czf app.tgz -C out_artifact .
+  artifacts:
+    when: on_success
+    expire_in: 7 days
+    paths:
+      - app.tgz
+
+.setup_ssh: &setup_ssh
+  image: debian:bookworm-slim
+  before_script:
+    - DEBIAN_FRONTEND=noninteractive apt-get update -y -qq
+    - apt-get install -y --no-install-recommends openssh-client rsync git
+    - eval "$(ssh-agent -s)"
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh && chmod 700 ~/.ssh
+    - |
+      cat <<EOF > ~/.ssh/config
+      Host *
+        Port 7822
+        StrictHostKeyChecking no
+      EOF
+    - chmod 600 ~/.ssh/config
 
 deploy:
   stage: deploy
+  needs: ["build"]
+  <<: *setup_ssh
   script:
+    - scp app.tgz "$VPS_USER@$VPS_HOST:/tmp/app.tgz"
     - |
-      ssh -p 7822 "$VPS_USER@$VPS_HOST" "bash -lc '
+      ssh "$VPS_USER@$VPS_HOST" "bash -lc '
         set -euo pipefail
+        mkdir -p \"$VPS_PATH\"
         cd \"$VPS_PATH\"
 
-        ssh-keyscan gitlab.com >> ~/.ssh/known_hosts 2>/dev/null || true
-        chmod 644 ~/.ssh/known_hosts || true
+        ts=\$(date +%Y%m%d%H%M%S)
+        mkdir -p releases
+        mkdir -p shared
+        tar -xzf /tmp/app.tgz -C releases
+        mv /tmp/app.tgz /tmp/app.tgz.\$ts
 
-        export GIT_SSH_COMMAND=\"ssh -i ~/.ssh/ar_euroqst_com_deploy_key -o IdentitiesOnly=yes\"
+        latest_dir=\$(ls -dt releases/* | head -n1)
 
-        git fetch origin
-        git checkout -f \"$BRANCH\"
-        git reset --hard \"origin/$BRANCH\"
-        git clean -fd
-      '"
+        rm -rf .next
+        mkdir -p .next
+        rsync -a \"\$latest_dir/.next/static/\" .next/static/
+        [ -d \"\$latest_dir/public\" ] && rsync -a \"\$latest_dir/public/\" public/ || true
 
-    - |
-      ssh -p 7822 "$VPS_USER@$VPS_HOST" "bash -lc '
-        set -euo pipefail
-        cd \"$VPS_PATH\"
-        if [ -f package-lock.json ]; then
-          npm ci --include=dev
-        else
-          npm install --include=dev
-        fi
-        npm run build
-      '"
-
-    - |
-      ssh -p 7822 "$VPS_USER@$VPS_HOST" "bash -lc '
-        set -euo pipefail
-        cd \"$VPS_PATH\"
         export NODE_ENV=\"$NODE_ENV\"
         export PORT=\"$APP_PORT\"
-        pm2 reload \"$PM2_APP_NAME\" --update-env || pm2 start npm --name \"$PM2_APP_NAME\" -- run start -- -p \"$APP_PORT\" -H 0.0.0.0
+
+        app_root=\"\$latest_dir/standalone\"
+        [ -f \"\$app_root/server.js\" ] || (echo \"server.js not found in standalone\" && exit 1)
+
+        pm2 reload \"$PM2_APP_NAME\" --update-env --interpreter=node -- \"\$app_root/server.js\" || \
+        pm2 start node --name \"$PM2_APP_NAME\" -- \"\$app_root/server.js\"
+
         pm2 save
       '"
