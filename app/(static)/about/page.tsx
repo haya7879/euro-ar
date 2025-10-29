@@ -53,8 +53,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
     // Fallback metadata
     return {
-      title:
-        "عن يوروكويست الدولية | التدريب والتطوير المهني",
+      title: "عن يوروكويست الدولية | التدريب والتطوير المهني",
       description:
         "تعرف على يوروكويست الدولية، معهد تعليمي رائد يقدم تدريبًا عالي الجودة وتجارب تعليمية متميزة. تأسست في 2015 بخبرة تزيد عن 25 عامًا.",
       keywords:
@@ -101,7 +100,11 @@ export default function AboutPage() {
                     className="!mb-4"
                   />
                   <p className="font-normal text-lg leading-7">
-                    تأسست يوروكويست الدولية في عام 2015 على يد فريق يمتلك خبرة تزيد عن 25 عامًا، وقد قدمت أكثر من 1000 برنامج تدريبي، استفاد منها أكثر من 15,000 مشارك عبر قطاعات متنوعة في مراكز عالمية تشمل دبي، لندن، برشلونة، إسطنبول، فيينا، باريس، وجنيف.
+                    تأسست يوروكويست الدولية في عام 2015 على يد فريق يمتلك خبرة
+                    تزيد عن 25 عامًا، وقد قدمت أكثر من 1000 برنامج تدريبي،
+                    استفاد منها أكثر من 15,000 مشارك عبر قطاعات متنوعة في مراكز
+                    عالمية تشمل دبي، لندن، برشلونة، إسطنبول، فيينا، باريس،
+                    وجنيف.
                   </p>
                 </div>
               </div>
@@ -114,20 +117,21 @@ export default function AboutPage() {
             >
               <div className="flex flex-col gap-12 relative z-10">
                 <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 md:gap-16">
+                  <div className="text-center sm:text-start">
+                    <h3 className="mb-4 text-2xl md:text-4xl font-bold capitalize">
+                      <span className="text-[#3E5EC0]">رؤيتنا</span>
+                    </h3>
+                    <p className="font-normal text-base md:text-lg leading-7">
+                      أن نكون الخيار الأول عالميًا في التدريب والتطوير المهني،
+                      من خلال تقديم حلول تعليمية مبتكرة ذات تأثير مستدام.
+                    </p>
+                  </div>
                   <div className="w-32 sm:w-36 md:w-40 flex-shrink-0">
                     <img
                       src="/assets/icons/vision-icon.svg"
                       alt=""
                       className="w-full h-full"
                     />
-                  </div>
-                  <div className="text-center sm:text-left">
-                    <h3 className="mb-4 text-2xl md:text-4xl font-bold capitalize">
-                      <span className="text-[#3E5EC0]">رؤيتنا</span>
-                    </h3>
-                    <p className="font-normal text-base md:text-lg leading-7">
-                      أن نكون الخيار الأول عالميًا في التدريب والتطوير المهني، من خلال تقديم حلول تعليمية مبتكرة ذات تأثير مستدام.
-                    </p>
                   </div>
                 </div>
               </div>
@@ -140,20 +144,22 @@ export default function AboutPage() {
             >
               <div className="flex flex-col gap-12 relative z-10">
                 <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8 md:gap-16">
+                  <div className="text-center sm:text-start">
+                    <h3 className="mb-4 text-2xl md:text-4xl font-bold capitalize">
+                      <span className="text-[#3E5EC0]">مهمتنا</span>
+                    </h3>
+                    <p className="font-normal text-base md:text-lg leading-7">
+                      تمكين الأفراد والفرق والمؤسسات من تحسين الأداء من خلال
+                      برامج تدريبية متخصصة تجمع بين النظرية والتطبيق العملي،
+                      مصممة خصيصًا لتلبية الاحتياجات المؤسسية.
+                    </p>
+                  </div>
                   <div className="w-32 sm:w-36 md:w-40 flex-shrink-0">
                     <img
                       src="/assets/icons/mission-icon.svg"
                       alt=""
                       className="w-full h-full"
                     />
-                  </div>
-                  <div className="text-center sm:text-left">
-                    <h3 className="mb-4 text-2xl md:text-4xl font-bold capitalize">
-                      <span className="text-[#3E5EC0]">مهمتنا</span>
-                    </h3>
-                    <p className="font-normal text-base md:text-lg leading-7">
-                      تمكين الأفراد والفرق والمؤسسات من تحسين الأداء من خلال برامج تدريبية متخصصة تجمع بين النظرية والتطبيق العملي، مصممة خصيصًا لتلبية الاحتياجات المؤسسية.
-                    </p>
                   </div>
                 </div>
               </div>
@@ -166,13 +172,10 @@ export default function AboutPage() {
             >
               <div className="flex flex-col gap-12 relative z-10">
                 <div className="w-full">
-                  <SectionTitle
-                    title="قيمنا"
-                    highlight=""
-                    className="!mb-4"
-                  />
+                  <SectionTitle title="قيمنا" highlight="" className="!mb-4" />
                   <p className="font-normal text-lg leading-7 text-gray-700 mb-8">
-                    في يوروكويست، قيمنا توجه كل ما نقوم به. إنها تشكل تفاعلاتنا وقراراتنا والطريقة التي نبني بها برامجنا.
+                    في يوروكويست، قيمنا توجه كل ما نقوم به. إنها تشكل تفاعلاتنا
+                    وقراراتنا والطريقة التي نبني بها برامجنا.
                   </p>
 
                   {/* Values Grid */}
@@ -206,7 +209,8 @@ export default function AboutPage() {
                       </div>
                       <div className="border-t border-[#C5C5C5] pt-4">
                         <p className="text-gray-600 text-base font-medium">
-                          نحافظ على معايير عالية من خلال الانضباط والاحترام والموثوقية.
+                          نحافظ على معايير عالية من خلال الانضباط والاحترام
+                          والموثوقية.
                         </p>
                       </div>
                     </div>
@@ -257,7 +261,8 @@ export default function AboutPage() {
                       </div>
                       <div className="border-t border-[#C5C5C5] pt-4">
                         <p className="text-gray-600 text-base font-medium">
-                          نركز على نتائج قابلة للقياس تحدث تأثيرًا حقيقيًا ودائمًا.
+                          نركز على نتائج قابلة للقياس تحدث تأثيرًا حقيقيًا
+                          ودائمًا.
                         </p>
                       </div>
                     </div>
@@ -478,19 +483,8 @@ export default function AboutPage() {
               <div className="flex flex-col gap-12 relative z-10">
                 <div className="w-full">
                   <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-center lg:items-start">
-                    {/* Left Side - Question Mark Icon */}
-                    <div className="w-full lg:w-1/4 flex items-start justify-center lg:justify-start">
-                      <div className="relative max-w-[150px] lg:max-w-none">
-                        <img
-                          src="/assets/icons/why-choose-icon.svg"
-                          alt=""
-                          className="w-full h-auto"
-                        />
-                      </div>
-                    </div>
-
                     {/* Right Side - Content */}
-                    <div className="w-full lg:w-3/4 text-center lg:text-left">
+                    <div className="w-full lg:w-3/4 text-center lg:text-start">
                       <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">
                         لماذا تختار{" "}
                         <span className="text-[#3E5EC0]">يوروكويست؟</span>
@@ -500,11 +494,24 @@ export default function AboutPage() {
                         <span className="font-semibold">
                           أكثر من 20 فئة تدريبية
                         </span>{" "}
-                        منهجيات تجمع بين النظرية والتطبيق حلول مصممة خصيصًا للمؤسسات والأفراد حضور عالمي في مدن مثل دبي، لندن، برشلونة، إسطنبول، فيينا، باريس، جنيف، وأكثر تركيز قوي على المواضيع الناشئة مثل{" "}
+                        منهجيات تجمع بين النظرية والتطبيق حلول مصممة خصيصًا
+                        للمؤسسات والأفراد حضور عالمي في مدن مثل دبي، لندن،
+                        برشلونة، إسطنبول، فيينا، باريس، جنيف، وأكثر تركيز قوي
+                        على المواضيع الناشئة مثل{" "}
                         <span className="font-semibold">
                           الذكاء الاصطناعي، الاستدامة، والتحول الرقمي
                         </span>
                       </p>
+                    </div>
+                    {/* Left Side - Question Mark Icon */}
+                    <div className="w-full lg:w-1/4 flex items-start justify-center lg:justify-start">
+                      <div className="relative max-w-[150px] lg:max-w-none">
+                        <img
+                          src="/assets/icons/why-choose-icon.svg"
+                          alt=""
+                          className="w-full h-auto"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -588,7 +595,7 @@ export default function AboutPage() {
 
                     {/* Right Side - Goals */}
                     <div className="w-full lg:w-1/2 flex flex-col gap-4 md:gap-6">
-                      <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-black text-center lg:text-left">
+                      <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-black text-center lg:text-start">
                         نهدف إلى التوسع عالميًا من خلال:
                       </h3>
 
@@ -611,7 +618,8 @@ export default function AboutPage() {
                         <li className="flex items-start gap-3 md:gap-4">
                           <div className="flex-shrink-0 w-2 h-2 bg-black rounded-full mt-2 md:mt-3"></div>
                           <p className="text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
-                            ضمان بقاء عملائنا جاهزين للمستقبل في عالم سريع التطور.
+                            ضمان بقاء عملائنا جاهزين للمستقبل في عالم سريع
+                            التطور.
                           </p>
                         </li>
                       </ul>
