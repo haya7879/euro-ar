@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/assets/images/logo.webp",
+        url: "./assets/images/logo.webp",
         width: 1200,
         height: 630,
         alt: "الدول التدريبية العالمية",
@@ -41,11 +41,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "الدول التدريبية العالمية",
     description: "الدول التدريبية العالمية - Professional Training and Certification Courses",
-    images: ["/assets/images/logo.webp"],
+    images: ["./assets/images/logo.webp"],
     site: "@EuroQest",
   },
   icons: {
-    icon: "/assets/images/mini-logo.png",
+    icon: "./assets/images/mini-logo.png",
   },
 };
 
