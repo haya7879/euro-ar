@@ -18,7 +18,7 @@ export default function SectionTitle({
         <div className="relative inline-block">
           <span className="text-[#3E5EC0] relative">{highlight}</span>
           <img
-            src="/assets/images/line.svg"
+            src="./assets/images/line.svg"
             alt=""
             className="absolute -bottom-2 left-0 w-full h-auto"
           />

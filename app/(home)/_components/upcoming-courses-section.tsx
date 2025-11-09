@@ -10,7 +10,7 @@ export default async function UpcomingCoursesSection() {
     <section className="courses-section bg-white py-14 relative">
       {/* Background Shape */}
       <img
-        src="/assets/images/categories-shape.svg"
+        src="./assets/images/categories-shape.svg"
         alt=""
         className="categories-shape absolute right-[-100px] top-0 w-[250px] h-[250px]"
       />

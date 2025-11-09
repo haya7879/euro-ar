@@ -25,7 +25,7 @@ export default function HeroSection({ className = "" }: HeroSectionProps) {
             <span className="relative inline-block mx-2">
               <span className="text-[#3E5EC0] font-bold">+1000</span>
               <img
-                src="/assets/images/line.svg"
+                src="./assets/images/line.svg"
                 alt=""
                 className="absolute right-0 -bottom-1 max-w-full h-auto"
               />
