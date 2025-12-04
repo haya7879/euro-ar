@@ -1,8 +1,13 @@
 // Get reCAPTCHA keys from: https://www.google.com/recaptcha/admin
 
 export const RECAPTCHA_CONFIG = {
-  siteKey: "6LfRciEsAAAAANOSENz3LXGJHrAVC2SyRkuLjLnM",
-  secretKey: "6LfRciEsAAAAAKU01M3ftWsHYdPKjo2mzVdzC6p9",
+  // localhost keys
+  // siteKey: "6LeCxdMrAAAAAG7HUFwS_jOHrS38Sfn8xB5gd6-H",
+  // secretKey: "6LeCxdMrAAAAAOQ0YVPHF_rNNfINyH9SkNvYcttz",
+
+  // production keys
+  siteKey: "6LftdCEsAAAAAIMTcT5Uxl_rvZXitcQUtk7qFJfv",
+  secretKey: "6LftdCEsAAAAAO6nfcPuHMTyAh08IEbA4FWv0DBd",
   // Default actions for different forms
   actions: {
     contact: 'contact_form',

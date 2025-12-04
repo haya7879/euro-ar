@@ -451,7 +451,7 @@ export default function ContactPopup() {
                     {/* Submit Button */}
                     <button
                       type="submit"
-                      disabled={!recaptchaVerified || contactMutation.isPending || !isPhoneValid}
+                      disabled={(isRecaptchaConfigured && !recaptchaVerified) || contactMutation.isPending || !isPhoneValid}
                       className="submit-btn min-w-[170px] w-fit h-12 rounded-[10px] px-[18px] text-sm font-semibold text-white bg-gradient-to-r from-[#314EA9] to-[#446AE1] border-none cursor-pointer flex items-center justify-center gap-2 ml-0 transition-all duration-500 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed max-md:w-full max-md:min-w-auto max-md:h-11 max-md:text-[13px]"
                     >
                       <span className="btn-text">
@@ -465,13 +465,15 @@ export default function ContactPopup() {
                     </button>
 
                     {/* reCAPTCHA v2 */}
-                    <ReCaptchaV2
-                      onVerify={handleRecaptchaVerify}
-                      onError={handleRecaptchaError}
-                      onExpire={handleRecaptchaExpire}
-                      theme="light"
-                      size="normal"
-                    />
+                    {isRecaptchaConfigured && (
+                      <ReCaptchaV2
+                        onVerify={handleRecaptchaVerify}
+                        onError={handleRecaptchaError}
+                        onExpire={handleRecaptchaExpire}
+                        theme="light"
+                        size="normal"
+                      />
+                    )}
                   </div>
                 </form>
               </div>

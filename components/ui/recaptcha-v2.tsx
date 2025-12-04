@@ -2,6 +2,7 @@
 
 import React, { useRef, useCallback, useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
+import { RECAPTCHA_CONFIG } from '@/constants/recaptcha'
 
 interface ReCaptchaV2Props {
   onVerify: (token: string) => void
@@ -44,7 +45,7 @@ export default function ReCaptchaV2({
     <div className={`recaptcha-v2-container ${className}`}>
       <ReCAPTCHA
         ref={recaptchaRef}
-        sitekey="6LfRciEsAAAAANOSENz3LXGJHrAVC2SyRkuLjLnM" //ar
+        sitekey={RECAPTCHA_CONFIG.siteKey}
         onChange={handleVerify}
         onExpired={handleExpire}
         onErrored={handleError}

@@ -463,7 +463,7 @@ export default function DownloadPopup() {
                   <button
                     type="submit"
                     disabled={
-                      !recaptchaVerified ||
+                      (isRecaptchaConfigured && !recaptchaVerified) ||
                       downloadMutation.isPending ||
                       isGeneratingPDF ||
                       !isPhoneValid
@@ -483,13 +483,15 @@ export default function DownloadPopup() {
                   </button>
 
                   {/* reCAPTCHA v2 */}
-                  <ReCaptchaV2
-                    onVerify={handleRecaptchaVerify}
-                    onError={handleRecaptchaError}
-                    onExpire={handleRecaptchaExpire}
-                    theme="light"
-                    size="normal"
-                  />
+                  {isRecaptchaConfigured && (
+                    <ReCaptchaV2
+                      onVerify={handleRecaptchaVerify}
+                      onError={handleRecaptchaError}
+                      onExpire={handleRecaptchaExpire}
+                      theme="light"
+                      size="normal"
+                    />
+                  )}
                 </div>
               </form>
             </div>
