@@ -1,8 +1,8 @@
 // Get reCAPTCHA keys from: https://www.google.com/recaptcha/admin
 
 export const RECAPTCHA_CONFIG = {
-  siteKey: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6LfhaSEsAAAAAK0CkEjphBLSS6LtjB4_ZoXat3bM',
-  secretKey: process.env.RECAPTCHA_SECRET_KEY || '6LfhaSEsAAAAAA-yA6Cvg6udpWcxigbX4NOX-Lv2',
+  siteKey: "6LfRciEsAAAAANOSENz3LXGJHrAVC2SyRkuLjLnM",
+  secretKey: "6LfRciEsAAAAAKU01M3ftWsHYdPKjo2mzVdzC6p9",
   // Default actions for different forms
   actions: {
     contact: 'contact_form',

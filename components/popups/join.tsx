@@ -6,9 +6,9 @@ import { cn } from "@/lib/utils";
 import PhoneInput from "@/components/ui/phone-input";
 import { useJoinForm } from "@/services/forms/forms-hooks";
 import ReCaptchaV2 from "@/components/ui/recaptcha-v2";
-import { RECAPTCHA_CONFIG, validateRecaptchaConfig } from "@/constants/recaptcha";
 import { usePopupStore } from "@/store/popup-store";
 import { useAlert } from "@/hooks/useAlert";
+import { validateRecaptchaConfig } from "@/constants/recaptcha";
 
 interface JoinFormData {
   full_name: string;

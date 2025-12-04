@@ -2,7 +2,6 @@
 
 import React, { useRef, useCallback, useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
-import { RECAPTCHA_CONFIG } from '@/constants/recaptcha'
 
 interface ReCaptchaV2Props {
   onVerify: (token: string) => void
@@ -40,36 +39,12 @@ export default function ReCaptchaV2({
     onError?.(error)
   }, [onError])
 
-  // If reCAPTCHA is not configured, return a mock component
-  if (!RECAPTCHA_CONFIG.siteKey) {
-    return (
-      <div className={`recaptcha-mock ${className}`}>
-        <div className="flex items-center gap-3 p-4 border border-gray-300 rounded-lg bg-gray-50">
-          <input
-            type="checkbox"
-            id="recaptcha-mock"
-            onChange={(e) => {
-              if (e.target.checked) {
-                onVerify('mock-token')
-              }
-            }}
-            className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-          />
-          <label htmlFor="recaptcha-mock" className="text-sm text-gray-700">
-            I'm not a robot (Mock reCAPTCHA)
-          </label>
-        </div>
-      </div>
-    )
-  }
 
   return (
     <div className={`recaptcha-v2-container ${className}`}>
       <ReCAPTCHA
         ref={recaptchaRef}
-        sitekey="6LfhaSEsAAAAAK0CkEjphBLSS6LtjB4_ZoXat3bM" //ar
-        // sitekey="6LeMxdMrAAAAALts50DURorRFtZwdISrVIbSg-8b"
-        // sitekey="6LezvtMrAAAAAD6czyI91m_cAMcGYZtQp4BN8hGW" //en
+        sitekey="6LfRciEsAAAAANOSENz3LXGJHrAVC2SyRkuLjLnM" //ar
         onChange={handleVerify}
         onExpired={handleExpire}
         onErrored={handleError}
