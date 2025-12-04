@@ -26,6 +26,12 @@ h1, h2, h3, h4, h5, h6, p, span, div, a, button, input, textarea, select {
 }
 
 
+.bg-coverage{
+  background-image: url("/assets/images/global-map2.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 
 /* Line clamp utility for text truncation */
 .line-clamp-2 {
