@@ -357,7 +357,7 @@ export default function JoinPageClient() {
                     onClick={handleFileButtonClick}
                     suppressHydrationWarning={true}
                     className={cn(
-                      "file-input-btn h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3 bg-white cursor-pointer flex items-center gap-2 text-left",
+                      "file-input-btn h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3 bg-white cursor-pointer flex items-center gap-2 text-start",
                       errors.cv && "border-red-500"
                     )}
                   >
