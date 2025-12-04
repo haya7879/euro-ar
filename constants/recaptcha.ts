@@ -8,7 +8,6 @@ export const RECAPTCHA_CONFIG = {
   // production keys
   siteKey: "6LftdCEsAAAAAIMTcT5Uxl_rvZXitcQUtk7qFJfv",
   secretKey: "6LftdCEsAAAAAO6nfcPuHMTyAh08IEbA4FWv0DBd",
-  // Default actions for different forms
   actions: {
     contact: 'contact_form',
     join: 'join_form',
