@@ -6,8 +6,8 @@ export const RECAPTCHA_CONFIG = {
   // secretKey: "6LeCxdMrAAAAAOQ0YVPHF_rNNfINyH9SkNvYcttz",
 
   // production keys
-  siteKey: "6LftdCEsAAAAAIMTcT5Uxl_rvZXitcQUtk7qFJfv",
-  secretKey: "6LftdCEsAAAAAO6nfcPuHMTyAh08IEbA4FWv0DBd",
+  siteKey: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '',
+  secretKey: process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY || '',
   actions: {
     contact: 'contact_form',
     join: 'join_form',
