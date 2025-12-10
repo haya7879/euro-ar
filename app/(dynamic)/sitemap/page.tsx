@@ -70,11 +70,11 @@ export default async function SitemapPage() {
             {/* Pages Section */}
             <div className="relative flex flex-col gap-10">
               {/* Background stripe */}
-              <div className="absolute left-0 top-0 w-14 h-full bg-blue-50 -z-10 hidden md:block"></div>
+              <div className="absolute right-0 top-0 w-14 h-full bg-blue-50 -z-10 hidden md:block"></div>
 
-              <h2 className="text-4xl font-semibold ml-0 md:ml-10">الصفحات</h2>
+              <h2 className="text-4xl font-semibold mr-0 md:mr-10">الصفحات</h2>
 
-              <div className="ml-0 md:ml-28 flex flex-wrap gap-12 max-w-4xl">
+              <div className="mr-0 md:mr-28 flex flex-wrap gap-12 max-w-4xl">
                 <ul className="list-disc list-inside text-lg font-medium text-gray-500 space-y-1">
                   <li>
                     <a
@@ -161,13 +161,13 @@ export default async function SitemapPage() {
             {/* Categories Section */}
             <div className="relative flex flex-col gap-10">
               {/* Background stripe */}
-              <div className="absolute left-0 top-0 w-14 h-full bg-teal-50 -z-10 hidden md:block"></div>
+              <div className="absolute right-0 top-0 w-14 h-full bg-teal-50 -z-10 hidden md:block"></div>
 
-              <h2 className="text-4xl font-semibold ml-0 md:ml-10">
+              <h2 className="text-4xl font-semibold mr-0 md:mr-10">
                 التخصصات التدريبية
               </h2>
 
-              <div className="ml-0 md:ml-28 grid grid-cols-1 md:grid-cols-2 gap-2 max-w-4xl">
+              <div className="mr-0 md:mr-28 grid grid-cols-1 md:grid-cols-2 gap-2 max-w-4xl">
                 {sitemapData?.categories && sitemapData.categories.length > 0 ? (
                   <>
                     <ul className="list-disc list-inside text-lg font-medium text-gray-500 space-y-2">
@@ -209,11 +209,11 @@ export default async function SitemapPage() {
             {/* Cities Section */}
             <div className="relative flex flex-col gap-10">
               {/* Background stripe */}
-              <div className="absolute left-0 top-0 w-14 h-full bg-blue-50 -z-10 hidden md:block"></div>
+              <div className="absolute right-0 top-0 w-14 h-full bg-blue-50 -z-10 hidden md:block"></div>
 
-              <h2 className="text-4xl font-semibold ml-0 md:ml-10">المدن التدريبية</h2>
+              <h2 className="text-4xl font-semibold mr-0 md:mr-10">المدن التدريبية</h2>
 
-              <div className="ml-0 md:ml-28 flex flex-wrap gap-12 max-w-4xl">
+              <div className="mr-0 md:mr-28 flex flex-wrap gap-12 max-w-4xl">
                 {sitemapData?.cities && sitemapData.cities.length > 0 ? (
                   <ul className="list-disc list-inside text-lg font-medium text-gray-500 space-y-1">
                     {sitemapData.cities.map((city) => (
@@ -238,13 +238,13 @@ export default async function SitemapPage() {
               Object.keys(sitemapData.city_category_seos).length > 0 && (
                 <div className="relative flex flex-col gap-10">
                   {/* Background stripe */}
-                  <div className="absolute left-0 top-0 w-14 h-full bg-green-50 -z-10 hidden md:block"></div>
+                  <div className="absolute right-0 top-0 w-14 h-full bg-green-50 -z-10 hidden md:block"></div>
 
-                  <h2 className="text-4xl font-semibold ml-0 md:ml-10">
+                  <h2 className="text-4xl font-semibold mr-0 md:mr-10">
                     ترابطات المدن والتخصصات التدريبية
                   </h2>
 
-                  <div className="ml-0 md:ml-28 space-y-8 max-w-4xl">
+                  <div className="mr-0 md:mr-28 space-y-8 max-w-4xl">
                     {Object.entries(sitemapData.city_category_seos).map(
                       ([categoryId, combinations]) => {
                         const category = sitemapData?.categories?.find(
@@ -281,13 +281,13 @@ export default async function SitemapPage() {
               Object.keys(sitemapData.city_course_seos).length > 0 && (
                 <div className="relative flex flex-col gap-10">
                   {/* Background stripe */}
-                  <div className="absolute left-0 top-0 w-14 h-full bg-purple-50 -z-10 hidden md:block"></div>
+                  <div className="absolute right-0 top-0 w-14 h-full bg-purple-50 -z-10 hidden md:block"></div>
 
-                  <h2 className="text-4xl font-semibold ml-0 md:ml-10">
+                  <h2 className="text-4xl font-semibold mr-0 md:mr-10">
                     ترابطات المدن والدورات التدريبية
                   </h2>
 
-                  <div className="ml-0 md:ml-28 space-y-8 max-w-4xl">
+                  <div className="mr-0 md:mr-28 space-y-8 max-w-4xl">
                     {Object.entries(sitemapData.city_course_seos).map(
                       ([courseId, combinations]) => {
                         const course = combinations[0]?.course;
