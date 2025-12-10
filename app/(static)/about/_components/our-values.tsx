@@ -79,7 +79,7 @@ export default function OurValues() {
               </div>
             </div>
 
-            {/* Results-Oriented Approach */}
+            {/* Results-Oriented */}
             <div className="border border-[#C5C5C5] rounded-xl p-4">
               <div className="flex items-center gap-2 md:gap-3 mb-4">
                 <div className="w-8 h-8 flex items-center justify-center">
