@@ -151,7 +151,7 @@ export default async function SitemapPage() {
                       href="/join"
                       className="hover:text-blue-600 transition-colors duration-300"
                     >
-                      انضم إلينا
+                      انضم إلى فريقنا
                     </a>
                   </li>
                 </ul>

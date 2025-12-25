@@ -204,7 +204,7 @@ export default function JoinPageClient() {
         {/* Form Section */}
         <div className="w-full">
           <h2 className="mb-5 text-[#314EA9] text-xl md:text-2xl font-semibold">
-            انضم إلينا
+            انضم إلى فريقنا
           </h2>
           <div className="border border-[#969fac] p-4 md:p-8 rounded-lg">
             <form

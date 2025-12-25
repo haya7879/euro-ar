@@ -1,7 +1,14 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { X, Mail, Phone, MapPin, ChevronRight, ChevronLeft } from "lucide-react";
+import {
+  X,
+  Mail,
+  Phone,
+  MapPin,
+  ChevronRight,
+  ChevronLeft,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 import PhoneInput from "@/components/ui/phone-input";
 import { useContactForm } from "@/services/forms/forms-hooks";
@@ -86,8 +93,8 @@ export default function ContactPopup() {
 
   const handleRecaptchaError = (error: any) => {
     // Only log error in development mode
-    if (process.env.NODE_ENV === 'development') {
-      console.error('reCAPTCHA error:', error);
+    if (process.env.NODE_ENV === "development") {
+      console.error("reCAPTCHA error:", error);
     }
     setRecaptchaVerified(false);
     setRecaptchaToken(null);
@@ -126,7 +133,7 @@ export default function ContactPopup() {
     e.preventDefault();
 
     if (!validateForm()) return;
-    
+
     // Check reCAPTCHA only if it's configured
     if (isRecaptchaConfigured && !recaptchaVerified) {
       showErrorAlert("يرجى إكمال التحقق من reCAPTCHA");
@@ -142,7 +149,8 @@ export default function ContactPopup() {
       company: formData.company,
       subject: formData.subject,
       message: formData.message,
-      ...(isRecaptchaConfigured && recaptchaToken && { recaptcha_token: recaptchaToken }),
+      ...(isRecaptchaConfigured &&
+        recaptchaToken && { recaptcha_token: recaptchaToken }),
     };
 
     try {
@@ -192,7 +200,7 @@ export default function ContactPopup() {
         {/* Close Button */}
         <button
           onClick={closeContact}
-          className="absolute top-1 right-2.5 bg-none border-none text-sm text-[#6F6F6F] cursor-pointer z-10 p-2.5 rounded-full transition-all duration-300 hover:bg-gray-100"
+          className="absolute top-1 left-2.5 bg-none border-none text-sm text-[#6F6F6F] cursor-pointer z-10 p-2.5 rounded-full transition-all duration-300 hover:bg-gray-100"
         >
           <X className="w-4 h-4" />
         </button>
@@ -208,7 +216,9 @@ export default function ContactPopup() {
                 اتصل بنا
               </h2>
               <p className="text-sm">
-                يسعدنا التواصل معك. يرجى ملء النموذج ببياناتك وسيقوم فريقنا بالرد في أقرب وقت ممكن للمساعدة في احتياجاتك التدريبية، أو الاستفسارات عن الدورات، أو أي أسئلة أخرى قد تكون لديك.
+                يسعدنا التواصل معك. يرجى ملء النموذج ببياناتك وسيقوم فريقنا
+                بالرد في أقرب وقت ممكن للمساعدة في احتياجاتك التدريبية، أو
+                الاستفسارات عن الدورات، أو أي أسئلة أخرى قد تكون لديك.
               </p>
             </div>
 
@@ -248,10 +258,7 @@ export default function ContactPopup() {
                   اتصل بنا
                 </h2>
 
-                <form
-                  onSubmit={handleSubmit}
-                  className="flex flex-col gap-4"
-                >
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                   <div className="grid gap-2 md:grid-cols-2 max-md:grid-cols-1 max-md:gap-3">
                     {/* Full Name */}
                     <div className="flex flex-col gap-1">
@@ -451,8 +458,12 @@ export default function ContactPopup() {
                     {/* Submit Button */}
                     <button
                       type="submit"
-                      disabled={(isRecaptchaConfigured && !recaptchaVerified) || contactMutation.isPending || !isPhoneValid}
-                      className="submit-btn min-w-[170px] w-fit h-12 rounded-[10px] px-[18px] text-sm font-semibold text-white bg-gradient-to-r from-[#314EA9] to-[#446AE1] border-none cursor-pointer flex items-center justify-center gap-2 ml-0 transition-all duration-500 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed max-md:w-full max-md:min-w-auto max-md:h-11 max-md:text-[13px]"
+                      disabled={
+                        (isRecaptchaConfigured && !recaptchaVerified) ||
+                        contactMutation.isPending ||
+                        !isPhoneValid
+                      }
+                      className="min-w-[170px] w-fit h-11 rounded-md px-2 text-sm font-semibold text-white bg-gradient-to-r from-[#314EA9] to-[#446AE1] border-none cursor-pointer flex items-center justify-center gap-2 ml-0 transition-all duration-500 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed max-md:w-full max-md:min-w-auto max-md:text-xs"
                     >
                       <span className="btn-text">
                         {contactMutation.isPending

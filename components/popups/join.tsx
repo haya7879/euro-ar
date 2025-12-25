@@ -1,7 +1,15 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { X, Mail, Phone, MapPin, Upload, ChevronRight, ChevronLeft } from "lucide-react";
+import {
+  X,
+  Mail,
+  Phone,
+  MapPin,
+  Upload,
+  ChevronRight,
+  ChevronLeft,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 import PhoneInput from "@/components/ui/phone-input";
 import { useJoinForm } from "@/services/forms/forms-hooks";
@@ -36,7 +44,9 @@ export default function JoinPopup() {
   });
 
   const [fileName, setFileName] = useState("اختر الملف");
-  const [errors, setErrors] = useState<Partial<Record<keyof JoinFormData, string>>>({});
+  const [errors, setErrors] = useState<
+    Partial<Record<keyof JoinFormData, string>>
+  >({});
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const [recaptchaVerified, setRecaptchaVerified] = useState(false);
   const [isPhoneValid, setIsPhoneValid] = useState(false);
@@ -136,8 +146,8 @@ export default function JoinPopup() {
 
   const handleRecaptchaError = (error: any) => {
     // Only log error in development mode
-    if (process.env.NODE_ENV === 'development') {
-      console.error('reCAPTCHA error:', error);
+    if (process.env.NODE_ENV === "development") {
+      console.error("reCAPTCHA error:", error);
     }
     setRecaptchaVerified(false);
     setRecaptchaToken(null);
@@ -157,7 +167,7 @@ export default function JoinPopup() {
       showErrorAlert("خطأ!", "يرجى رفع سيرتك الذاتية");
       return;
     }
-    
+
     // Check reCAPTCHA only if it's configured
     if (isRecaptchaConfigured && !recaptchaVerified) {
       showErrorAlert("خطأ!", "يرجى إكمال التحقق من reCAPTCHA");
@@ -174,7 +184,8 @@ export default function JoinPopup() {
       cv: formData.cv,
       speciality: formData.speciality,
       message: formData.message,
-      ...(isRecaptchaConfigured && recaptchaToken && { recaptcha_token: recaptchaToken }),
+      ...(isRecaptchaConfigured &&
+        recaptchaToken && { recaptcha_token: recaptchaToken }),
     };
 
     try {
@@ -227,7 +238,7 @@ export default function JoinPopup() {
         {/* Close Button */}
         <button
           onClick={closeJoin}
-          className="absolute top-1 right-2.5 bg-none border-none text-sm text-[#6F6F6F] cursor-pointer z-10 p-2.5 rounded-full transition-all duration-300 hover:bg-gray-100"
+          className="absolute top-1 left-2.5 bg-none border-none text-sm text-[#6F6F6F] cursor-pointer z-10 p-2.5 rounded-full transition-all duration-300 hover:bg-gray-100"
         >
           <X className="w-4 h-4" />
         </button>
@@ -238,12 +249,14 @@ export default function JoinPopup() {
             className="hidden lg:flex lg:w-[280px] bg-cover bg-center text-white p-4 rounded-lg flex-col justify-between min-h-[250px] gap-6 lg:rounded-l-2xl lg:rounded-r-none lg:min-h-auto"
             style={{ backgroundImage: "url('/assets/images/forms-bg.png')" }}
           >
-    <div>
+            <div>
               <h2 className="text-3xl font-black mb-2.5 max-md:text-2xl">
-                انضم إلينا
+                انضم إلى فريقنا
               </h2>
               <p className="text-sm">
-                كن جزءاً من يوروكويست إنترناشيونال. نحن نبحث دائماً عن محترفين موهوبين متحمسين للتدريب والتطوير وإحداث تأثير. قدم تفاصيلك وارفع سيرتك الذاتية للانضمام إلى فريقنا المتنامي.
+                كن جزءاً من يوروكويست إنترناشيونال. نحن نبحث دائماً عن محترفين
+                موهوبين متحمسين للتدريب والتطوير وإحداث تأثير. قدم تفاصيلك وارفع
+                سيرتك الذاتية للانضمام إلى فريقنا المتنامي.
               </p>
             </div>
 
@@ -280,7 +293,7 @@ export default function JoinPopup() {
             <div className="contact-content flex flex-col gap-6 h-full">
               <div className="join-form-section flex-1">
                 <h2 className="hidden max-lg:block text-[22px] font-bold text-[#3E5EC0] mb-3">
-                  انضم إلينا
+                  انضم إلى فريقنا
                 </h2>
 
                 <form
@@ -493,11 +506,17 @@ export default function JoinPopup() {
                     {/* Submit Button */}
                     <button
                       type="submit"
-                      disabled={(isRecaptchaConfigured && !recaptchaVerified) || joinMutation.isPending || !isPhoneValid}
-                      className="submit-btn min-w-[170px] w-fit h-12 rounded-[10px] px-[18px] text-sm font-semibold text-white bg-gradient-to-r from-[#314EA9] to-[#446AE1] border-none cursor-pointer flex items-center justify-center gap-2 ml-0 transition-all duration-500 ease-in-out hover:[&_svg]:translate-x-0.5 disabled:opacity-50 disabled:cursor-not-allowed max-md:w-full max-md:min-w-auto max-md:h-11 max-md:text-[13px]"
+                      disabled={
+                        (isRecaptchaConfigured && !recaptchaVerified) ||
+                        joinMutation.isPending ||
+                        !isPhoneValid
+                      }
+                      className="min-w-[170px] w-fit h-11 rounded-md px-2 text-sm font-semibold text-white bg-gradient-to-r from-[#314EA9] to-[#446AE1] border-none cursor-pointer flex items-center justify-center gap-2 ml-0 transition-all duration-500 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed max-md:w-full max-md:min-w-auto max-md:text-xs"
                     >
                       <span className="btn-text">
-                        {joinMutation.isPending ? "جارِ الإرسال..." : "إرسال الطلب"}
+                        {joinMutation.isPending
+                          ? "جارِ الإرسال..."
+                          : "إرسال الطلب"}
                       </span>
                       <ChevronLeft className="w-4 h-4" />
                     </button>

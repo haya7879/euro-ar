@@ -26,7 +26,7 @@ export default function DownloadPopup() {
 
   const MONTH_NAMES = [
     "يناير",
-    "فبراير", 
+    "فبراير",
     "مارس",
     "أبريل",
     "مايو",
@@ -145,10 +145,7 @@ export default function DownloadPopup() {
     console.error("reCAPTCHA error:", error);
     setRecaptchaVerified(false);
     setRecaptchaToken(null);
-    showErrorAlert(
-      "خطأ!",
-      "فشل التحقق من reCAPTCHA. يرجى المحاولة مرة أخرى."
-    );
+    showErrorAlert("خطأ!", "فشل التحقق من reCAPTCHA. يرجى المحاولة مرة أخرى.");
   };
 
   const handleRecaptchaExpire = () => {
@@ -253,17 +250,11 @@ export default function DownloadPopup() {
           console.error("Error generating PDF:", pdfError);
           setIsGeneratingPDF(false);
           setProgress(0);
-          showErrorAlert(
-            "خطأ!",
-            "فشل إنشاء PDF، ولكن تم إرسال طلبك بنجاح."
-          );
+          showErrorAlert("خطأ!", "فشل إنشاء PDF، ولكن تم إرسال طلبك بنجاح.");
         }
       } else {
         // If no course/timing data, just show success
-        showSuccessAlert(
-          "نجح!",
-          "شكراً لك! سيبدأ تحميل البروشور قريباً."
-        );
+        showSuccessAlert("نجح!", "شكراً لك! سيبدأ تحميل البروشور قريباً.");
         setTimeout(() => {
           closeDownload();
         }, 1000);
@@ -316,7 +307,7 @@ export default function DownloadPopup() {
           {/* Close Button */}
           <button
             onClick={closeDownload}
-            className="absolute top-1 right-2.5 bg-none border-none text-sm text-[#6F6F6F] cursor-pointer z-10 p-2.5 rounded-full transition-all duration-300 hover:bg-gray-100"
+            className="absolute top-1 left-2.5 bg-none border-none text-sm text-[#6F6F6F] cursor-pointer z-10 p-2.5 rounded-full transition-all duration-300 hover:bg-gray-100"
           >
             <X className="w-4 h-4" />
           </button>
@@ -468,7 +459,7 @@ export default function DownloadPopup() {
                       isGeneratingPDF ||
                       !isPhoneValid
                     }
-                    className="submit-btn min-w-[170px] w-fit h-12 rounded-[10px] px-[18px] text-sm font-semibold text-white bg-gradient-to-r from-[#314EA9] to-[#446AE1] border-none cursor-pointer flex items-center justify-center gap-2 ml-0 transition-all duration-500 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed max-md:w-full max-md:min-w-auto max-md:h-11 max-md:text-[13px]"
+                    className="min-w-[170px] w-fit h-11 rounded-md px-2 text-sm font-semibold text-white bg-gradient-to-r from-[#314EA9] to-[#446AE1] border-none cursor-pointer flex items-center justify-center gap-2 ml-0 transition-all duration-500 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed max-md:w-full max-md:min-w-auto max-md:text-xs"
                   >
                     <span className="btn-text">
                       {downloadMutation.isPending

@@ -189,7 +189,7 @@ export default function InquirePopup() {
         {/* Close Button */}
         <button
           onClick={closeInquire}
-          className="absolute top-1 right-2.5 bg-none border-none text-sm text-[#6F6F6F] cursor-pointer z-10 p-2.5 rounded-full transition-all duration-300 hover:bg-gray-100"
+          className="absolute top-1 left-2.5 bg-none border-none text-sm text-[#6F6F6F] cursor-pointer z-10 p-2.5 rounded-full transition-all duration-300 hover:bg-gray-100"
         >
           <X className="w-4 h-4" />
         </button>
@@ -199,7 +199,7 @@ export default function InquirePopup() {
           <div className="register-right flex-1 p-4 md:p-6 overflow-y-auto rounded-lg max-md:p-3">
             
             {/* Header */}
-            <div className="register-header mb-8 max-md:mb-6">
+            <div className="register-header mb-6">
               <h3 className="text-[#3E5EC0] text-xl font-bold mb-2 max-md:text-lg">
                 {courseTitle || 'استفسار عن الدورة'}
               </h3>
@@ -207,7 +207,7 @@ export default function InquirePopup() {
 
             <form onSubmit={handleSubmit} className="form-inputs flex flex-col gap-4">
               {/* Form Grid */}
-              <div className="form-grid grid gap-2 md:grid-cols-2 max-md:grid-cols-1 max-md:gap-3">
+              <div className="form-grid grid gap-3 md:grid-cols-3 max-md:grid-cols-1 max-md:gap-3">
                 {/* Full Name */}
                 <div className="form-group flex flex-col gap-1">
                   <label htmlFor="inquire_full_name" className="text-[13px] text-[#333]">الاسم الكامل</label>
@@ -345,7 +345,7 @@ export default function InquirePopup() {
                 <button
                   type="submit"
                   disabled={(isRecaptchaConfigured && !recaptchaVerified) || inquireMutation.isPending || !isPhoneValid}
-                  className="submit-btn min-w-[170px] w-fit h-12 rounded-[10px] px-[18px] text-sm font-semibold text-white bg-gradient-to-r from-[#314EA9] to-[#446AE1] border-none cursor-pointer flex items-center justify-center gap-2 ml-0 transition-all duration-500 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed max-md:w-full max-md:min-w-auto max-md:h-11 max-md:text-[13px]"
+                  className="min-w-[170px] w-fit h-11 rounded-md px-2 text-sm font-semibold text-white bg-gradient-to-r from-[#314EA9] to-[#446AE1] border-none cursor-pointer flex items-center justify-center gap-2 ml-0 transition-all duration-500 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed max-md:w-full max-md:min-w-auto max-md:text-xs"
                 >
                   <span className="btn-text">{inquireMutation.isPending ? 'جارِ إرسال الرسالة...' : 'إرسال الرسالة'}</span>
                   {!inquireMutation.isPending && <ChevronLeft className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-0.5" />}
