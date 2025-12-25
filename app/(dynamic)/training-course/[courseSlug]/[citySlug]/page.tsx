@@ -239,7 +239,7 @@ export default async function Page({ params }: PageProps) {
           backgroundImage={"/assets/images/hero-about.webp"}
           title={seo.h1 || course.title}
           description={
-            seo.description || course.description || "جاري تحميل تفاصيل الدورة..."
+            seo.description || course.description
           }
           breadcrumbs={breadcrumbs}
           enableTypewriter={true}

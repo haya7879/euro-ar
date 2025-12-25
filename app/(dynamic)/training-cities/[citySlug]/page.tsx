@@ -203,8 +203,8 @@ export default async function Page({
       <header>
         <HeroBanner
           backgroundImage="/assets/images/hero-city.webp"
-          title={city.h1 || city.title || "City"}
-          description={city.description || "Explore training courses in this city"}
+          title={city.h1 || city.title}
+          description={city.description}
           breadcrumbs={breadcrumbs}
           enableTypewriter={true}
           typewriterSpeed={100}

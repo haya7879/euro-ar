@@ -19,7 +19,7 @@ export default function CategoriesSection({
     <section className="bg-[#F2F8FF] md:py-14 py-12 relative">
       {/* Background Shape */}
       <img
-        src="./assets/images/categories-shape.svg"
+        src="/assets/images/categories-shape.svg"
         alt=""
         className="absolute right-[-100px] top-0 w-[250px] h-[250px]"
       />
