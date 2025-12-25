@@ -120,7 +120,7 @@ export default async function Page({
     },
     {
       href: "/training-cities",
-      label: "Cities",
+      label: "مدن التدريب",
     },
     {
       href: `/training-cities/${city?.slug}`,
@@ -229,7 +229,7 @@ export default async function Page({
           <CategoriesSection
             categories={categories}
             citySlug={citySlug}
-            title="Categories in"
+            title="التخصصات في"
             highlight={city.title}
           />
         </div>

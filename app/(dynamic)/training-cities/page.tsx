@@ -110,7 +110,7 @@ export default async function CitiesPage({ searchParams }: CitiesPageProps) {
     },
     {
       href: "/training-cities",
-      label: "المدن",
+      label: "مدن التدريب",
     },
   ];
 

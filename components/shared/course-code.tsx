@@ -20,7 +20,7 @@ export default function CourseCode({ code }: { code: string }) {
     >
       {isCopied(code) ? (
         <>
-          <span>Copied</span>
+          <span>تم النسخ</span>
           <CheckCircle size={12} />
         </>
       ) : (

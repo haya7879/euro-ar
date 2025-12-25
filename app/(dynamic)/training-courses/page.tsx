@@ -111,7 +111,7 @@ export default async function CategoriesPage({ searchParams }: CategoriesPagePro
     },
     {
       href: "/training-courses",
-      label: "التخصصات التدريبية",
+      label: "تخصصات التدريب",
     },
   ];
 

@@ -3,14 +3,10 @@ import React from "react";
 
 export default function OurValues() {
   return (
-    <section id="our-values" className="bg-white md:py-11 py-8 scroll-mt-24">
+    <section id="our-values" className="bg-white md:py-10 py-6 scroll-mt-24">
       <div className="flex flex-col gap-12 relative z-10">
         <div className="w-full">
           <SectionTitle title="قيمنا" highlight="" className="!mb-4" />
-          <p className="font-normal text-sm md:text-base text-gray-700 mb-8">
-            في EuroQuest، توجه قيمنا كل ما نقوم به. إنها تشكل تفاعلاتنا وقراراتنا والطريقة التي نبني بها برامجنا.
-          </p>
-
           {/* Values Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* Quality */}
@@ -23,7 +19,7 @@ export default function OurValues() {
               </div>
               <div className="border-t border-[#C5C5C5] pt-4">
                 <p className="text-gray-600 text-sm md:text-base font-medium">
-                  نحن نصمم كل تفصيلة لتقديم نتائج استثنائية ودائمة.
+                  نصنع كل تفصيلة لتقديم نتائج استثنائية ودائمة.
                 </p>
               </div>
             </div>
@@ -74,24 +70,24 @@ export default function OurValues() {
               </div>
               <div className="border-t border-[#C5C5C5] pt-4">
                 <p className="text-gray-600 text-sm md:text-base font-medium">
-                  نتطور باستمرار، نحول الأفكار إلى حلول أذكى وأفضل.
+                  نتطور باستمرار، محولين الأفكار إلى حلول أذكى وأفضل.
                 </p>
               </div>
             </div>
 
-            {/* Results-Oriented */}
+            {/* Results-Oriented Approach */}
             <div className="border border-[#C5C5C5] rounded-xl p-4">
               <div className="flex items-center gap-2 md:gap-3 mb-4">
                 <div className="w-8 h-8 flex items-center justify-center">
                   <img src="/assets/icons/value-icon5.svg" alt="" />
                 </div>
                 <h3 className="text-lg font-bold text-[#3E5EC0]">
-                  نهج موجه نحو النتائج
+                  نهج يركز على النتائج
                 </h3>
               </div>
               <div className="border-t border-[#C5C5C5] pt-4">
                 <p className="text-gray-600 text-sm md:text-base font-medium">
-                  نركز على النتائج القابلة للقياس التي تخلق تأثيرًا حقيقيًا ودائمًا.
+                  نركز على النتائج القابلة للقياس التي تخلق تأثيراً حقيقياً ودائماً.
                 </p>
               </div>
             </div>

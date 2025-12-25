@@ -16,14 +16,12 @@ export default async function UpcomingCoursesSection() {
       />
 
       <Container>
-        <div className="md:mb-10 mb-8">
-          {/* Section Header */}
-          <SectionTitle
-            title="الدورات"
-            highlight="القادمة"
-            description="الدورات القادمة لتطوير المهارات وتحسين الأداء"
-          />
-        </div>
+        {/* Section Header */}
+        <SectionTitle
+          title="الدورات"
+          highlight="القادمة"
+          description="الدورات القادمة لتطوير المهارات وتحسين الأداء"
+        />
 
         {/* Courses Slider */}
         <UpcomingCoursesSlider upcomingCourses={upcomingCourses} />

@@ -128,7 +128,7 @@ export default async function Page({
     },
     {
       href: "/training-courses",
-      label: "التخصصات",
+      label: "تخصصات التدريب",
     },
     {
       href: `/training-courses/${course.category.slug}`,

@@ -10,13 +10,13 @@ export default function OurImpact() {
     >
       <Container className="flex flex-col gap-14 relative z-10">
         <div className="w-full">
-          <SectionTitle title="تأثيرنا" highlight="" className="!mb-8" />
+          {/* <SectionTitle title="Our" highlight="Impact" className="!mb-8" /> */}
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="flex flex-col items-center text-center gap-3">
               <img src="/assets/icons/check.svg" alt="" className="w-12 h-12" />
               <h3 className="text-base font-semibold text-black mb-2">
-                تحسين كفاءة القوى العاملة في المؤسسات
+                تحسين كفاءة القوى العاملة في المنظمات
               </h3>
             </div>
 
@@ -30,7 +30,7 @@ export default function OurImpact() {
             <div className="flex flex-col items-center text-center gap-3">
               <img src="/assets/icons/check.svg" alt="" className="w-12 h-12" />
               <h3 className="text-base font-semibold text-black mb-2">
-                تحقيق فرق العمل تعاونًا أفضل ونتائج أفضل
+                تحقيق الفرق للتعاون والنتائج الأفضل
               </h3>
             </div>
           </div>

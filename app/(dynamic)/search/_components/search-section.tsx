@@ -1,12 +1,8 @@
 "use client";
-
-import React from "react";
-import LoadingSpinner from "@/components/ui/loading-spinner";
 import SmallLoadingSpinner from "@/components/ui/small-loading-spinner";
 import SearchBanner from "@/components/shared/search-banner";
 import SearchHero from "./search-hero";
 import SearchResults from "./search-results";
-import SearchSummary from "./search-summary";
 import { useSearch } from "./hooks/use-search";
 
 export default function SearchSection() {
@@ -29,9 +25,6 @@ export default function SearchSection() {
     return (
       <div className="container mx-auto py-8">
         <article className="text-center">
-          <div className="text-red-500 text-6xl mb-6" aria-hidden="true">
-            ⚠️
-          </div>
           <h2 className="text-xl font-semibold text-gray-700 mb-2">
             خطأ في البحث
           </h2>
@@ -69,12 +62,12 @@ export default function SearchSection() {
 
       <div className="container mx-auto pb-13">
         {/* Search Summary */}
-        <SearchSummary
+        {/* <SearchSummary
           totalCount={totalCount}
           resultType={resultType}
           appliedFilters={appliedFilters}
           cacheStatus={cacheStatus}
-        />
+        /> */}
 
         {/* Loading State */}
         {loading && (

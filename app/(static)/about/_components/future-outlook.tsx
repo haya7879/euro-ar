@@ -5,11 +5,11 @@ export default function FutureOutlook() {
   return (
     <section
       id="future-outlook"
-      className="bg-white md:py-11 py-8 scroll-mt-24"
+      className="bg-white md:py-10 py-6 scroll-mt-24"
     >
       <div className="flex flex-col gap-12 relative z-10">
         <div className="w-full">
-          <SectionTitle title="النظرة" highlight="المستقبلية" className="!mb-8" />
+          <SectionTitle title="النظرة المستقبلية"  highlight="" className="!mb-4" />
 
           {/* Future Outlook Content */}
           <div className="border border-gray-200 rounded-xl md:p-4 p-2 flex flex-col lg:flex-row gap-6">
@@ -25,7 +25,7 @@ export default function FutureOutlook() {
             {/* Right Side - Goals */}
             <div className="w-full lg:w-1/2 flex flex-col gap-4 md:gap-6">
               <h3 className="text-xl md:text-2xl font-bold text-black text-center lg:text-start">
-                نسعى للتوسع عالميًا من خلال:
+                نهدف إلى التوسع عالمياً من خلال:
               </h3>
 
               {/* Goal List */}

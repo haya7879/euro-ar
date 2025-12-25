@@ -12,10 +12,10 @@ export default function JoinBtn() {
     <>
       <button
         onClick={handleJoinTeam}
-        className="bg-[#3E5EC0] hover:bg-[#2d4aa7] !mt-0 mx-auto md:mx-0 text-white px-8 py-3 rounded-lg font-semibold text-base transition-all duration-300 transform cursor-pointer flex items-center gap-3 group"
+        className="bg-[#3E5EC0] hover:bg-[#2d4aa7] !mt-0 mx-auto md:mx-0 text-white px-4 py-2.5 rounded-md font-semibold text-sm transition-all duration-300 transform cursor-pointer flex items-center gap-3 group"
         suppressHydrationWarning={true}
       >
-        <span>انضم إلينا</span>
+        <span>انضم إلى فريقنا</span>
         <ChevronLeft className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
       </button>
     </>

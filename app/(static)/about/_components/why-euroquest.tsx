@@ -1,12 +1,30 @@
+import Container from "@/components/shared/container";
 import React from "react";
 
 export default function WhyEuroquest() {
   return (
-    <section id="why-euroquest" className="bg-white md:py-11 py-8 scroll-mt-24">
+    <section id="why-euroquest" className="bg-white md:py-10 py-6 scroll-mt-24">
       <div className="flex flex-col gap-12 relative z-10">
         <div className="w-full">
-          <div className="flex flex-col lg:flex-row gap-6 items-center lg:items-start">
+          <div className="flex flex-col lg:flex-row md:gap-6 gap-4 items-center lg:items-start">
             {/* Left Side - Question Mark Icon */}
+            <div className="w-full lg:w-3/4 text-center lg:text-right">
+              <h2 className="text-xl md:text-2xl font-bold mb-2">
+                لماذا تختار <span className="text-[#3E5EC0]">يوروكويست ؟</span>
+              </h2>
+              <p className="font-normal text-sm md:text-base leading-7">
+                برامج تغطي{" "}
+                <span className="font-semibold">أكثر من 20 فئة تدريبية</span>{" "}
+                منهجيات تجمع بين النظرية والتطبيق حلول مخصصة للمنظمات والأفراد
+                وجود عالمي في مدن مثل دبي، لندن، برشلونة، إسطنبول، فيينا، باريس،
+                جنيف، والمزيد تركيز قوي على المواضيع الناشئة مثل{" "}
+                <span className="font-semibold">
+                  الذكاء الاصطناعي، الاستدامة، والتحول الرقمي
+                </span>
+              </p>
+            </div>
+
+            {/* Right Side - Content */}
             <div className="w-full max-w-[200px] flex items-start justify-center lg:justify-start">
               <div className="relative">
                 <img
@@ -16,24 +34,49 @@ export default function WhyEuroquest() {
                 />
               </div>
             </div>
-
-            {/* Right Side - Content */}
-            <div className="w-full lg:w-3/4 text-center lg:text-start">
-              <h2 className="text-xl md:text-2xl font-bold mb-2">
-                لماذا تختار <span className="text-[#3E5EC0]">EuroQuest؟</span>
-              </h2>
-              <p className="font-normal text-sm md:text-base leading-7">
-                برامج تغطي{" "}
-                <span className="font-semibold">أكثر من 20 فئة تدريبية</span>{" "}
-                منهجيات تجمع بين النظرية والتطبيق حلول مخصصة للمؤسسات والأفراد وجود عالمي في
-                مدن مثل دبي، لندن، برشلونة، إسطنبول، فيينا،
-                باريس، جنيف، والمزيد تركيز قوي على المواضيع الناشئة مثل{" "}
-                <span className="font-semibold">
-                  الذكاء الاصطناعي والاستدامة والتحول الرقمي
-                </span>
-              </p>
-            </div>
           </div>
+          <section className="bg-[#F8FBFF] md:py-11 py-8 mt-4">
+            <Container className="flex flex-col gap-14 relative z-10">
+              <div className="w-full">
+                {/* <SectionTitle title="Our" highlight="Impact" className="!mb-8" /> */}
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="flex flex-col items-center text-center gap-3">
+                    <img
+                      src="/assets/icons/check.svg"
+                      alt=""
+                      className="w-12 h-12"
+                    />
+                    <h3 className="text-base font-semibold text-black mb-2">
+                      تحسين كفاءة القوى العاملة في المنظمات
+                    </h3>
+                  </div>
+
+                  <div className="flex flex-col items-center text-center gap-3">
+                    <img
+                      src="/assets/icons/check.svg"
+                      alt=""
+                      className="w-12 h-12"
+                    />
+                    <h3 className="text-base font-semibold text-black mb-2">
+                      اكتساب المهنيين للمهارات اللازمة للتقدم الوظيفي
+                    </h3>
+                  </div>
+
+                  <div className="flex flex-col items-center text-center gap-3">
+                    <img
+                      src="/assets/icons/check.svg"
+                      alt=""
+                      className="w-12 h-12"
+                    />
+                    <h3 className="text-base font-semibold text-black mb-2">
+                      تحقيق الفرق للتعاون والنتائج الأفضل
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </Container>
+          </section>
         </div>
       </div>
     </section>

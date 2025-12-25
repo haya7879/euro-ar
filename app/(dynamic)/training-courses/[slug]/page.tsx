@@ -130,7 +130,7 @@ export default async function Page({
     },
     {
       href: "/training-courses",
-      label: "التخصصات",
+      label: "تخصصات التدريب",
     },
     {
       href: `/training-courses/${category?.slug || slug}`,

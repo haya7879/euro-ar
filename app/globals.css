@@ -159,7 +159,6 @@ input , textarea{
   overflow: hidden;
 
   .cities-swiper {
-    padding: 8px;
     overflow: hidden;
 
     .swiper-slide {
@@ -413,7 +412,6 @@ input , textarea{
   overflow: hidden;
 
   .courses-swiper {
-    padding: 8px;
     overflow: hidden;
 
     .swiper-slide {
@@ -592,12 +590,8 @@ input , textarea{
   max-width: none;
 }
 
-.overview-text p {
-  margin-bottom: 16px;
-}
-
 .overview-text p:last-child {
-  margin-bottom: 0;
+  margin-top: 30px !important;
 }
 
 .overview-text strong {
@@ -609,31 +603,19 @@ input , textarea{
 /* Main section headings (Course Benefits, Course Objectives, etc.) */
 .overview-text p strong:only-child {
   display: block;
-  margin: 32px 0 20px 0;
-  font-size: 22px;
+  margin: 32px 0 0 0;
+  font-size: 18px;
   color: #3E5EC0;
   padding-bottom: 0;
   border-bottom: none;
   position: relative;
-  text-align: left;
+  text-align: start;
 }
 
-.overview-text p strong:only-child::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 60px;
-  height: 3px;
-  background: #20b486;
-  border-radius: 2px;
-}
-
-/* Unit headings (Unit 1, Unit 2, etc.) - different style for sub-sections */
 .overview-text .unit-heading {
   font-size: 18px !important;
-  margin: 24px 0 12px 0 !important;
-  background: #f7fafc !important;
+  margin-block: 14px !important;
+  background: #F2F8FF !important;
   color: #2d3748 !important;
   padding: 12px 16px !important;
   border-radius: 0 8px 8px 0 !important;
@@ -665,6 +647,7 @@ input , textarea{
 /* Enhanced styling for better visual hierarchy */
 .overview-text p strong:only-child {
   transition: all 0.3s ease;
+  margin-bottom: 14px;
 }
 
 .overview-text .unit-heading:hover {
@@ -690,13 +673,9 @@ input , textarea{
 }
 
 .overview-text ul {
-  margin: 16px 0;
-  padding-left: 16px;
+  margin: 14px 0;
+  padding-left: 12px;
 }
-
-/* .overview-text ul:last-of-type {
-  margin-bottom: 70px !important;
-} */
 
 .overview-text li {
   list-style: none;
@@ -726,18 +705,8 @@ input , textarea{
     font-size: 15px;
   }
 
-  .overview-text strong {
-    font-size: 17px;
-  }
-
-  .overview-text p strong:only-child {
-    font-size: 18px !important;
-    margin: 20px 0 12px 0 !important;
-  }
-
   .overview-text .unit-heading {
     font-size: 16px !important;
-    margin: 16px 0 8px 0 !important;
     padding: 10px 12px !important;
   }
 
@@ -745,8 +714,9 @@ input , textarea{
     padding-left: 20px;
   }
 
-  .overview-text p strong:only-child::after {
-    width: 40px !important;
+  .overview-text p,
+  .overview-text strong {
+    font-size: 14px;
   }
 }
 
@@ -754,7 +724,6 @@ input , textarea{
 .overview-content {
   display: flex;
   flex-direction: column;
-  /* padding-top: 70px; */
   color: #6f6f6f;
 }
 
@@ -765,8 +734,9 @@ input , textarea{
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 4px;
   list-style-position: inside;
+  margin: 0 !important;
 }
 
 .overview-content ol {
@@ -780,13 +750,13 @@ input , textarea{
 
 .overview-content h2 {
   color: #3E5EC0;
-  font-size: 32px;
+  font-size: 28px;
 }
 
 .overview-content .course-title {
   font-weight: 700;
   color: #134e88;
-  font-size: 32px;
+  font-size: 28px;
   line-height: 36px;
 }
 
@@ -799,25 +769,11 @@ input , textarea{
 
 /* Social Share Section */
 .social-share-section {
-  margin: 40px 0;
+  margin: 32px 0;
   padding: 16px;
   background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 100%);
   border-radius: 8px;
   text-align: center;
-}
-
-.share-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #2d3748;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.social-share-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
 }
 
 .social-btn {

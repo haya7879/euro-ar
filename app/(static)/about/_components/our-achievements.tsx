@@ -41,7 +41,7 @@ export default function OurAchievements() {
                 </div>
                 <div>
                   <h3 className="text-base font-semibold text-black leading-relaxed">
-                    شبكة عالمية من المدربين المعتمدين دوليًا
+                    شبكة عالمية من المدربين المعتمدين دولياً
                   </h3>
                 </div>
               </div>
@@ -54,7 +54,7 @@ export default function OurAchievements() {
                     25+
                   </div>
                   <p className="text-sm md:text-base font-semibold text-black">
-                    سنوات من الخبرة
+                    عاماً من الخبرة
                   </p>
                 </div>
 
@@ -84,7 +84,7 @@ export default function OurAchievements() {
                     1000+
                   </div>
                   <p className="text-sm md:text-base font-semibold text-black">
-                    مشارك تم تدريبهم عبر الصناعات
+                    مشارك تم تدريبهم عبر مختلف الصناعات
                   </p>
                 </div>
               </div>

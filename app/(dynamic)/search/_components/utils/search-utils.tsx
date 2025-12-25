@@ -59,7 +59,7 @@ export function formatDate(dateString: string): string {
 export function generateSearchBreadcrumbs() {
   return [
     { label: "", href: "/", icon: <Home size={16} />, },
-    { label: "Search Results", href: "#" },
+    { label: "نتائج البحث", href: "#" },
   ];
 }
 
@@ -67,9 +67,9 @@ export function generateSearchBreadcrumbs() {
  * Generates hero banner description based on search results
  */
 export function generateHeroDescription(totalCount: number, resultType: "timings" | "courses"): string {
-  const itemType = resultType === "timings" ? "training timing" : "training course";
-  const pluralSuffix = totalCount !== 1 ? "s" : "";
-  return `Found ${totalCount} ${itemType}${pluralSuffix}`;
+  const itemType = resultType === "timings" ? "وقت التدريب" : "دورة تدريبية";
+  const pluralSuffix = totalCount !== 1 ? "" : "";
+  return `يوجد ${totalCount} ${itemType}${pluralSuffix}`;
 }
 
 /**
