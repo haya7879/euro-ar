@@ -13,7 +13,7 @@ export default function AboutSection({ className = "" }: AboutSectionProps) {
         {/* Main Content Section */}
         <div className="flex items-center justify-between lg:flex-row-reverse flex-col gap-8 lg:gap-10 mb-10">
           {/* Image Section - Left */}
-          <div className="relative lg:w-1/2 flex items-center justify-center">
+          <div className="relative lg:max-w-[470px] flex items-center justify-center">
             <img
               src="/assets/images/about-section.png"
               alt="تعاون الفريق"
