@@ -18,7 +18,10 @@ export default function CourseTimings({ course, timings }: CourseTimingsProps) {
   const pathname = usePathname();
   
   // Determine page type based on pathname
-  const isCityCoursePage = pathname.includes(`/${course.slug}/`) && pathname.split('/').length > 3;
+  // City course page has pattern: /training-course/[courseSlug]/[citySlug]
+  // Regular course page has pattern: /training-course/[courseSlug]
+  const pathSegments = pathname.split('/').filter(Boolean);
+  const isCityCoursePage = pathSegments.length === 3 && pathSegments[0] === 'training-course';
   const pageType: SearchPageType = isCityCoursePage ? "city-course" : "course";
   const enableCityFilter = !isCityCoursePage;
   
@@ -59,10 +62,6 @@ export default function CourseTimings({ course, timings }: CourseTimingsProps) {
     month: selectedMonth || "",
     ...(enableCityFilter && { city: selectedCity || "" }),
   };
-
-  // if (citiesLoading) {
-  //   return <LoadingSpinner/>;
-  // }
 
   return (
     <div>
