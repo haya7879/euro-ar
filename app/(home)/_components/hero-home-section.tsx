@@ -21,7 +21,7 @@ export default function HeroSection({ className = "" }: HeroSectionProps) {
         <div className="max-w-full w-full">
           {/* Hero Title */}
           <h1 className="font-cairo text-2xl md:text-4xl lg:text-5xl max-w-[1000px] mx-auto font-bold text-gray-900 mb-2 leading-tight animate-slide-up">
-            انضم إلى
+            انضم إلى أكثر من
             <span className="relative inline-block mx-2">
               <span className="text-[#3E5EC0] font-bold">+1000</span>
               <img
@@ -30,12 +30,14 @@ export default function HeroSection({ className = "" }: HeroSectionProps) {
                 className="absolute right-0 -bottom-1 max-w-full h-auto"
               />
             </span>
-            برنامج ودورة تدريبية في وجهات عالمية حول العالم
+            برنامج ودورة تدريبية في وجهات دولية حول العالم
           </h1>
 
           {/* Hero Description */}
           <p className="text-gray-600 mb-2 text-base md:text-lg leading-relaxed max-w-[900px] mx-auto animate-fade-in-delay opacity-0 transform translate-y-5">
-            يوروكويست إنترناشيونال هي مؤسسة تعليمية وتدريبية رائدة، تقدم أكثر من 1000 برنامج ودورة تدريبية عالية الجودة حول العالم، مصممة لتطوير المهارات وتلبية احتياجات عملائنا.
+            تُعد يوركويست إنترناشيونال مؤسسة تعليمية وتدريبية رائدة، تقدّم أكثر
+            من 1000 برنامج ودورة تدريبية عالية الجودة حول العالم، مصممة لتطوير
+            المهارات وتلبية احتياجات عملائنا
           </p>
         </div>
 

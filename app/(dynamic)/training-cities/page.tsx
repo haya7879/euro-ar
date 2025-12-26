@@ -147,14 +147,14 @@ export default async function CitiesPage({ searchParams }: CitiesPageProps) {
         <Schema
           pageType="cities"
           pageTitle="المدن | الدول التدريبية العالمية"
-          pageDescription="استكشف دورات التدريب في المدن الرئيسية في جميع أنحاء العالم. ابحث عن دورات تدريبية مهنية في دبي, لندن, باريس, اسطنبول, وينا, وغيرها."
+          pageDescription="استكشف الدورات التدريبية في أبرز العواصم والمدن العالمية"
           pageUrl={`${baseUrl}/training-cities`}
         />
         <header>
           <HeroBanner
             backgroundImage="/assets/images/hero-cities.webp"
             title="استكشف دورات التدريب في المدن الرئيسية في جميع أنحاء العالم"
-            description="ابحث عن دورات تدريبية مهنية في دبي, لندن, باريس, اسطنبول, وينا, وغيرها."
+            description="تصفّح مجموعة واسعة من التخصصات التدريبية في مختلف المجالات"
             breadcrumbs={breadcrumbs}
             enableTypewriter={true}
             typewriterSpeed={100}
