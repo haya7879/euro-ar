@@ -41,7 +41,7 @@ export default function SearchTimingCard({
             </h4>
           </div>
           <div className="price text-[#253a7b] font-semibold text-sm flex items-center gap-1">
-            Fees: {Number(timing.fees) + 0} <Euro size={14} />
+            الرسوم: {Number(timing.fees) + 0} <Euro size={14} />
           </div>
         </div>
 
@@ -50,7 +50,7 @@ export default function SearchTimingCard({
           <div className="flex items-center gap-1">
             <Calendar size={16} className="text-gray-500" />
             <span className="label text-xs whitespace-nowrap text-gray-600 font-medium">
-              From:
+              من:
             </span>
             <span className="value text-xs whitespace-nowrap text-[#253a7b] font-semibold">
               {formatDate(timing.start_date)}
@@ -58,7 +58,7 @@ export default function SearchTimingCard({
           </div>
           <div className="flex items-center gap-1">
             <span className="label text-xs whitespace-nowrap text-gray-600 font-medium">
-              To:
+              إلى:
             </span>
             <span className="value text-xs whitespace-nowrap text-[#253a7b] font-semibold">
               {formatDate(timing.end_date)}
@@ -93,7 +93,7 @@ export default function SearchTimingCard({
           }}
           className="flex-1 h-6.5 text-[11px] bg-white text-[#3E5EC0] border border-[#3E5EC0] cursor-pointer rounded-full font-semibold hover:bg-gradient-to-r hover:from-[#4E71D4] hover:to-[#324B9A] hover:text-white transition-all duration-200 hover:scale-105 flex items-center justify-center gap-1"
         >
-          Register
+          تسجيل
         </button>
         <button
           onClick={(e) => {
@@ -106,7 +106,7 @@ export default function SearchTimingCard({
           }}
           className="flex-1 h-6.5 text-[11px] bg-white text-[#3E5EC0] border border-[#3E5EC0] cursor-pointer rounded-full font-semibold hover:bg-gradient-to-r hover:from-[#4E71D4] hover:to-[#324B9A] hover:text-white transition-all duration-200 hover:scale-105 flex items-center justify-center gap-1"
         >
-          Enquire
+          استفسار
         </button>
       </div>
     </Link>
