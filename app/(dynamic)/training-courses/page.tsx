@@ -7,7 +7,6 @@ import { getCategories, getSeoData } from "@/services/services";
 import Container from "@/components/shared/container";
 import Schema from "@/components/shared/schema";
 
-
 // Generate metadata dynamically for SEO optimization
 export async function generateMetadata(): Promise<Metadata> {
   try {
@@ -71,8 +70,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
     // SEO-optimized fallback metadata
     return {
-      title:
-        "التخصصات التدريبية | الدول التدريبية العالمية",
+      title: "التخصصات التدريبية | الدول التدريبية العالمية",
       description:
         "استكشف جميع تخصصات التدريب في الدول التدريبية العالمية. ابحث عن دورات تدريبية مهنية في الإدارة, الموارد البشرية, التكنولوجيا, المالية, وغيرها على مختلف المجالات.",
       keywords:
@@ -97,11 +95,13 @@ interface CategoriesPageProps {
   }>;
 }
 
-export default async function CategoriesPage({ searchParams }: CategoriesPageProps) {
+export default async function CategoriesPage({
+  searchParams,
+}: CategoriesPageProps) {
   const params = await searchParams;
   const categories = await getCategories();
   const baseUrl = "https://euroqst.com";
-  
+
   // Breadcrumb configuration
   const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -154,8 +154,8 @@ export default async function CategoriesPage({ searchParams }: CategoriesPagePro
         <header>
           <HeroBanner
             backgroundImage="/assets/images/hero-categories.webp"
-            title="استكشف جميع تخصصات التدريب في الدول التدريبية العالمية"
-            description="تصفّح مجموعة واسعة من التخصصات التدريبية في مختلف المجالات"
+            title="تصفّح مجموعة واسعة من التخصصات التدريبية في مختلف المجالات"
+            description="ابحث عن دورات تدريبية مهنية في الإدارة, الموارد البشرية, التكنولوجيا, المالية, وغيرها على مختلف المجالات."
             breadcrumbs={breadcrumbs}
             enableTypewriter={true}
             typewriterSpeed={100}
@@ -169,7 +169,8 @@ export default async function CategoriesPage({ searchParams }: CategoriesPagePro
                 لا يوجد تخصصات متاحة
               </h2>
               <p className="text-gray-600">
-                نحن نعمل على إضافة المزيد من التخصصات. يرجى التحقق مرة أخرى قريبا!
+                نحن نعمل على إضافة المزيد من التخصصات. يرجى التحقق مرة أخرى
+                قريبا!
               </p>
             </article>
           </Container>
@@ -184,7 +185,9 @@ export default async function CategoriesPage({ searchParams }: CategoriesPagePro
       {categoryListSchema && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(categoryListSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(categoryListSchema),
+          }}
         />
       )}
 
@@ -199,8 +202,8 @@ export default async function CategoriesPage({ searchParams }: CategoriesPagePro
       <header>
         <HeroBanner
           backgroundImage="/assets/images/hero-categories.webp"
-          title="استكشف جميع تخصصات التدريب في الدول التدريبية العالمية"
-          description="تصفّح مجموعة واسعة من التخصصات التدريبية في مختلف المجالات"
+          title="تصفّح مجموعة واسعة من التخصصات التدريبية في مختلف المجالات"
+          description="ابحث عن دورات تدريبية مهنية في الإدارة, الموارد البشرية, التكنولوجيا, المالية, وغيرها على مختلف المجالات."
           breadcrumbs={breadcrumbs}
           enableTypewriter={true}
           typewriterSpeed={100}
