@@ -76,7 +76,7 @@ export default function Navbar() {
                   alt="الدول التدريبية العالمية Training Logo"
                   width={190}
                   height={50}
-                  className="w-[160px] lg:w-[190px] lg:h-[50px]"
+                  className="lg:w-[190px] w-[150px] h-[50px] object-contain"
                   priority
                 />
               </Link>
@@ -158,18 +158,18 @@ export default function Navbar() {
             >
               {/* Sidebar Header */}
               <motion.div
-                className="px-6 pt-5 pb-4 bg-gradient-to-br from-white to-slate-100 border-b border-blue-200/20 max-[480px]:px-4 max-[480px]:pt-4 max-[480px]:pb-3"
+                className="px-6 pt-4 pb-3 bg-gradient-to-br from-white to-slate-100 border-b border-blue-200/20 max-[480px]:px-4 max-[480px]:pt-4 max-[480px]:pb-3"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1, duration: 0.4 }}
               >
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center justify-between">
                   <Image
-                    src="./assets/images/logo.svg"
+                    src="./assets/images/logo-ar.svg"
                     alt="الدول التدريبية العالمية Training Logo"
                     width={160}
                     height={50}
-                    className="w-40 h-auto max-[480px]:w-36"
+                    className="w-[150px] h-[50px] object-cover"
                     priority
                     unoptimized
                   />

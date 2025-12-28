@@ -14,12 +14,12 @@ export default function ContactSection({
           <div className="flex items-center md:justify-evenly justify-center md:flex-row flex-col-reverse gap-5">
             {/* Request Content */}
             <div className="max-w-[540px] text-center md:text-start">
-              <p className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-6">
-                انضم إلى واحدة من أفضل{" "}
-                <span className="text-[#3E5EC0] font-bold">
-                  مؤسسات التدريب
+              <p className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 leading-relaxed mb-6">
+                انضم إلى واحدة من أبرز
+                {" "}<span className="text-[#3E5EC0] font-bold">
+                  المؤسسات التدريبية
                 </span>{" "}
-                في العالم
+                الرائدة عالمياً
               </p>
 
               <JoinBtn />

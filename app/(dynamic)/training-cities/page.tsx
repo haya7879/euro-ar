@@ -154,7 +154,7 @@ export default async function CitiesPage({ searchParams }: CitiesPageProps) {
           <HeroBanner
             backgroundImage="/assets/images/hero-cities.webp"
             title="استكشف دورات التدريب في المدن الرئيسية في جميع أنحاء العالم"
-            description="تصفّح مجموعة واسعة من التخصصات التدريبية في مختلف المجالات"
+            description="استكشف الدورات التدريبية في أبرز العواصم والمدن العالمية"
             breadcrumbs={breadcrumbs}
             enableTypewriter={true}
             typewriterSpeed={100}
@@ -199,7 +199,7 @@ export default async function CitiesPage({ searchParams }: CitiesPageProps) {
         <HeroBanner
           backgroundImage="/assets/images/hero-cities.webp"
           title="استكشف دورات التدريب في المدن الرئيسية في جميع أنحاء العالم"
-          description="ابحث عن دورات تدريبية مهنية في دبي, لندن, باريس, اسطنبول, وينا, وغيرها."
+          description="استكشف الدورات التدريبية في أبرز العواصم والمدن العالمية"
           breadcrumbs={breadcrumbs}
           enableTypewriter={true}
           typewriterSpeed={100}

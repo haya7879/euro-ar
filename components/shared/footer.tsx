@@ -13,33 +13,34 @@ export default function Footer() {
             <div className="max-w-[300px] w-full md:w-auto">
               <Link href="/" className="text-white/50">
                 <Image
-                  src="./assets/images/logo.svg"
+                  src="./assets/images/logo-ar.svg"
                   alt="EuroQuest"
                   width={150}
                   height={50}
-                  className="w-[200px] h-auto mb-8 mt-2"
+                  className="mb-4 w-[190px] h-[50px] object-cover"
                   unoptimized
                 />
               </Link>
               <ul className="flex flex-col gap-4">
                 <li className="list-none flex items-start gap-2">
-                  <MapPin className="w-5 h-5"/>
+                  <MapPin className="w-5 h-5" />
                   <span className="text-base">
-                    Šancová 3568/61 <br />
-                    Mestská časť Nové Mesto
+                    شانسوفا 3568/61 - نوفي ميستو
                     <br />
-                    Bratislava 831 04
+                    براتيسلافا 831 04
                     <br />
-                    Slovakia
+                    سلوفاكيا
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <Mail className="w-5 h-5"/>
+                  <Mail className="w-5 h-5" />
                   <span className="text-base">info@euroqst.com</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Phone className="w-5 h-5" />
-                  <span className="text-base" dir="ltr">+421 911 803 183</span>
+                  <span className="text-base" dir="ltr">
+                    +421 911 803 183
+                  </span>
                 </li>
               </ul>
             </div>
@@ -82,12 +83,12 @@ export default function Footer() {
 
             {/* Language and Social */}
             <div className="max-w-[200px] w-full md:w-auto">
-              <p className="text-white text-lg font-bold mb-4">
-                عن يوروكويست
-              </p>
+              <p className="text-white text-lg font-bold mb-4">عن يوروكويست</p>
               <div className="flex flex-col gap-1.5 mb-4">
                 <p className="text-base mb-3 justify-center">
-                  يوروكويست إنترناشيونال هي شريك تدريب رائد، تمكن المؤسسات والمهنيين من بناء المهارات، ودفع الابتكار، وتحقيق النجاح المستدام.
+                  يوروكويست إنترناشيونال هي شريك تدريب رائد، تمكن المؤسسات
+                  والمهنيين من بناء المهارات، ودفع الابتكار، وتحقيق النجاح
+                  المستدام.
                 </p>
               </div>
 

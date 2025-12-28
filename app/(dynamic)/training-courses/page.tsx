@@ -155,7 +155,7 @@ export default async function CategoriesPage({ searchParams }: CategoriesPagePro
           <HeroBanner
             backgroundImage="/assets/images/hero-categories.webp"
             title="استكشف جميع تخصصات التدريب في الدول التدريبية العالمية"
-            description="ابحث عن دورات تدريبية مهنية في الإدارة, الموارد البشرية, التكنولوجيا, المالية, وغيرها على مختلف المجالات."
+            description="تصفّح مجموعة واسعة من التخصصات التدريبية في مختلف المجالات"
             breadcrumbs={breadcrumbs}
             enableTypewriter={true}
             typewriterSpeed={100}
@@ -200,7 +200,7 @@ export default async function CategoriesPage({ searchParams }: CategoriesPagePro
         <HeroBanner
           backgroundImage="/assets/images/hero-categories.webp"
           title="استكشف جميع تخصصات التدريب في الدول التدريبية العالمية"
-          description="ابحث عن دورات تدريبية مهنية في الإدارة, الموارد البشرية, التكنولوجيا, المالية, وغيرها على مختلف المجالات."
+          description="تصفّح مجموعة واسعة من التخصصات التدريبية في مختلف المجالات"
           breadcrumbs={breadcrumbs}
           enableTypewriter={true}
           typewriterSpeed={100}
