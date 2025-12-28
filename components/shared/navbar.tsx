@@ -73,7 +73,7 @@ export default function Navbar() {
               >
                 <Image
                   src="./assets/images/logo-ar.svg"
-                  alt="الدول التدريبية العالمية Training Logo"
+                  alt="الدول التدريبية العالمية"
                   width={190}
                   height={50}
                   className="lg:w-[190px] w-[160px] h-[65px] object-cover"
@@ -166,7 +166,7 @@ export default function Navbar() {
                 <div className="flex items-center justify-between">
                   <Image
                     src="./assets/images/logo-ar.svg"
-                    alt="الدول التدريبية العالمية Training Logo"
+                    alt="الدول التدريبية العالمية"
                     width={160}
                     height={50}
                     className="w-[160px] h-[50px] object-cover"
