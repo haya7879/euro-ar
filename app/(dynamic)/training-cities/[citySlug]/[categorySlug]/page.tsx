@@ -178,10 +178,9 @@ export default async function Page({
         url: `${baseUrl}/assets/images/logo.png`,
       },
     },
-    hasPart: courses.map((course: Course) => ({
+    hasPart: courses.map((course) => ({
       "@type": "Course",
       name: course.title,
-      description: course.description,
       provider: {
         "@type": "Organization",
         name: "الدول التدريبية العالمية",

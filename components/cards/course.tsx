@@ -21,7 +21,7 @@ export default function CourseCard({ course, citySlug }: CourseCardProps) {
         </h3>
 
         {course?.duration_label?.trim() === "2 Weeks" && (
-          <span className="text-xs w-fit flex items-center px-2 py-1 gap-1 bg-gradient-to-br from-[#f7fafc] to-[#edf2f7] rounded-full text-[#3e5ec0] whitespace-nowrap font-semibold">
+          <span className="text-xs w-fit flex items-center px-2 py-1 gap-1 bg-linear-to-br from-[#f7fafc] to-[#edf2f7] rounded-full text-[#3e5ec0] whitespace-nowrap font-semibold">
             <Clock size={12} className="mt-0.5" />أسبوعين
           </span>
         )}
@@ -33,7 +33,7 @@ export default function CourseCard({ course, citySlug }: CourseCardProps) {
         <CourseCode code={course.code} />
 
         {/* Arrow Link */}
-        <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#f7fafc] to-[#edf2f7] text-[#667eea] flex items-center justify-center transition-all duration-300 border-2 border-transparent">
+        <div className="w-9 h-9 rounded-lg bg-linear-to-br from-[#f7fafc] to-[#edf2f7] text-[#667eea] flex items-center justify-center transition-all duration-300 border-2 border-transparent">
           <ArrowLeft
             size={16}
             className="transform rotate-45 group-hover:rotate-0 transition-transform duration-300 ease-in-out"

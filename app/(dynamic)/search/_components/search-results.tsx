@@ -32,10 +32,10 @@ function NoResultsFound() {
     <div className="text-center">
       <div className="text-gray-400 text-6xl mb-6">🔍</div>
       <h3 className="text-xl font-semibold text-gray-700 mb-2">
-        No Results Found
+        لا يوجد نتائج 
       </h3>
       <p className="text-gray-500 mb-6">
-        We couldn't find any training courses matching your search criteria.
+        لم نتمكن من العثور على أي دورات تدريبية   .
       </p>
     </div>
   );

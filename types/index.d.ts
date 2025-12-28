@@ -82,12 +82,12 @@ declare interface Course {
   title: string;
   code: string;
   duration?: string | null;
+  duration_label?: string | null;
   h1?: string;
   description?: string;
   content?: string;
   meta_title?: string;
   meta_description?: string;
-  duration_label?: string;
   canonical?: string;
   category?: Category;
   timings?: Timing[];
