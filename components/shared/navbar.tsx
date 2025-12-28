@@ -169,7 +169,7 @@ export default function Navbar() {
                     alt="الدول التدريبية العالمية"
                     width={160}
                     height={50}
-                    className="w-[160px] h-[50px] object-cover"
+                    className="w-40 h-[50px] object-cover"
                     unoptimized
                   />
                   <motion.button
