@@ -5,6 +5,7 @@ import CourseCode from "../shared/course-code";
 interface CourseCardProps {
   course: Course;
   citySlug?: string;
+  duration_label?: string;
 }
 
 export default function CourseCard({ course, citySlug }: CourseCardProps) {
@@ -19,9 +20,9 @@ export default function CourseCard({ course, citySlug }: CourseCardProps) {
           {course.title}
         </h3>
 
-        {Number(course.duration) === 10 && (
+        {course?.duration_label?.trim() === "2 Weeks" && (
           <span className="text-xs w-fit flex items-center px-2 py-1 gap-1 bg-gradient-to-br from-[#f7fafc] to-[#edf2f7] rounded-full text-[#3e5ec0] whitespace-nowrap font-semibold">
-            <Clock size={12} className="mt-0.5" />2 Weeks
+            <Clock size={12} className="mt-0.5" />أسبوعين
           </span>
         )}
       </div>

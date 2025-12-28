@@ -87,6 +87,7 @@ declare interface Course {
   content?: string;
   meta_title?: string;
   meta_description?: string;
+  duration_label?: string;
   canonical?: string;
   category?: Category;
   timings?: Timing[];
