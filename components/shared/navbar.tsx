@@ -76,7 +76,7 @@ export default function Navbar() {
                   alt="الدول التدريبية العالمية Training Logo"
                   width={190}
                   height={50}
-                  className="lg:w-[190px] h-[65px] object-cover"
+                  className="lg:w-[190px] w-[160px] h-[65px] object-cover"
                   priority
                   unoptimized
                 />
@@ -170,7 +170,7 @@ export default function Navbar() {
                     alt="الدول التدريبية العالمية Training Logo"
                     width={160}
                     height={50}
-                    className="w-[150px] h-[50px] object-cover"
+                    className="w-[160px] h-[50px] object-cover"
                     priority
                     unoptimized
                   />
