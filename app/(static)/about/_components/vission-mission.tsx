@@ -5,7 +5,7 @@ export default function VissionMission() {
     <>
       {/* Our Vission */}
       <section id="our-vision" className="scroll-mt-24">
-        <div className="flex flex-col gap-12 relative z-10 md:my-10 my-8">
+        <div className="flex flex-col gap-12 relative z-10">
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
             <div className="w-20 flex-shrink-0">
               <img
