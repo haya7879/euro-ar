@@ -17,7 +17,7 @@ export default function Footer() {
                   alt="EuroQuest"
                   width={150}
                   height={50}
-                  className="mb-4 w-[190px] h-[50px] object-cover"
+                  className="mb-3 w-[190px] h-[65px] object-cover"
                   unoptimized
                 />
               </Link>

@@ -23,7 +23,7 @@ export default function HeroSection({ className = "" }: HeroSectionProps) {
           <h1 className="font-cairo text-2xl md:text-4xl lg:text-5xl max-w-[1000px] mx-auto font-bold text-gray-900 mb-2 leading-tight animate-slide-up">
             انضم إلى أكثر من
             <span className="relative inline-block mx-2">
-              <span className="text-[#3E5EC0] font-bold">+1000</span>
+              <span className="text-[#3E5EC0] font-bold">1000</span>
               <img
                 src="./assets/images/line.svg"
                 alt=""
