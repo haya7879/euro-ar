@@ -80,7 +80,7 @@ export default function AboutPage() {
       {/* Hero Banner */}
       <HeroBanner
         backgroundImage="/assets/images/hero-about.webp"
-        title="يوروكويست إنترناشيونال - من نحن" 
+        title="عن يوركويست إنترناشيونال" 
         description="تأسست شركة يوروكويست إنترناشيونال في عام 2015 على يد فريق يتمتع بخبرة تزيد عن 25 عامًا، وقد قدمت أكثر من 1000 دورة تدريبية، استفاد منها أكثر من 15000 مشارك عبر قطاعات متنوعة في مراكز عالمية بما في ذلك دبي ولندن وبرشلونة واسطنبول وفيينا وباريس وجنيف."
         breadcrumbs={breadcrumbs}
         enableTypewriter={true}
