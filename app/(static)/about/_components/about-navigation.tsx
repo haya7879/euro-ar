@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 const sections = [
-  { id: "who-is-euroquest", label: "عن يوركويست إنترناشيونال"},
+  // { id: "who-is-euroquest", label: "عن يوركويست إنترناشيونال"},
   { id: "our-vision", label: "رؤيتنا" },
   { id: "our-mission", label: "رسالتنا" },
   { id: "our-values", label: "قيمنا" },

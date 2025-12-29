@@ -16,7 +16,7 @@ export default function VissionMission() {
             </div>
             <div className="text-center sm:text-start">
               <h3 className="mb-1 text-xl md:text-2xl font-bold capitalize">
-                <span className="text-[#3E5EC0]">رؤيتنا</span>
+                <span>رؤيتنا</span>
               </h3>
               <p className="font-normal text-sm md:text-base leading-7">
                 أن نصبح الوجهة الأولى عالميًا في التدريب والتطوير المهني من خلال
@@ -40,7 +40,7 @@ export default function VissionMission() {
             </div>
             <div className="text-center sm:text-right">
               <h3 className="mb-1 text-xl md:text-2xl font-bold capitalize">
-                <span className="text-[#3E5EC0]">رسالتنا</span>
+                <span>رسالتنا</span>
               </h3>
               <p className="font-normal text-sm md:text-base">
                 تمكين الأفراد والمؤسسات من تطوير المهارات وتعزيز الأداء عبر
