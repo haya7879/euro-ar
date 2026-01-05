@@ -1,6 +1,55 @@
 import { NextRequest, NextResponse } from "next/server";
 import puppeteer from "puppeteer";
 
+// Helper function to create a safe filename from course title
+function createFilename(courseTitle: string, customFilename?: string): {
+  ascii: string;
+  utf8: string;
+} {
+  const title = courseTitle || "Training Course";
+  
+  if (customFilename) {
+    // If custom filename provided, use it
+    const safeAscii = customFilename
+      .replace(/[^\w\s-]/g, "")
+      .replace(/\s+/g, "-")
+      .toLowerCase()
+      .substring(0, 100);
+    return {
+      ascii: safeAscii || "brochure",
+      utf8: customFilename,
+    };
+  }
+
+  // Create filename from course title
+  // ASCII fallback: remove special chars, replace spaces with hyphens
+  // Keep Arabic characters for UTF-8 version
+  const asciiName = title
+    .replace(/[^\w\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .toLowerCase()
+    .substring(0, 100) || "brochure";
+
+  // Clean UTF-8 filename: remove only truly problematic characters
+  const utf8Name = title
+    .replace(/[<>:"/\\|?*\x00-\x1F]/g, "") // Remove invalid filename chars
+    .trim();
+
+  return {
+    ascii: asciiName,
+    utf8: utf8Name || title,
+  };
+}
+
+// Helper function to encode filename for Content-Disposition header
+function encodeFilename(filename: string): string {
+  // Use RFC 5987 encoding for UTF-8 filenames
+  return encodeURIComponent(filename)
+    .replace(/'/g, "%27")
+    .replace(/\(/g, "%28")
+    .replace(/\)/g, "%29");
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -72,29 +121,35 @@ export async function POST(request: NextRequest) {
       preferCSSPageSize: true,
       displayHeaderFooter: true,
       headerTemplate: `
-        <div style="font-size: 10px; width: 100%; text-align: center; color: #3e5ec0; padding: 5px; border-bottom: 1px solid #e5e7eb;">
+        <div style="font-size: 10px; width: 100%; text-align: center; color: #3e5ec0; padding: 5px; border-bottom: 1px solid #e5e7eb; direction: rtl;">
           <span style="font-weight: 600;">${
             course.title || "Training Course"
           }</span>
         </div>
       `,
       footerTemplate: `
-        <div style="font-size: 9px; width: 100%; display: flex; justify-content: center; align-items: center; color: #6b7280; padding: 5px 7px; border-top: 1px solid #e5e7eb;">
-          <span>Šancová 3568/61 Mestská časť Nové Mesto Bratislava 831 04 Slovakia</span>
+        <div style="font-size: 9px; width: 100%; display: flex; justify-content: center; align-items: center; color: #6b7280; padding: 5px 7px; border-top: 1px solid #e5e7eb; direction: rtl; text-align: center;">
+          <span>شانسوفا 3568/61 - نوفي ميستو - براتيسلافا 831 04 - سلوفاكيا</span>
         </div>
       `,
     });
 
     await browser.close();
 
+    // Create filename with Arabic support
+    const { ascii, utf8 } = createFilename(course.title, filename);
+    const encodedUtf8 = encodeFilename(utf8);
+    
+    // Use RFC 5987 encoding for UTF-8 filename support
+    // Format: attachment; filename="ascii.pdf"; filename*=UTF-8''encoded-utf8.pdf
+    const contentDisposition = `attachment; filename="${ascii}.pdf"; filename*=UTF-8''${encodedUtf8}.pdf`;
+
     // Return PDF as response
     return new NextResponse(pdfBuffer as any, {
       status: 200,
       headers: {
         "Content-Type": "application/pdf",
-        "Content-Disposition": `attachment; filename="${
-          filename || "brochure.pdf"
-        }"`,
+        "Content-Disposition": contentDisposition,
         "Content-Length": pdfBuffer.length.toString(),
       },
     });
@@ -133,7 +188,7 @@ function generateBrochureHTML(course: any, timing: any): string {
 
   return `
   <!DOCTYPE html>
-<html>
+<html dir="rtl">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -244,7 +299,7 @@ function generateBrochureHTML(course: any, timing: any): string {
       .cover-detail-item:nth-child(3)::after {
         content: '';
         position: absolute;
-        right: 0;
+        left: 0;
         top: 20%;
         bottom: 20%;
         width: 1px;
@@ -365,6 +420,8 @@ function generateBrochureHTML(course: any, timing: any): string {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         position: relative;
+        direction: rtl;
+        text-align: right;
       }
       .brochure {
         max-width: 1200px;
@@ -485,69 +542,59 @@ function generateBrochureHTML(course: any, timing: any): string {
         margin-bottom: 12px;
       }
 
-      /* Overview Content Styling - Same as globals.css */
+      /*=============== Overview Content ============== */
+
+      /* Overview Text Styling */
       .overview-text {
         line-height: 1.8;
         color: #333;
         font-size: 16px;
         max-width: none;
       }
-
-      .overview-text p {
-        margin-bottom: 16px;
-      }
-
+      
       .overview-text p:last-child {
-        margin-bottom: 0;
+        margin-top: 30px !important;
       }
-
-      .overview-text strong {
-        color: #2c3e50;
-        font-weight: 600;
-        font-size: 18px;
-      }
-
-      /* Main section headings (Course Benefits, Course Objectives, etc.) */
-      .overview-text p strong:only-child {
-        display: block;
-        margin: 32px 0 20px 0;
-        font-size: 22px;
+      
+      .overview-text p strong:first-child:not(.unit-heading):not(.secondary-heading) {
         color: #3e5ec0;
-        padding-bottom: 0;
+        text-align: right;
         border-bottom: none;
+        margin: 20px 0 0;
+        padding-bottom: 0;
+        font-size: 20px;
+        display: block;
         position: relative;
-        text-align: left;
       }
-
-      .overview-text p strong:only-child::after {
-        content: "";
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 60px;
-        height: 3px;
-        background: #20b486;
-        border-radius: 2px;
+      
+      .overview-text p br:first-of-type {
+        display: none !important;
       }
-
-      .overview-text .unit-heading {
-        font-size: 18px !important;
-        margin: 24px 0 12px 0 !important;
-        color: #3e5ec0 !important;
+      
+      .overview-text .unit-heading,
+      .overview-text p strong.unit-heading,
+      .overview-text strong.unit-heading {
+        font-size: 15px !important;
+        margin: 14px 0 !important;
+        background: #F2F8FF !important;
+        color: #2d3748 !important;
         padding: 12px 16px !important;
         border-radius: 0 8px 8px 0 !important;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
         -webkit-text-fill-color: #2d3748 !important;
         background-clip: unset !important;
         -webkit-background-clip: unset !important;
         position: relative;
-        width: fit-content;
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        font-weight: 600 !important;
       }
-
+      
       .overview-text .unit-heading::after {
         display: none !important;
       }
-
-      /* Secondary headings - simpler styling for other headings */
+      
       .overview-text .secondary-heading {
         font-size: 16px !important;
         margin: 20px 0 12px 0 !important;
@@ -556,89 +603,62 @@ function generateBrochureHTML(course: any, timing: any): string {
         display: inline !important;
         font-weight: 600 !important;
       }
-
+      
       .overview-text .secondary-heading::after {
         display: none !important;
       }
-
-      /* Enhanced styling for better visual hierarchy */
+      
       .overview-text p strong:only-child {
         transition: all 0.3s ease;
+        margin-bottom: 5px;
       }
-
-      /* Improve spacing and readability */
-      .overview-text p {
-        line-height: 1.7;
+      .overview-text p:first-child strong:only-child {
+        margin-top: 16px !important;
       }
-
-      .overview-text p strong:only-child + * {
+      .overview-text .unit-heading:hover {
+        background: #f0f4ff !important;
+        transform: translateX(4px) !important;
+      }
+      
+      .overview-text p strong:only-child+* {
         margin-top: 16px;
       }
-
-      .overview-text .unit-heading + * {
+      
+      .overview-text .unit-heading+* {
         margin-top: 12px;
       }
-
-      .overview-text .secondary-heading + * {
+      
+      .overview-text .secondary-heading+* {
         margin-top: 8px;
       }
-
+      
       .overview-text ul {
-        margin: 16px 0;
-        padding-left: 16px;
+        margin: 14px 0;
+        padding-left: 12px;
       }
-
+      
       .overview-text li {
         list-style: none;
         position: relative;
         padding-left: 24px;
         line-height: 1.6;
       }
-
+      
       .overview-text li:before {
-        content: "•";
+        content: "✓";
         position: absolute;
         left: 0;
         top: 0;
-        color: #3e5ec0;
+        color: #10b981;
         font-weight: bold;
-        font-size: 18px;
+        font-size: 14px;
       }
-
+      
       .overview-text li p {
         margin: 0;
         display: inline;
       }
-
-      /* Responsive adjustments */
-      @media (max-width: 768px) {
-        .overview-text {
-          font-size: 15px;
-        }
-
-        .overview-text strong {
-          font-size: 17px;
-        }
-
-        .overview-text p strong:only-child {
-          font-size: 18px !important;
-          margin: 20px 0 12px 0 !important;
-        }
-
-        .overview-text .unit-heading {
-          font-size: 16px !important;
-          margin: 16px 0 8px 0 !important;
-          padding: 10px 12px !important;
-        }
-
-        .overview-text li {
-          padding-left: 20px;
-        }
-
-        .overview-text p strong:only-child::after {
-          width: 40px !important;
-        }
-      }
+      
       .bullets {
         display: flex;
         flex-direction: column;
@@ -854,7 +874,7 @@ function generateBrochureHTML(course: any, timing: any): string {
 .last-page-contact-item:nth-child(2)::after {
   content: '';
   position: absolute;
-  right: 0;
+  left: 0;
   top: 20%;
   bottom: 20%;
   width: 1px;
@@ -913,6 +933,56 @@ function generateBrochureHTML(course: any, timing: any): string {
   color: #8e9aaf;
   font-style: italic;
   margin-top: 8px;
+}
+
+.registration-terms {
+  margin-top: 20px;
+  border-top: 2px solid #e5e7eb;
+  line-height: 1.8;
+  color: #333;
+  font-size: 16px;
+}
+
+.registration-terms p {
+  display: block;
+  margin-top: 26px;
+  margin-bottom:8px;
+  font-size: 18px !important;
+  font-weight:600 !important;
+  color: #2d3748;
+  padding-bottom: 0;
+  border-bottom: none;
+  position: relative;
+  text-align: right;
+}
+
+.registration-terms ul {
+  padding-right: 10px;
+  padding-left: 0;
+}
+
+.registration-terms li {
+  list-style: none;
+  position: relative;
+  padding-right: 16px;
+  padding-left: 0;
+  line-height: 1.8;
+  font-size:14px;
+}
+
+.registration-terms li::before {
+  content: "•";
+  position: absolute;
+  right: 0;
+  top: 7px;
+  width: 16px;
+  height: 16px;
+  font-size:16px
+}
+
+.registration-terms li p {
+  margin: 0;
+  display: inline;
 }
 
     </style>
@@ -994,6 +1064,17 @@ function generateBrochureHTML(course: any, timing: any): string {
     <div class="brochure">
       <div class="main">
             <div class="section overview-text">${course.content || ""}</div>
+            
+            <div class="registration-terms">
+              <p>شروط التسجيل وسياسة الإلغاء</p>
+              <ul>
+                <li>يُعد التسجيل معتمدًا فقط عند استلام بريد إلكتروني رسمي من الإدارة المعنية في الشركة أو الجهة التي يعمل لديها المشارك يؤكد الترشيح والموافقة، ولا يُعتبر التسجيل عبر الموقع الإلكتروني معتمدًا دون ذلك.</li>
+                <li>يجب سداد الرسوم كاملة قبل <b>30 يومًا</b> من تاريخ بدء الدورة.</li>
+                <li>يتم رد <b>50٪</b> من الرسوم في حال الإلغاء قبل <b>15 يومًا</b> أو أكثر من تاريخ بدء الدورة.</li>
+                <li>لا يتم رد أي رسوم في حال الإلغاء قبل أقل من <b>15 يومًا</b> من تاريخ بدء الدورة أو في حال عدم الحضور أو الانسحاب بعد البدء.</li>
+                <li>تحتفظ الجهة المنظمة بحق تغيير مكان انعقاد الدورة في <b>الحالات الاضطرارية فقط</b>، مع إخطار المشاركين رسميًا، كما تحتفظ بحق تأجيل أو إلغاء الدورة عند عدم اكتمال العدد.</li>
+              </ul>
+            </div>
       </div>
     </div>
 
@@ -1063,38 +1144,65 @@ function generateBrochureHTML(course: any, timing: any): string {
         const overviewText = document.querySelector(".overview-text");
         if (!overviewText) return;
 
-        const strongElements = overviewText.querySelectorAll(
-          "p strong:only-child"
-        );
-
-        // Define main headings that should get primary styling
+        // Try multiple selectors to catch all strong elements in paragraphs
+        const strongElements = overviewText.querySelectorAll("p strong, strong");
+        
+        // Define main headings that should get primary styling (both English and Arabic)
         const mainHeadings = [
+          // English headings
           "Course Overview",
-          "Course Benefits",
+          "Course Benefits", 
           "Course Objectives",
           "Training Methodology",
           "Target Audience",
           "Target Competencies",
           "Course Outline",
           "Why Attend",
-          "نظرة عامة على الدورة",
-          "فوائد الدورة",
-          "أهداف الدورة",
-          "منهجية التدريب",
-          "الجمهور المستهدف",
-          "الكفاءات المستهدفة",
-          "مخطط الدورة",
-          "لماذا تحضر",
+          // Arabic headings
+          "نظرة عامة على الدورة:",
+          "فوائد الدورة:",
+          "أهداف الدورة:",
+          "منهجية التدريب:",
+          "الفئة المستهدفة:",
+          "الكفاءات المستهدفة:",
+          "محاور الدورة:",
+          "القيمة التطبيقية للدورة:"
         ];
-
-        strongElements.forEach((strong) => {
+        
+        strongElements.forEach(strong => {
           const text = strong.textContent?.trim() || "";
-
+          const parent = strong.parentElement;
+          
+          // Check if this is a heading (strong element that's the main content of its paragraph)
+          let isHeading = false;
+          if (parent && parent.tagName === "P") {
+            const parentText = parent.textContent?.trim() || "";
+            const strongText = strong.textContent?.trim() || "";
+            
+            // It's a heading if:
+            // 1. The paragraph text matches the strong text exactly (ignoring whitespace/br)
+            // 2. The paragraph text starts with the strong text
+            // 3. The strong is the only significant content in the paragraph
+            const parentTextNormalized = parentText.replace(/\s+/g, " ").trim();
+            const strongTextNormalized = strongText.replace(/\s+/g, " ").trim();
+            
+            if (parentTextNormalized === strongTextNormalized || 
+                parentTextNormalized.startsWith(strongTextNormalized) ||
+                parent.children.length === 1) {
+              isHeading = true;
+            }
+          } else {
+            // If not in a paragraph, treat as heading
+            isHeading = true;
+          }
+          
+          if (!isHeading) return;
+          
           // Remove existing classes to prevent duplicates
           strong.classList.remove("unit-heading", "secondary-heading");
-
-          // Check if it's a Unit heading
-          if (text.startsWith("Unit ")) {
+          
+          // Check if it's a Unit heading (English or Arabic) - ONLY unit headings get unit-heading class
+          if (text.startsWith("Unit ") || text.startsWith("الوحدة")) {
             strong.classList.add("unit-heading");
           }
           // Check if it's NOT one of the main headings, make it secondary
