@@ -39,7 +39,7 @@ export default function HeadingStyler({ content }: HeadingStylerProps) {
               
               if (textWithoutBullet) {
                 // Create a div wrapper with check icon (using div for better block display)
-                return `<div style="display: flex; align-items: flex-start; gap: 8px; direction: rtl;">
+                return `<div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 2px; direction: rtl;">
                   <span style="flex-shrink: 0; margin-top: 2px;">${checkIconSVG}</span>
                   <span style="flex: 1;">${textWithoutBullet}</span>
                 </div>`;
