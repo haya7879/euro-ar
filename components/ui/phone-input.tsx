@@ -376,14 +376,29 @@ export default function PhoneInput({
           disabled && "opacity-50 cursor-not-allowed bg-gray-50",
           className
         )}>
+          {/* Phone Number Input */}
+          <input
+            ref={phoneInputRef}
+            type="tel"
+            id={id}
+            name={name}
+            className="text-right flex-1 border-none outline-none px-4 py-3 text-sm bg-transparent rounded-r-xl max-md:px-3 max-md:text-[13px] disabled:cursor-not-allowed"
+            placeholder={placeholder}
+            value={phoneInput}
+            onChange={handlePhoneInputChange}
+            onKeyDown={handleKeyDown}
+            required={required}
+            disabled={disabled}
+          />
+
           {/* Country Selector */}
-          <div className="country-code-selector relative min-w-[85px] max-md:min-w-[100px] border-l border-[#E5E7EB] rounded-r-xl cursor-pointer transition-colors duration-300">
+          <div className="country-code-selector relative min-w-[85px] max-md:min-w-[100px] border-r border-[#E5E7EB] rounded-l-xl cursor-pointer transition-colors duration-300">
             <div 
-              className="country-code-display flex items-center gap-0.5 px-1.5 py-3 max-md:px-3 text-[13px] text-[#374151]"
+              className="country-code-display flex items-center gap-1 px-1.5 py-3 max-md:px-3 text-[13px] text-[#374151]"
               onClick={handleCountrySelectorClick}
             >
               <ChevronDown className={cn(
-                "dropdown-arrow mr-auto text-[#6B7280] transition-transform duration-300 w-3 h-3",
+                "dropdown-arrow ml-1 text-[#6B7280] transition-transform duration-300 w-3 h-3",
                 isDropdownOpen && "rotate-180"
               )} />
               <span className="country-code-text font-medium">{selectedCountry.dialCode}</span>
@@ -396,11 +411,11 @@ export default function PhoneInput({
 
             {/* Dropdown */}
             {isDropdownOpen && !disabled && (
-              <div className="country-dropdown absolute top-full right-0 bg-white border border-[#E5E7EB] rounded-lg shadow-[0_10px_25px_rgba(0,0,0,0.1)] z-[1000] max-h-[300px] w-[300px] overflow-hidden">
+              <div className="country-dropdown absolute top-full left-0 bg-white border border-[#E5E7EB] rounded-lg shadow-[0_10px_25px_rgba(0,0,0,0.1)] z-[1000] max-h-[300px] w-[300px] overflow-hidden">
                 {/* Search Input */}
-                <div className="search-container border-b border-[#E5E7EB] p-3">
+                <div className="search-container border-b border-[#E5E7EB] px-3 py-0.5">
                   <div className="relative">
-                    <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[#6B7280]" />
+                    {/* <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-[#6B7280]" /> */}
                     <input
                       ref={searchInputRef}
                       type="text"
@@ -408,7 +423,7 @@ export default function PhoneInput({
                       value={searchQuery}
                       onChange={handleSearchChange}
                       onKeyDown={handleKeyDown}
-                      className="text-right w-full pr-9 pl-3 py-2 border border-[#E5E7EB] rounded-lg text-sm focus:outline-none focus:border-[#667eea] focus:ring-1 focus:ring-[#667eea]"
+                      className="text-right w-full py-2 text-xs focus:outline-none"
                     />
                   </div>
                 </div>
@@ -421,7 +436,7 @@ export default function PhoneInput({
                         key={country.code}
                         type="button"
                         className={cn(
-                          "country-option flex items-center gap-3 px-4 py-3 cursor-pointer transition-colors duration-200 hover:bg-[#fafafa] border-none bg-none w-full text-start text-sm text-[#374151]",
+                          "country-option flex items-center gap-3 px-4 py-2 cursor-pointer transition-colors duration-200 hover:bg-[#fafafa] border-none bg-none w-full text-start text-sm text-[#374151]",
                           selectedCountry.code === country.code && "bg-blue-50 text-[#3E5EC0]",
                           highlightedIndex === index && "bg-blue-100"
                         )}
@@ -433,7 +448,7 @@ export default function PhoneInput({
                           alt={country.name}
                           className="flag w-5 h-[15px] rounded-sm object-cover"
                         />
-                        <span className="name flex-1 font-medium">{country.name}</span>
+                        <span className="name flex-1 font-medium text-xs">{country.name}</span>
                         <span className="code text-[#6B7280] text-xs">{country.dialCode}</span>
                       </button>
                     ))
@@ -446,21 +461,6 @@ export default function PhoneInput({
               </div>
             )}
           </div>
-
-          {/* Phone Number Input */}
-          <input
-            ref={phoneInputRef}
-            type="tel"
-            id={id}
-            name={name}
-            className="text-right flex-1 border-none outline-none px-4 py-3 text-sm bg-transparent rounded-l-xl max-md:px-3 max-md:text-[13px] disabled:cursor-not-allowed"
-            placeholder={placeholder}
-            value={phoneInput}
-            onChange={handlePhoneInputChange}
-            onKeyDown={handleKeyDown}
-            required={required}
-            disabled={disabled}
-          />
         </div>
       </div>
       
