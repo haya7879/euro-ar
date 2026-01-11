@@ -612,11 +612,23 @@ textarea {
   color: #3e5ec0;
   text-align: right;
   border-bottom: none;
-  margin: 20px 0 0;
+  margin: 20px 0 15px;
   padding-bottom: 0;
   font-size: 20px;
   display: block;
   position: relative;
+}
+
+.overview-text p strong:first-child:not(.unit-heading):not(.secondary-heading)::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+  width: 60px;
+  height: 3px;
+  background: #20b486;
+  border-radius: 2px;
 }
 
 .overview-text p br:first-of-type {
@@ -662,14 +674,22 @@ textarea {
 
 .overview-text p strong:only-child {
   transition: all 0.3s ease;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
+  position: relative;
+}
+.overview-text p strong:only-child::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #20b486;
+  border-radius: 2px;
 }
 .overview-text p:first-child strong:only-child {
   margin-top: 16px !important;
-}
-.overview-text .unit-heading:hover {
-  background: #f0f4ff !important;
-  transform: translateX(4px) !important;
 }
 
 .overview-text p strong:only-child+* {

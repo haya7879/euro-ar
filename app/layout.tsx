@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     site: "@EuroQest",
   },
   icons: {
-    icon: "./assets/images/mini-logo.png",
+    icon: "/assets/images/mini-logo.png",
   },
 };
 

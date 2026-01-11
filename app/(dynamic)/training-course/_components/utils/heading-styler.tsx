@@ -7,6 +7,75 @@ interface HeadingStylerProps {
 
 export default function HeadingStyler({ content }: HeadingStylerProps) {
   useEffect(() => {
+    // Function to replace bullet points with check icons
+    const replaceBulletsWithIcons = () => {
+      const overviewText = document.querySelector('.overview-text');
+      if (!overviewText) return;
+
+      // SVG check icon (similar to FaCheck from react-icons)
+      const checkIconSVG = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; flex-shrink: 0;"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+
+      // Find all paragraphs that contain bullet points and haven't been processed yet
+      const paragraphs = overviewText.querySelectorAll('p');
+      
+      paragraphs.forEach(paragraph => {
+        // Skip if already processed (check for check icon presence)
+        if (paragraph.querySelector('svg[stroke="#10b981"]')) return;
+        
+        const originalHTML = paragraph.innerHTML;
+        
+        // Check if paragraph contains bullet point (•)
+        if (originalHTML.includes('•')) {
+          // Split by <br> tags to handle line breaks
+          const lines = originalHTML.split(/<br\s*\/?>/i);
+          
+          const processedLines = lines.map(line => {
+            const trimmedLine = line.trim();
+            
+            // Check if line starts with bullet point
+            if (trimmedLine.startsWith('•')) {
+              // Remove the bullet point and any leading whitespace
+              const textWithoutBullet = trimmedLine.replace(/^[\s]*•[\s]*/, '').trim();
+              
+              if (textWithoutBullet) {
+                // Create a div wrapper with check icon (using div for better block display)
+                return `<div style="display: flex; align-items: flex-start; gap: 8px; direction: rtl;">
+                  <span style="flex-shrink: 0; margin-top: 2px;">${checkIconSVG}</span>
+                  <span style="flex: 1;">${textWithoutBullet}</span>
+                </div>`;
+              }
+            }
+            // If line doesn't start with bullet but contains it, try to process it
+            else if (trimmedLine.includes('•')) {
+              // Split by bullet and process each part
+              const parts = trimmedLine.split('•').filter(p => p.trim());
+              if (parts.length > 1) {
+                return parts.map(part => {
+                  const trimmedPart = part.trim();
+                  if (trimmedPart) {
+                    return `<div style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; direction: rtl;">
+                      <span style="flex-shrink: 0; margin-top: 2px;">${checkIconSVG}</span>
+                      <span style="flex: 1;">${trimmedPart}</span>
+                    </div>`;
+                  }
+                  return '';
+                }).filter(Boolean).join('');
+              }
+            }
+            
+            // Return original line if it doesn't contain bullet at start
+            return line;
+          });
+          
+          // Reconstruct the paragraph - remove empty lines and join
+          const filteredLines = processedLines.filter(line => line.trim());
+          if (filteredLines.length > 0) {
+            paragraph.innerHTML = filteredLines.join('');
+          }
+        }
+      });
+    };
+
     // Function to style headings with specific classes
     const styleHeadings = () => {
       const overviewText = document.querySelector('.overview-text');
@@ -85,11 +154,27 @@ export default function HeadingStyler({ content }: HeadingStylerProps) {
     const attemptStyling = () => {
       // Use requestAnimationFrame to ensure DOM is ready
       requestAnimationFrame(() => {
+        replaceBulletsWithIcons();
         styleHeadings();
         // Try again after delays to catch late-rendered content
-        setTimeout(() => requestAnimationFrame(styleHeadings), 200);
-        setTimeout(() => requestAnimationFrame(styleHeadings), 500);
-        setTimeout(() => requestAnimationFrame(styleHeadings), 1000);
+        setTimeout(() => {
+          requestAnimationFrame(() => {
+            replaceBulletsWithIcons();
+            styleHeadings();
+          });
+        }, 200);
+        setTimeout(() => {
+          requestAnimationFrame(() => {
+            replaceBulletsWithIcons();
+            styleHeadings();
+          });
+        }, 500);
+        setTimeout(() => {
+          requestAnimationFrame(() => {
+            replaceBulletsWithIcons();
+            styleHeadings();
+          });
+        }, 1000);
       });
     };
 
@@ -103,7 +188,12 @@ export default function HeadingStyler({ content }: HeadingStylerProps) {
       if (overviewText && !observer) {
         observer = new MutationObserver(() => {
           // Debounce the styling to avoid excessive calls
-          setTimeout(() => requestAnimationFrame(styleHeadings), 100);
+          setTimeout(() => {
+            requestAnimationFrame(() => {
+              replaceBulletsWithIcons();
+              styleHeadings();
+            });
+          }, 100);
         });
         
         observer.observe(overviewText, {
