@@ -154,8 +154,8 @@ export default async function CategoriesPage({
         <header>
           <HeroBanner
             backgroundImage="/assets/images/hero-categories.webp"
-            title="تصفّح مجموعة واسعة من التخصصات التدريبية في مختلف المجالات"
-            description="ابحث عن دورات تدريبية مهنية في الإدارة, الموارد البشرية, التكنولوجيا, المالية, وغيرها على مختلف المجالات."
+            title="تخصصات ودورات تدريبية متنوعة في مختلف المجالات"
+            description="اكتشف مجموعة من الدورات التدريبية المتخصصة في مجالات متنوعة تشمل الإدارة، القيادة، الموارد البشرية، التكنولوجيا، والمالية، وغيرها، مصممة لتطوير المهارات وتعزيز الأداء المهني والمؤسسي وفق أفضل الممارسات."
             breadcrumbs={breadcrumbs}
             enableTypewriter={true}
             typewriterSpeed={100}

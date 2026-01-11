@@ -87,7 +87,7 @@ export default function Navbar() {
                 <li key={link.href} className="relative group">
                   <Link
                     href={link.href}
-                    className={`text-[#314EA9] transition-colors duration-300 font-semibold text-base relative ${
+                    className={`text-[#314EA9] transition-colors duration-300 text-base relative ${
                       isActive(link.href) ? "font-bold" : "font-semibold"
                     }`}
                   >

@@ -465,7 +465,7 @@ export default function RegisterPopup() {
               {/* Responsible Person Information */}
               <div className="form-section mb-2">
                 <h2 className="text-[#3E5EC0] text-lg font-semibold mb-2.5">
-                  معلومات الشخص المسؤول
+                  معلومات الشخص المسؤول عن التدريب في الشركة
                 </h2>
                 <div className="form-grid register-grid grid gap-2 md:grid-cols-4 max-md:grid-cols-1 max-md:gap-3">
                   {/* Responsible Name */}
