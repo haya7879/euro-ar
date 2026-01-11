@@ -14,7 +14,6 @@ interface CacheItem<T> {
   key: string;
 }
 
-// Cache storage interface
 interface CacheStorage {
   [key: string]: CacheItem<any>;
 }
