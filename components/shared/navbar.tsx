@@ -72,7 +72,7 @@ export default function Navbar() {
                 aria-label="الدول التدريبية العالمية - Return to homepage"
               >
                 <Image
-                  src="./assets/images/logo-ar.svg"
+                  src="/assets/images/logo-ar.svg"
                   alt="الدول التدريبية العالمية"
                   width={190}
                   height={50}
@@ -165,7 +165,7 @@ export default function Navbar() {
               >
                 <div className="flex items-center justify-between">
                   <Image
-                    src="./assets/images/logo-ar.svg"
+                    src="/assets/images/logo-ar.svg"
                     alt="الدول التدريبية العالمية"
                     width={160}
                     height={50}
