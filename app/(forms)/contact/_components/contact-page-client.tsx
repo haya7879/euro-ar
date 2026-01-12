@@ -75,7 +75,7 @@ export default function ContactPageClient() {
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'يرجى إدخال بريد إلكتروني صالح'
     }
-    if (!formData.phone_number.trim()) newErrors.phone_number = 'رقم الهاتف مطلوب'
+    if (!formData.phone_number.trim()) newErrors.phone_number = 'رقم الموبايل مطلوب'
     if (!formData.subject.trim()) newErrors.subject = 'الموضوع مطلوب'
     if (!formData.country.trim()) newErrors.country = 'الدولة مطلوبة'
     if (!formData.message.trim()) newErrors.message = 'الرسالة مطلوبة'
@@ -247,10 +247,10 @@ export default function ContactPageClient() {
                     <PhoneInput
                       id="phone1"
                       name="phone_number"
-                      label="رقم الهاتف"
+                      label="رقم الموبايل"
                       value={`${formData.phone_country_code}${formData.phone_number}`}
                       onChange={handlePhoneChange}
-                      placeholder="أدخل رقم الهاتف"
+                      placeholder="أدخل رقم الموبايل"
                       required
                       defaultCountry="AE"
                       error={!!errors.phone_number}

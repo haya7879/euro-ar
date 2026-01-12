@@ -236,7 +236,7 @@ export default async function Page({
       <header>
         <HeroBanner
           backgroundImage={"/assets/images/hero-course.webp"}
-          title={course.h1 || course.title}
+          title={`دورة ${course.h1 || course.title}`}
           description={course.description || "جاري تحميل تفاصيل الدورة..."}
           breadcrumbs={breadcrumbs}
           enableTypewriter={true}

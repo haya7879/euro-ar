@@ -109,7 +109,7 @@ export default function JoinPageClient() {
       newErrors.speciality = "التخصص مطلوب";
     if (!formData.country.trim()) newErrors.country = "الدولة مطلوبة";
     if (!formData.phone_number.trim())
-      newErrors.phone_number = "رقم الهاتف مطلوب";
+      newErrors.phone_number = "رقم الموبايل مطلوب";
     if (!cvFile) newErrors.cv = "ملف السيرة الذاتية مطلوب";
     if (!formData.message.trim()) newErrors.message = "الرسالة مطلوبة";
 
@@ -327,10 +327,10 @@ export default function JoinPageClient() {
                   <PhoneInput
                     id="phone"
                     name="phone_number"
-                    label="رقم الهاتف"
+                    label="رقم الموبايل"
                     value={`${formData.phone_country_code}${formData.phone_number}`}
                     onChange={handlePhoneChange}
-                    placeholder="أدخل رقم الهاتف"
+                    placeholder="أدخل رقم الموبايل"
                     required
                     defaultCountry="AE"
                     error={!!errors.phone_number}

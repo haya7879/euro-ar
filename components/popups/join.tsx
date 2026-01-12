@@ -121,7 +121,7 @@ export default function JoinPopup() {
       newErrors.country = "الدولة مطلوبة";
     }
     if (!formData.phone.trim()) {
-      newErrors.phone = "رقم الهاتف مطلوب";
+      newErrors.phone = "رقم الموبايل مطلوب";
     } else if (!isPhoneValid) {
       newErrors.phone = "يرجى إدخال رقم هاتف صالح";
     }
@@ -423,12 +423,12 @@ export default function JoinPopup() {
                     {/* Phone Number */}
                     <div className="form-group flex flex-col gap-1">
                       <PhoneInput
-                        label="رقم الهاتف"
+                        label="رقم الموبايل"
                         name="join_phone"
                         value={formData.phone}
                         onChange={(value) => handleInputChange("phone", value)}
                         onValidationChange={setIsPhoneValid}
-                        placeholder="أدخل رقم الهاتف"
+                        placeholder="أدخل رقم الموبايل"
                         required
                         defaultCountry="US"
                         error={!!errors.phone}

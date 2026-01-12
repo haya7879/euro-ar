@@ -391,8 +391,8 @@ export default function RegisterPopup() {
                     <PhoneInput
                       id="phone5"
                       name="mobile"
-                      label="رقم الهاتف"
-                      placeholder="أدخل رقم الهاتف"
+                      label="رقم الموبايل"
+                      placeholder="أدخل رقم الموبايل"
                       value={formData.phoneNumber}
                       onChange={handlePhoneChange1}
                       onValidationChange={setIsPhoneValid}

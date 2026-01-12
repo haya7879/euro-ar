@@ -92,7 +92,7 @@ export default function InquirePopup() {
       newErrors.email = 'يرجى إدخال بريد إلكتروني صالح'
     }
     if (!formData.phoneNumber.trim()) {
-      newErrors.phoneNumber = 'رقم الهاتف مطلوب'
+      newErrors.phoneNumber = 'رقم الموبايل مطلوب'
     } else if (!isPhoneValid) {
       newErrors.phoneNumber = 'يرجى إدخال رقم هاتف صالح'
     }
@@ -250,8 +250,8 @@ export default function InquirePopup() {
                 <PhoneInput
                   id="phone3"
                   name="mobile"
-                  label="رقم الهاتف"
-                  placeholder="أدخل رقم الهاتف"
+                  label="رقم الموبايل"
+                  placeholder="أدخل رقم الموبايل"
                   value={formData.phoneNumber}
                   onChange={handlePhoneChange}
                   onValidationChange={setIsPhoneValid}

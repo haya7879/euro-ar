@@ -117,7 +117,7 @@ export default function ContactPopup() {
       newErrors.email = "يرجى إدخال بريد إلكتروني صالح";
     }
     if (!formData.phoneNumber.trim()) {
-      newErrors.phoneNumber = "رقم الهاتف مطلوب";
+      newErrors.phoneNumber = "رقم الموبايل مطلوب";
     } else if (!isPhoneValid) {
       newErrors.phoneNumber = "يرجى إدخال رقم هاتف صالح";
     }
@@ -352,8 +352,8 @@ export default function ContactPopup() {
                     <PhoneInput
                       id="phone1"
                       name="phone_number"
-                      label="رقم الهاتف"
-                      placeholder="أدخل رقم الهاتف"
+                      label="رقم الموبايل"
+                      placeholder="أدخل رقم الموبايل"
                       value={formData.phoneNumber}
                       onChange={handlePhoneChange}
                       onValidationChange={setIsPhoneValid}

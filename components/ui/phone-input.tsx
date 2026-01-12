@@ -471,7 +471,7 @@ export default function PhoneInput({
         )}>
           {error ? helperText : (
             enableAutoDetect && phoneInput && selectedCountry && !validatePhoneNumber(`${selectedCountry.dialCode}${phoneInput}`, selectedCountry.code)
-              ? `تنسيق رقم الهاتف غير صالح لـ ${selectedCountry.name}. يرجى إدخال رقم صالح.`
+              ? `تنسيق رقم الموبايل غير صالح لـ ${selectedCountry.name}. يرجى إدخال رقم صالح.`
               : helperText
           )}
         </p>

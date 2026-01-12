@@ -121,7 +121,7 @@ export default function DownloadPopup() {
 
     if (!formData.fullName.trim()) newErrors.fullName = "الاسم الكامل مطلوب";
     if (!formData.phoneNumber.trim()) {
-      newErrors.phoneNumber = "رقم الهاتف مطلوب";
+      newErrors.phoneNumber = "رقم الموبايل مطلوب";
     } else if (!isPhoneValid) {
       newErrors.phoneNumber = "يرجى إدخال رقم هاتف صالح";
     }
@@ -372,8 +372,8 @@ export default function DownloadPopup() {
                   <PhoneInput
                     id="phone2"
                     name="phone"
-                    label="رقم الهاتف"
-                    placeholder="أدخل رقم الهاتف"
+                    label="رقم الموبايل"
+                    placeholder="أدخل رقم الموبايل"
                     value={formData.phoneNumber}
                     onChange={handlePhoneChange}
                     onValidationChange={setIsPhoneValid}
