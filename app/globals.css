@@ -652,7 +652,7 @@ textarea {
   display: block !important;
   width: 100% !important;
   box-sizing: border-box !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
 }
 
 .overview-text .unit-heading::after {
