@@ -20,17 +20,17 @@ export async function generateMetadata(): Promise<Metadata> {
       authors: [{ name: "الدول التدريبية العالمية" }],
       creator: "الدول التدريبية العالمية",
       publisher: "الدول التدريبية العالمية",
-      // robots: {
-      //   index: true,
-      //   follow: false,
-      //   googleBot: {
-      //     index: true,
-      //     follow: false,
-      //     "max-video-preview": -1,
-      //     "max-image-preview": "large",
-      //     "max-snippet": -1,
-      //   },
-      // },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
       openGraph: {
         type: "website",
         locale: "en_US",
