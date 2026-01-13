@@ -25,7 +25,7 @@ export default function BlogCard({ blog, className = "" }: BlogCardProps) {
   };
 
   return (
-    <div className={`swiper-slide flex-shrink-0 ${className}`}>
+    <div className={`swiper-slide shrink-0 ${className}`}>
       <Link
         className="w-full h-auto bg-white overflow-hidden transition-all duration-300 ease-in-out p-3 shadow-[4px_4px_40px_0_rgba(62,94,192,0.1)] rounded-xl cursor-pointer hover:shadow-[4px_4px_20px_0_rgba(62,94,192,0.27)] block"
         href={`/blog/${blog.slug}`}

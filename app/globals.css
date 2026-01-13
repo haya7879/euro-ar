@@ -677,6 +677,7 @@ textarea {
   margin-bottom: 15px;
   position: relative;
 }
+
 .overview-text p strong:only-child::after {
   content: '';
   display: block;
@@ -688,6 +689,7 @@ textarea {
   background: #20b486;
   border-radius: 2px;
 }
+
 .overview-text p:first-child strong:only-child {
   margin-top: 16px !important;
 }
@@ -729,6 +731,10 @@ textarea {
 .overview-text li p {
   margin: 0;
   display: inline;
+}
+
+.add_desc p {
+  margin-bottom: 14px;
 }
 
 /* Responsive adjustments */

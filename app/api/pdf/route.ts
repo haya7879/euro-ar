@@ -2,12 +2,15 @@ import { NextRequest, NextResponse } from "next/server";
 import puppeteer from "puppeteer";
 
 // Helper function to create a safe filename from course title
-function createFilename(courseTitle: string, customFilename?: string): {
+function createFilename(
+  courseTitle: string,
+  customFilename?: string
+): {
   ascii: string;
   utf8: string;
 } {
   const title = courseTitle || "Training Course";
-  
+
   if (customFilename) {
     // If custom filename provided, use it
     const safeAscii = customFilename
@@ -24,11 +27,12 @@ function createFilename(courseTitle: string, customFilename?: string): {
   // Create filename from course title
   // ASCII fallback: remove special chars, replace spaces with hyphens
   // Keep Arabic characters for UTF-8 version
-  const asciiName = title
-    .replace(/[^\w\s-]/g, "")
-    .replace(/\s+/g, "-")
-    .toLowerCase()
-    .substring(0, 100) || "brochure";
+  const asciiName =
+    title
+      .replace(/[^\w\s-]/g, "")
+      .replace(/\s+/g, "-")
+      .toLowerCase()
+      .substring(0, 100) || "brochure";
 
   // Clean UTF-8 filename: remove only truly problematic characters
   const utf8Name = title
@@ -139,7 +143,7 @@ export async function POST(request: NextRequest) {
     // Create filename with Arabic support
     const { ascii, utf8 } = createFilename(course.title, filename);
     const encodedUtf8 = encodeFilename(utf8);
-    
+
     // Use RFC 5987 encoding for UTF-8 filename support
     // Format: attachment; filename="ascii.pdf"; filename*=UTF-8''encoded-utf8.pdf
     const contentDisposition = `attachment; filename="${ascii}.pdf"; filename*=UTF-8''${encodedUtf8}.pdf`;
@@ -165,7 +169,7 @@ export async function POST(request: NextRequest) {
 function generateBrochureHTML(course: any, timing: any): string {
   const MONTH_NAMES = [
     "يناير",
-    "فبراير", 
+    "فبراير",
     "مارس",
     "أبريل",
     "مايو",
@@ -588,7 +592,7 @@ function generateBrochureHTML(course: any, timing: any): string {
         display: block !important;
         width: 100% !important;
         box-sizing: border-box !important;
-        font-weight: 600 !important;
+        font-weight: 700 !important;
       }
       
       .overview-text .unit-heading::after {
@@ -632,17 +636,18 @@ function generateBrochureHTML(course: any, timing: any): string {
         margin-top: 8px;
       }
       
-      .overview-text ul {
-        margin: 14px 0;
-        padding-left: 12px;
-      }
-      
-      .overview-text li {
-        list-style: none;
-        position: relative;
-        padding-left: 24px;
-        line-height: 1.6;
-      }
+.overview-text ul {
+  margin: 14px 0;
+  padding-left: 12px;
+}
+
+.overview-text li {
+  list-style: none;
+  position: relative;
+  padding-left: 24px;
+  line-height: 1.6;
+  margin-bottom:5px;
+}
       
       .overview-text li:before {
         content: "✓";
@@ -968,13 +973,14 @@ function generateBrochureHTML(course: any, timing: any): string {
   padding-left: 0;
   line-height: 1.8;
   font-size:14px;
+  margin-bottom:5px;
 }
 
 .registration-terms li::before {
   content: "•";
   position: absolute;
   right: 0;
-  top: 7px;
+  top: -3px;
   width: 16px;
   height: 16px;
   font-size:16px
@@ -983,6 +989,10 @@ function generateBrochureHTML(course: any, timing: any): string {
 .registration-terms li p {
   margin: 0;
   display: inline;
+}
+  .ltr-text {
+  direction: ltr;
+  unicode-bidi: embed;
 }
 
     </style>
@@ -1048,12 +1058,12 @@ function generateBrochureHTML(course: any, timing: any): string {
             </div>
 
       <div class="cover-footer">
-        <div class="company-name">الدول التدريبية العالمية</div>
+        <div class="company-name">يوروكويست إنترناشيونال</div>
         <div class="tagline">مؤسسة تعليمية وتدريبية رائدة</div>
         <div class="contact-info">
           <span>info@euroqst.com</span>
           <span>•</span>
-          <span>${"+421 911 803 183"}</span>
+          <span class="ltr-text">${"+421 911 803 183"}</span>
         </div>
       </div>
     </div>
@@ -1107,7 +1117,7 @@ function generateBrochureHTML(course: any, timing: any): string {
           </svg>
         </div>
         
-        <h1 class="last-page-title">الدول التدريبية العالمية</h1>
+        <h1 class="last-page-title">يوروكويست إنترناشيونال</h1>
         <p class="last-page-tagline">أكثر من 11 عامًا من الثقة</p>
         
         <div class="last-page-description">
@@ -1117,7 +1127,7 @@ function generateBrochureHTML(course: any, timing: any): string {
         <div class="last-page-footer">
           <div class="last-page-company-tagline">مؤسسة تعليمية وتدريبية رائدة</div>
           <div class="last-page-trust-badge">
-            ✓ مزود تدريب معتمد ✓ معترف به في الصناعة ✓ مدربون خبراء
+            ✓ مزود تدريب معتمد ✓ مدربون خبراء
           </div>
         </div>
       </div>
