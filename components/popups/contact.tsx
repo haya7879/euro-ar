@@ -64,6 +64,9 @@ export default function ContactPopup() {
 
   // Prevent body scroll when modal is open
   useEffect(() => {
+    // Check if document is available (client-side only)
+    if (typeof window === 'undefined') return;
+    
     if (isContactOpen) {
       document.body.style.overflow = "hidden";
     } else {

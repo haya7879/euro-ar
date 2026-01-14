@@ -31,6 +31,9 @@ export default function Navbar() {
 
   // Prevent body scroll when sidebar is open
   useEffect(() => {
+    // Check if document is available (client-side only)
+    if (typeof window === 'undefined') return;
+    
     if (isSidebarOpen) {
       document.body.style.overflow = "hidden";
     } else {

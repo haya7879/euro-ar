@@ -69,6 +69,9 @@ export default function RegisterPopup() {
 
   // Prevent body scroll when modal is open
   useEffect(() => {
+    // Check if document is available (client-side only)
+    if (typeof window === 'undefined') return;
+    
     if (isRegisterOpen) {
       document.body.style.overflow = "hidden";
     } else {

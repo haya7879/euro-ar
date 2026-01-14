@@ -1,48 +1,59 @@
-import { DOMAIN ,API_URL} from '@/constants/domain'
-import { NextResponse } from 'next/server'
+import { DOMAIN, API_URL } from "@/constants/domain";
+import { NextResponse } from "next/server";
 
 export async function GET() {
-  const baseUrl = DOMAIN
-  const apiUrl = API_URL
-  
+  const baseUrl = DOMAIN;
+  const apiUrl = API_URL;
+
   try {
-    // Fetch all courses with their cities
-    const response = await fetch(`${apiUrl}/courses?with_cities=true`, {
-      next: { revalidate: 3600 } // Revalidate every hour
-    })
-    const courses = await response.json()
+    const response = await fetch(`${apiUrl}/sitemap`, {
+      next: { revalidate: 3600 },
+    });
 
-    const urls: string[] = []
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
-    // Generate course + city combinations
-    courses.data?.forEach((course: any) => {
-      course.cities?.forEach((city: any) => {
-        urls.push(`    <url>
-        <loc>${baseUrl}/training-course/${course.slug}/${city.slug}</loc>
-        <lastmod>${new Date(course.updated_at || Date.now()).toISOString()}</lastmod>
+    const data = await response.json();
+    const urls: string[] = [];
+
+    if (data.city_course_seos) {
+      Object.values(data.city_course_seos).forEach((courseCities: any) => {
+        courseCities.forEach((item: any) => {
+          urls.push(`    <url>
+        <loc>${baseUrl}/training-course/${item.course.slug}/${
+            item.city.slug
+          }</loc>
+        <lastmod>${new Date(
+          item.updated_at || Date.now()
+        ).toISOString()}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
-    </url>`)
-      })
-    })
+    </url>`);
+        });
+      });
+    }
 
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <!--  Course + City combinations  -->
-${urls.join('\n')}
-</urlset>`
+</urlset>`;
 
     return new NextResponse(sitemap, {
       headers: {
-        'Content-Type': 'application/xml',
-        'Cache-Control': 'public, max-age=3600, s-maxage=3600',
+        "Content-Type": "application/xml",
+        "Cache-Control": "public, max-age=3600, s-maxage=3600",
       },
-    })
+    });
   } catch (error) {
-    console.error('Error generating city-course sitemap:', error)
-    return new NextResponse('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>', {
-      headers: { 'Content-Type': 'application/xml' },
-    })
+    console.error("Error generating city-course sitemap:", error);
+    return new NextResponse(
+      '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>',
+      {
+        headers: {
+          "Content-Type": "application/xml",
+          "Cache-Control": "public, max-age=3600, s-maxage=3600",
+        },
+      }
+    );
   }
 }
-

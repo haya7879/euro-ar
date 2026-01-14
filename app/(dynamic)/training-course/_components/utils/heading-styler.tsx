@@ -1,12 +1,22 @@
 "use client"
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 interface HeadingStylerProps {
   content: string;
 }
 
 export default function HeadingStyler({ content }: HeadingStylerProps) {
+  const [isMounted, setIsMounted] = useState(false);
+
   useEffect(() => {
+    // Ensure component is mounted before DOM manipulation
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    // Only run if component is mounted (client-side only)
+    if (!isMounted) return;
+
     // Function to replace bullet points with check icons
     const replaceBulletsWithIcons = () => {
       const overviewText = document.querySelector('.overview-text');
@@ -223,7 +233,7 @@ export default function HeadingStyler({ content }: HeadingStylerProps) {
         observer.disconnect();
       }
     };
-  }, [content]);
+  }, [content, isMounted]);
 
   return null; // This component doesn't render anything
 }
