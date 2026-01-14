@@ -125,15 +125,15 @@ export async function POST(request: NextRequest) {
       preferCSSPageSize: true,
       displayHeaderFooter: true,
       headerTemplate: `
-        <div class="font-cairo" style="font-family: 'Cairo', sans-serif !important; font-size: 10px; width: 100%; text-align: center; color: #3e5ec0; padding: 5px; border-bottom: 1px solid #e5e7eb; direction: rtl;">
-          <span style="font-weight: 600;" class="font-cairo">${
+        <div style="font-family: 'Cairo', sans-serif !important; font-size: 10px; width: 100%; text-align: center; color: #3e5ec0; padding: 5px; border-bottom: 1px solid #e5e7eb; direction: rtl;">
+          <span style="font-weight: 600;">${
             course.title || "Training Course"
           }</span>
         </div>
       `,
       footerTemplate: `
-        <div class="font-cairo" style="font-family: 'Cairo', sans-serif !important; font-size: 9px; width: 100%; display: flex; justify-content: center; align-items: center; color: #6b7280; padding: 5px 7px; border-top: 1px solid #e5e7eb; direction: rtl; text-align: center;">
-          <span class="font-cairo">شانسوفا 3568/61 - نوفي ميستو - براتيسلافا 831 04 - سلوفاكيا</span>
+        <div style="font-family: 'Cairo', sans-serif !important; font-size: 9px; width: 100%; display: flex; justify-content: center; align-items: center; color: #6b7280; padding: 5px 7px; border-top: 1px solid #e5e7eb; direction: rtl; text-align: center;">
+          <span>شانسوفا 3568/61 - نوفي ميستو - براتيسلافا 831 04 - سلوفاكيا</span>
         </div>
       `,
     });

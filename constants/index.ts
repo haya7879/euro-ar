@@ -51,8 +51,8 @@ export const socialLinks = [
 export const orderedMonths = generateDynamicMonths();
 
 export const durationOptions = [
-  { value: 5, label: "إسبوع واحد" },
-  { value: 10, label: "إسبوعين" },
+  { value: 5, label: "أسبوع واحد" },
+  { value: 10, label: "أسبوعين" },
 ];
 
 // API Endpoints

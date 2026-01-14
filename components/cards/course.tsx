@@ -9,6 +9,7 @@ interface CourseCardProps {
 }
 
 export default function CourseCard({ course, citySlug }: CourseCardProps) {
+  console.log(course)
   return (
     <Link
       href={`/training-course/${course.slug}${citySlug ? `/${citySlug}` : ""}`}
@@ -21,6 +22,11 @@ export default function CourseCard({ course, citySlug }: CourseCardProps) {
         </h3>
 
         {course?.duration_label?.trim() === "2 Weeks" && (
+          <span className="text-xs w-fit flex items-center px-2 py-1 gap-1 bg-linear-to-br from-[#f7fafc] to-[#edf2f7] rounded-full text-[#3e5ec0] whitespace-nowrap font-semibold">
+            <Clock size={12} className="mt-0.5" />أسبوعين
+          </span>
+        )}
+        {course?.duration == "10" && (
           <span className="text-xs w-fit flex items-center px-2 py-1 gap-1 bg-linear-to-br from-[#f7fafc] to-[#edf2f7] rounded-full text-[#3e5ec0] whitespace-nowrap font-semibold">
             <Clock size={12} className="mt-0.5" />أسبوعين
           </span>

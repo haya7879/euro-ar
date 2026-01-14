@@ -17,7 +17,6 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
-    domains: ['api-ar.euroqst.com', 'ar.euroqst.com'],
   },
 };
 
