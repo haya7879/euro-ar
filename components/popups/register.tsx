@@ -253,11 +253,11 @@ export default function RegisterPopup() {
 
             <form
               onSubmit={handleSubmit}
-              className="form-inputs flex flex-col gap-6"
+              className="flex flex-col gap-6"
             >
               {/* Company Information */}
-              <div className="form-section mb-2">
-                <h2 className="text-[#3E5EC0] text-lg font-semibold mb-2.5">
+              <div>
+                <h2 className="text-[#3E5EC0] font-semibold mb-4">
                   معلومات الشركة
                 </h2>
                 <div className="form-grid register-grid grid gap-2 md:grid-cols-3 max-md:grid-cols-1 max-md:gap-3">
@@ -265,7 +265,7 @@ export default function RegisterPopup() {
                   <div className="form-group flex flex-col gap-1">
                     <label
                       htmlFor="company_name"
-                      className="text-[13px] text-[#333]"
+                      className="text-xs text-[#333]"
                     >
                       اسم الشركة
                     </label>
@@ -279,7 +279,7 @@ export default function RegisterPopup() {
                         handleInputChange("companyName", e.target.value)
                       }
                       className={cn(
-                        "h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
+                        "text-sm placeholder:text-xs  h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
                         errors.companyName && "border-red-500"
                       )}
                       required
@@ -293,7 +293,7 @@ export default function RegisterPopup() {
 
                   {/* City */}
                   <div className="form-group flex flex-col gap-1">
-                    <label htmlFor="city" className="text-[13px] text-[#333]">
+                    <label htmlFor="city" className="text-xs text-[#333]">
                       المدينة
                     </label>
                     <input
@@ -306,7 +306,7 @@ export default function RegisterPopup() {
                         handleInputChange("city", e.target.value)
                       }
                       className={cn(
-                        "h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
+                        "text-sm placeholder:text-xs h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
                         errors.city && "border-red-500"
                       )}
                       required
@@ -322,7 +322,7 @@ export default function RegisterPopup() {
                   <div className="form-group flex flex-col gap-1">
                     <label
                       htmlFor="country"
-                      className="text-[13px] text-[#333]"
+                      className="text-xs text-[#333]"
                     >
                       الدولة
                     </label>
@@ -336,7 +336,7 @@ export default function RegisterPopup() {
                         handleInputChange("country", e.target.value)
                       }
                       className={cn(
-                        "h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
+                        "text-sm placeholder:text-xs h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
                         errors.country && "border-red-500"
                       )}
                       required
@@ -351,8 +351,8 @@ export default function RegisterPopup() {
               </div>
 
               {/* Contact Information */}
-              <div className="form-section mb-2">
-                <h2 className="text-[#3E5EC0] text-lg font-semibold mb-2.5">
+              <div>
+                <h2 className="text-[#3E5EC0] font-semibold mb-4">
                   معلومات الاتصال
                 </h2>
                 <div className="form-grid register-grid grid gap-2 md:grid-cols-4 max-md:grid-cols-1 max-md:gap-3">
@@ -360,7 +360,7 @@ export default function RegisterPopup() {
                   <div className="form-group flex flex-col gap-1">
                     <label
                       htmlFor="full_name"
-                      className="text-[13px] text-[#333]"
+                      className="text-xs text-[#333]"
                     >
                       الاسم الكامل
                     </label>
@@ -374,7 +374,7 @@ export default function RegisterPopup() {
                         handleInputChange("fullName", e.target.value)
                       }
                       className={cn(
-                        "h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
+                        "text-sm placeholder:text-xs h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
                         errors.fullName && "border-red-500"
                       )}
                       required
@@ -407,7 +407,7 @@ export default function RegisterPopup() {
                   <div className="form-group flex flex-col gap-1">
                     <label
                       htmlFor="job_title"
-                      className="text-[13px] text-[#333]"
+                      className="text-xs text-[#333]"
                     >
                       المسمى الوظيفي
                     </label>
@@ -421,7 +421,7 @@ export default function RegisterPopup() {
                         handleInputChange("jobTitle", e.target.value)
                       }
                       className={cn(
-                        "h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
+                        "text-sm placeholder:text-xs h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
                         errors.jobTitle && "border-red-500"
                       )}
                       required
@@ -435,7 +435,7 @@ export default function RegisterPopup() {
 
                   {/* Email */}
                   <div className="form-group flex flex-col gap-1">
-                    <label htmlFor="email" className="text-[13px] text-[#333]">
+                    <label htmlFor="email" className="text-xs text-[#333]">
                       البريد الإلكتروني
                     </label>
                     <input
@@ -448,7 +448,7 @@ export default function RegisterPopup() {
                         handleInputChange("email", e.target.value)
                       }
                       className={cn(
-                        "h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
+                        "text-sm placeholder:text-xs h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
                         errors.email && "border-red-500"
                       )}
                       required
@@ -463,8 +463,8 @@ export default function RegisterPopup() {
               </div>
 
               {/* Responsible Person Information */}
-              <div className="form-section mb-2">
-                <h2 className="text-[#3E5EC0] text-lg font-semibold mb-2.5">
+              <div>
+                <h2 className="text-[#3E5EC0] font-semibold mb-4">
                   معلومات الشخص المسؤول عن التدريب في الشركة
                 </h2>
                 <div className="form-grid register-grid grid gap-2 md:grid-cols-4 max-md:grid-cols-1 max-md:gap-3">
@@ -472,7 +472,7 @@ export default function RegisterPopup() {
                   <div className="form-group flex flex-col gap-1">
                     <label
                       htmlFor="responsible_name"
-                      className="text-[13px] text-[#333]"
+                      className="text-xs text-[#333]"
                     >
                       اسم الشخص المسؤول
                     </label>
@@ -486,7 +486,7 @@ export default function RegisterPopup() {
                         handleInputChange("responsibleName", e.target.value)
                       }
                       className={cn(
-                        "h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
+                        "text-sm placeholder:text-xs h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
                         errors.responsibleName && "border-red-500"
                       )}
                       required
@@ -502,7 +502,7 @@ export default function RegisterPopup() {
                   <div className="form-group flex flex-col gap-1">
                     <label
                       htmlFor="responsible_position"
-                      className="text-[13px] text-[#333]"
+                      className="text-xs text-[#333]"
                     >
                       منصب الشخص المسؤول
                     </label>
@@ -516,7 +516,7 @@ export default function RegisterPopup() {
                         handleInputChange("responsiblePosition", e.target.value)
                       }
                       className={cn(
-                        "h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
+                        "text-sm placeholder:text-xs h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
                         errors.responsiblePosition && "border-red-500"
                       )}
                       required
@@ -532,7 +532,7 @@ export default function RegisterPopup() {
                   <div className="form-group flex flex-col gap-1">
                     <label
                       htmlFor="responsible_email"
-                      className="text-[13px] text-[#333]"
+                      className="text-xs text-[#333]"
                     >
                       بريد الشخص المسؤول
                     </label>
@@ -546,7 +546,7 @@ export default function RegisterPopup() {
                         handleInputChange("responsibleEmail", e.target.value)
                       }
                       className={cn(
-                        "h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
+                        "text-sm placeholder:text-xs h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
                         errors.responsibleEmail && "border-red-500"
                       )}
                       required
@@ -579,6 +579,15 @@ export default function RegisterPopup() {
 
               {/* Hidden timing ID */}
               <input type="hidden" name="timing_id" value={timingId} />
+
+              {/* Important Notice */}
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-2 mb-2">
+                <ul className="text-[#333] text-xs space-y-1">
+                  <li className="leading-relaxed">
+                  يُعد هذا النموذج تسجيلًا مبدئيًا فقط ولا يُعتبر تسجيلًا نهائيًا في الدورة التدريبية , يتم اعتماد وتأكيد التسجيل رسميًا بعد استلام بريد إلكتروني من الجهة المختصة في المؤسسة، مرسل من البريد الإلكتروني الرسمي للمؤسسة، ويتضمن تفاصيل اعتماد التسجيل , <span className="text-[#314ea9] font-semibold">في حال عدم استلام هذا البريد، لا يُعد التسجيل مؤكدًا.</span>
+                  </li>
+                </ul>
+              </div>
 
               {/* Submit Section */}
               <div className="form-submition flex items-center justify-between gap-8 max-md:flex-col-reverse max-md:gap-4">

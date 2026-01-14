@@ -125,15 +125,15 @@ export async function POST(request: NextRequest) {
       preferCSSPageSize: true,
       displayHeaderFooter: true,
       headerTemplate: `
-        <div style="font-size: 10px; width: 100%; text-align: center; color: #3e5ec0; padding: 5px; border-bottom: 1px solid #e5e7eb; direction: rtl;">
-          <span style="font-weight: 600;">${
+        <div class="font-cairo" style="font-family: 'Cairo', sans-serif !important; font-size: 10px; width: 100%; text-align: center; color: #3e5ec0; padding: 5px; border-bottom: 1px solid #e5e7eb; direction: rtl;">
+          <span style="font-weight: 600;" class="font-cairo">${
             course.title || "Training Course"
           }</span>
         </div>
       `,
       footerTemplate: `
-        <div style="font-size: 9px; width: 100%; display: flex; justify-content: center; align-items: center; color: #6b7280; padding: 5px 7px; border-top: 1px solid #e5e7eb; direction: rtl; text-align: center;">
-          <span>شانسوفا 3568/61 - نوفي ميستو - براتيسلافا 831 04 - سلوفاكيا</span>
+        <div class="font-cairo" style="font-family: 'Cairo', sans-serif !important; font-size: 9px; width: 100%; display: flex; justify-content: center; align-items: center; color: #6b7280; padding: 5px 7px; border-top: 1px solid #e5e7eb; direction: rtl; text-align: center;">
+          <span class="font-cairo">شانسوفا 3568/61 - نوفي ميستو - براتيسلافا 831 04 - سلوفاكيا</span>
         </div>
       `,
     });
@@ -201,11 +201,36 @@ function generateBrochureHTML(course: any, timing: any): string {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
     <style>
+    
       @page {
         size: A4;
         margin: 0.7in 0in;
       }
-      
+            :root {
+        --accent: #6c63ff;
+        --muted: #6b7280;
+        --card: #fff;
+        --bg: #b4bdff17;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        font-family: "Cairo", sans-serif !important;
+        background: #fff;
+        color: #111827;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        position: relative;
+        direction: rtl;
+        text-align: right;
+      }
       @page:first {
         margin: 0;
         @top-left { content: none; }
@@ -401,32 +426,6 @@ function generateBrochureHTML(course: any, timing: any): string {
         gap: 8px;
         flex-wrap: wrap;
       }
-
-      :root {
-        --accent: #6c63ff;
-        --muted: #6b7280;
-        --card: #fff;
-        --bg: #b4bdff17;
-      }
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      html,
-      body {
-        height: 100%;
-      }
-      body {
-        font-family: "Cairo", sans-serif !important;
-        background: #fff;
-        color: #111827;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        position: relative;
-        direction: rtl;
-        text-align: right;
-      }
       .brochure {
         max-width: 1200px;
         margin-inline: auto;
@@ -547,95 +546,117 @@ function generateBrochureHTML(course: any, timing: any): string {
       }
 
       /*=============== Overview Content ============== */
+      
+/* Overview Text Styling */
+.overview-text {
+  line-height: 1.8;
+  color: #333;
+  font-size: 16px;
+  max-width: none;
+}
 
-      /* Overview Text Styling */
-      .overview-text {
-        line-height: 1.8;
-        color: #333;
-        font-size: 16px;
-        max-width: none;
-      }
-      
-      .overview-text p:last-child {
-        margin-top: 30px !important;
-      }
-      
-      .overview-text p strong:first-child:not(.unit-heading):not(.secondary-heading) {
-        color: #3e5ec0;
-        text-align: right;
-        border-bottom: none;
-        margin: 20px 0 0;
-        padding-bottom: 0;
-        font-size: 20px;
-        display: block;
-        position: relative;
-      }
-      
-      .overview-text p br:first-of-type {
-        display: none !important;
-      }
-      
-      .overview-text .unit-heading,
-      .overview-text p strong.unit-heading,
-      .overview-text strong.unit-heading {
-        font-size: 15px !important;
-        margin: 14px 0 !important;
-        background: #F2F8FF !important;
-        color: #2d3748 !important;
-        padding: 12px 16px !important;
-        border-radius: 0 8px 8px 0 !important;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
-        -webkit-text-fill-color: #2d3748 !important;
-        background-clip: unset !important;
-        -webkit-background-clip: unset !important;
-        position: relative;
-        display: block !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-        font-weight: 700 !important;
-      }
-      
-      .overview-text .unit-heading::after {
-        display: none !important;
-      }
-      
-      .overview-text .secondary-heading {
-        font-size: 16px !important;
-        margin: 20px 0 12px 0 !important;
-        color: #333 !important;
-        background: none !important;
-        display: inline !important;
-        font-weight: 600 !important;
-      }
-      
-      .overview-text .secondary-heading::after {
-        display: none !important;
-      }
-      
-      .overview-text p strong:only-child {
-        transition: all 0.3s ease;
-        margin-bottom: 5px;
-      }
-      .overview-text p:first-child strong:only-child {
-        margin-top: 16px !important;
-      }
-      .overview-text .unit-heading:hover {
-        background: #f0f4ff !important;
-        transform: translateX(4px) !important;
-      }
-      
-      .overview-text p strong:only-child+* {
-        margin-top: 16px;
-      }
-      
-      .overview-text .unit-heading+* {
-        margin-top: 12px;
-      }
-      
-      .overview-text .secondary-heading+* {
-        margin-top: 8px;
-      }
-      
+.overview-text p:last-child {
+  margin-top: 30px !important;
+}
+
+.overview-text p strong:first-child:not(.unit-heading):not(.secondary-heading) {
+  color: #3e5ec0;
+  text-align: right;
+  border-bottom: none;
+  margin: 20px 0 15px;
+  padding-bottom: 0;
+  font-size: 20px;
+  display: block;
+  position: relative;
+}
+
+.overview-text p strong:first-child:not(.unit-heading):not(.secondary-heading)::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+  width: 60px;
+  height: 3px;
+  background: #20b486;
+  border-radius: 2px;
+}
+
+.overview-text p br:first-of-type {
+  display: none !important;
+}
+
+.overview-text .unit-heading,
+.overview-text p strong.unit-heading,
+.overview-text strong.unit-heading {
+  font-size: 15px !important;
+  margin: 14px 0 !important;
+  background: #F2F8FF !important;
+  color: #2d3748 !important;
+  padding: 12px 16px !important;
+  border-radius: 0 8px 8px 0 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+  -webkit-text-fill-color: #2d3748 !important;
+  background-clip: unset !important;
+  -webkit-background-clip: unset !important;
+  position: relative;
+  display: block !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  font-weight: 700 !important;
+}
+
+.overview-text .unit-heading::after {
+  display: none !important;
+}
+
+.overview-text .secondary-heading {
+  font-size: 16px !important;
+  margin: 20px 0 12px 0 !important;
+  color: #333 !important;
+  background: none !important;
+  display: inline !important;
+  font-weight: 600 !important;
+}
+
+.overview-text .secondary-heading::after {
+  display: none !important;
+}
+
+.overview-text p strong:only-child {
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.overview-text p strong:only-child::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: #20b486;
+  border-radius: 2px;
+}
+
+.overview-text p:first-child strong:only-child {
+  margin-top: 16px !important;
+}
+
+.overview-text p strong:only-child+* {
+  margin-top: 16px;
+}
+
+.overview-text .unit-heading+* {
+  margin-top: 12px;
+}
+
+.overview-text .secondary-heading+* {
+  margin-top: 8px;
+}
+
 .overview-text ul {
   margin: 14px 0;
   padding-left: 12px;
@@ -646,24 +667,22 @@ function generateBrochureHTML(course: any, timing: any): string {
   position: relative;
   padding-left: 24px;
   line-height: 1.6;
-  margin-bottom:5px;
 }
-      
-      .overview-text li:before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        top: 0;
-        color: #10b981;
-        font-weight: bold;
-        font-size: 14px;
-      }
-      
-      .overview-text li p {
-        margin: 0;
-        display: inline;
-      }
-      
+
+.overview-text li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #10b981;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.overview-text li p {
+  margin: 0;
+  display: inline;
+}
       .bullets {
         display: flex;
         flex-direction: column;
