@@ -194,23 +194,23 @@ export default function InquirePopup() {
           <X className="w-4 h-4" />
         </button>
 
-        <div className="register-modal flex flex-col h-full max-h-full">
+        <div className="flex flex-col h-full max-h-full">
           {/* Right Section - Inquire Form */}
-          <div className="register-right flex-1 p-4 md:p-6 overflow-y-auto rounded-lg max-md:p-3">
+          <div className="flex-1 p-4 overflow-y-auto rounded-lg max-md:p-3">
             
             {/* Header */}
-            <div className="register-header mb-6">
+            <div className="mb-6">
               <h3 className="text-[#3E5EC0] text-xl font-bold mb-2 max-md:text-lg">
                 {courseTitle || 'استفسار عن الدورة'}
               </h3>
             </div>
 
-            <form onSubmit={handleSubmit} className="form-inputs flex flex-col gap-4">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               {/* Form Grid */}
-              <div className="form-grid grid gap-3 md:grid-cols-3 max-md:grid-cols-1 max-md:gap-3">
+              <div className="grid gap-x-2 gap-y-4 md:grid-cols-3 max-md:grid-cols-1">
                 {/* Full Name */}
-                <div className="form-group flex flex-col gap-1">
-                  <label htmlFor="inquire_full_name" className="text-[13px] text-[#333]">الاسم الكامل</label>
+                <div className="flex flex-col gap-1">
+                  <label htmlFor="inquire_full_name" className="text-xs text-[#333]">الاسم الكامل</label>
                   <input
                     type="text"
                     id="inquire_full_name"
@@ -219,7 +219,7 @@ export default function InquirePopup() {
                     value={formData.fullName}
                     onChange={(e) => handleInputChange('fullName', e.target.value)}
                     className={cn(
-                      "h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
+                      "text-sm placeholder:text-xs h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
                       errors.fullName && "border-red-500"
                     )}
                     required
@@ -228,8 +228,8 @@ export default function InquirePopup() {
                 </div>
 
                 {/* Email */}
-                <div className="form-group flex flex-col gap-1">
-                  <label htmlFor="inquire_email" className="text-[13px] text-[#333]">البريد الإلكتروني</label>
+                <div className="flex flex-col gap-1">
+                  <label htmlFor="inquire_email" className="text-xs text-[#333]">البريد الإلكتروني</label>
                   <input
                     type="email"
                     id="inquire_email"
@@ -238,7 +238,7 @@ export default function InquirePopup() {
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
                     className={cn(
-                      "h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
+                      "text-sm placeholder:text-xs h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
                       errors.email && "border-red-500"
                     )}
                     required
@@ -262,8 +262,8 @@ export default function InquirePopup() {
                 />
 
                 {/* Company */}
-                <div className="form-group flex flex-col gap-1">
-                  <label htmlFor="inquire_company" className="text-[13px] text-[#333]">الشركة</label>
+                <div className="flex flex-col gap-1">
+                  <label htmlFor="inquire_company" className="text-xs text-[#333]">الشركة</label>
                   <input
                     type="text"
                     id="inquire_company"
@@ -272,7 +272,7 @@ export default function InquirePopup() {
                     value={formData.company}
                     onChange={(e) => handleInputChange('company', e.target.value)}
                     className={cn(
-                      "h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
+                      "text-sm placeholder:text-xs h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
                       errors.company && "border-red-500"
                     )}
                     required
@@ -281,8 +281,8 @@ export default function InquirePopup() {
                 </div>
 
                 {/* City */}
-                <div className="form-group flex flex-col gap-1">
-                  <label htmlFor="inquire_city" className="text-[13px] text-[#333]">المدينة</label>
+                <div className="flex flex-col gap-1">
+                  <label htmlFor="inquire_city" className="text-xs text-[#333]">المدينة</label>
                   <input
                     type="text"
                     id="inquire_city"
@@ -291,7 +291,7 @@ export default function InquirePopup() {
                     value={formData.city}
                     onChange={(e) => handleInputChange('city', e.target.value)}
                     className={cn(
-                      "h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
+                      "text-sm placeholder:text-xs h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
                       errors.city && "border-red-500"
                     )}
                   />
@@ -299,8 +299,8 @@ export default function InquirePopup() {
                 </div>
 
                 {/* Country */}
-                <div className="form-group flex flex-col gap-1">
-                  <label htmlFor="inquire_country" className="text-[13px] text-[#333]">الدولة</label>
+                <div className="flex flex-col gap-1">
+                  <label htmlFor="inquire_country" className="text-xs text-[#333]">الدولة</label>
                   <input
                     type="text"
                     id="inquire_country"
@@ -309,7 +309,7 @@ export default function InquirePopup() {
                     value={formData.country}
                     onChange={(e) => handleInputChange('country', e.target.value)}
                     className={cn(
-                      "h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
+                      "text-sm placeholder:text-xs h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
                       errors.country && "border-red-500"
                     )}
                     required
@@ -319,8 +319,8 @@ export default function InquirePopup() {
               </div>
 
               {/* Message */}
-              <div className="form-group message-group flex flex-col gap-1">
-                <label htmlFor="inquire_message" className="text-[13px] text-[#333]">الرسالة</label>
+              <div className="message-group flex flex-col gap-1">
+                <label htmlFor="inquire_message" className="text-xs text-[#333]">الرسالة</label>
                 <textarea
                   id="inquire_message"
                   name="message"
@@ -328,7 +328,7 @@ export default function InquirePopup() {
                   value={formData.message}
                   onChange={(e) => handleInputChange('message', e.target.value)}
                   className={cn(
-                    "w-full min-h-[120px] px-4 py-3 border border-[#e2e8f0] rounded-xl outline-none resize-none text-sm transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 placeholder:text-[#6F6F6F] max-md:min-h-[100px] max-md:px-3 max-md:py-2",
+                    "w-full min-h-[120px] placeholder:text-xs px-4 py-3 border border-[#e2e8f0] rounded-xl outline-none resize-none text-sm transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 placeholder:text-[#6F6F6F] max-md:min-h-[100px] max-md:px-3 max-md:py-2",
                     errors.message && "border-red-500"
                   )}
                   required

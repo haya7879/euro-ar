@@ -264,7 +264,7 @@ export default function ContactPopup() {
                     <div className="flex flex-col gap-1">
                       <label
                         htmlFor="contact_full_name"
-                        className="text-[13px] text-[#333]"
+                        className="text-xs text-[#333]"
                       >
                         الاسم الكامل
                       </label>
@@ -277,7 +277,7 @@ export default function ContactPopup() {
                           handleInputChange("fullName", e.target.value)
                         }
                         className={cn(
-                          "h-11 text-sm w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
+                          "h-11 text-sm placeholder:text-xs w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
                           errors.fullName && "border-red-500"
                         )}
                         required
@@ -290,10 +290,10 @@ export default function ContactPopup() {
                     </div>
 
                     {/* Company */}
-                    <div className="form-group flex flex-col gap-1">
+                    <div className="flex flex-col gap-1">
                       <label
                         htmlFor="contact_company"
-                        className="text-[13px] text-[#333]"
+                        className="text-xs text-[#333]"
                       >
                         الشركة
                       </label>
@@ -306,7 +306,7 @@ export default function ContactPopup() {
                           handleInputChange("company", e.target.value)
                         }
                         className={cn(
-                          "h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
+                          "text-sm placeholder:text-xs h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
                           errors.company && "border-red-500"
                         )}
                         required
@@ -318,12 +318,12 @@ export default function ContactPopup() {
                       )}
                     </div>
                   </div>
-                  <div className="form-grid grid gap-2 md:grid-cols-2 max-md:grid-cols-1 max-md:gap-3">
+                  <div className="grid gap-x-2 gap-y-4 md:grid-cols-2 max-md:grid-cols-1">
                     {/* Email - Full Width */}
-                    <div className="form-group full-width flex flex-col gap-1">
+                    <div className="full-width flex flex-col gap-1">
                       <label
                         htmlFor="contact_email"
-                        className="text-[13px] text-[#333]"
+                        className="text-xs text-[#333]"
                       >
                         البريد الإلكتروني
                       </label>
@@ -336,7 +336,7 @@ export default function ContactPopup() {
                           handleInputChange("email", e.target.value)
                         }
                         className={cn(
-                          "h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
+                          "text-sm placeholder:text-xs h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
                           errors.email && "border-red-500"
                         )}
                         required
@@ -366,10 +366,10 @@ export default function ContactPopup() {
 
                   <div className="form-grid grid gap-2 md:grid-cols-2 max-md:grid-cols-1 max-md:gap-3">
                     {/* Subject */}
-                    <div className="form-group flex flex-col gap-1">
+                    <div className="flex flex-col gap-1">
                       <label
                         htmlFor="contact_subject"
-                        className="text-[13px] text-[#333]"
+                        className="text-xs text-[#333]"
                       >
                         الموضوع
                       </label>
@@ -382,7 +382,7 @@ export default function ContactPopup() {
                           handleInputChange("subject", e.target.value)
                         }
                         className={cn(
-                          "h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
+                          "text-sm placeholder:text-xs h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
                           errors.subject && "border-red-500"
                         )}
                         required
@@ -395,10 +395,10 @@ export default function ContactPopup() {
                     </div>
 
                     {/* Country */}
-                    <div className="form-group flex flex-col gap-1">
+                    <div className="flex flex-col gap-1">
                       <label
                         htmlFor="contact_country"
-                        className="text-[13px] text-[#333]"
+                        className="text-xs text-[#333]"
                       >
                         الدولة
                       </label>
@@ -411,7 +411,7 @@ export default function ContactPopup() {
                           handleInputChange("country", e.target.value)
                         }
                         className={cn(
-                          "h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
+                          "text-sm placeholder:text-xs h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
                           errors.country && "border-red-500"
                         )}
                         required
@@ -428,7 +428,7 @@ export default function ContactPopup() {
                   <div className="message-group flex flex-col gap-1">
                     <label
                       htmlFor="contact_message"
-                      className="text-[13px] text-[#333]"
+                      className="text-xs text-[#333]"
                     >
                       الرسالة
                     </label>
@@ -441,7 +441,7 @@ export default function ContactPopup() {
                         handleInputChange("message", e.target.value)
                       }
                       className={cn(
-                        "w-full min-h-[120px] px-4 py-3 border border-[#e2e8f0] rounded-xl outline-none resize-none text-sm transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 placeholder:text-[#6F6F6F] max-md:min-h-[100px] max-md:px-3 max-md:py-2",
+                        "w-full min-h-[120px] placeholder:text-xs h-11 px-4 py-3 border border-[#e2e8f0] rounded-xl outline-none resize-none text-sm transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 placeholder:text-[#6F6F6F] max-md:min-h-[100px] max-md:px-3 max-md:py-2",
                         errors.message && "border-red-500"
                       )}
                       required

@@ -243,7 +243,7 @@ export default function RegisterPopup() {
 
         <div className="register-modal flex flex-col h-full max-h-full">
           {/* Right Section - Registration Form */}
-          <div className="register-right flex-1 p-3 md:p-5 overflow-y-auto rounded-lg">
+          <div className="register-right flex-1 p-4 overflow-y-auto rounded-lg">
             {/* Header */}
             <div className="register-header mb-6">
               <h3 className="text-[#3E5EC0] text-xl font-bold mb-2 max-md:text-lg">
@@ -260,7 +260,7 @@ export default function RegisterPopup() {
                 <h2 className="text-[#3E5EC0] font-semibold mb-4">
                   معلومات الشركة
                 </h2>
-                <div className="form-grid register-grid grid gap-2 md:grid-cols-3 max-md:grid-cols-1 max-md:gap-3">
+                <div className="grid gap-2 md:grid-cols-3 max-md:grid-cols-1 max-md:gap-3">
                   {/* Company Name */}
                   <div className="form-group flex flex-col gap-1">
                     <label
@@ -279,7 +279,7 @@ export default function RegisterPopup() {
                         handleInputChange("companyName", e.target.value)
                       }
                       className={cn(
-                        "text-sm placeholder:text-xs  h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
+                        "text-sm placeholder:text-xs h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
                         errors.companyName && "border-red-500"
                       )}
                       required

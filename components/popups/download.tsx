@@ -313,7 +313,7 @@ export default function DownloadPopup() {
 
           <div className="flex flex-col h-full max-h-full">
             {/* Right Section - Download Form */}
-            <div className="flex-1 p-4 md:p-6 overflow-y-auto rounded-lg max-md:p-3">
+            <div className="flex-1 p-4 overflow-y-auto rounded-lg max-md:p-3">
               {/* Header */}
               <div className="register-header mb-8 max-md:mb-6">
                 <h3 className="text-[#3E5EC0] text-xl font-bold mb-2 max-md:text-lg">
@@ -337,12 +337,12 @@ export default function DownloadPopup() {
                 className="form-inputs flex flex-col gap-4"
               >
                 {/* Form Grid */}
-                <div className="form-grid grid gap-2 md:grid-cols-2 max-md:grid-cols-1 max-md:gap-3">
+                <div className="grid gap-x-2 gap-y-4 md:grid-cols-2 max-md:grid-cols-1">
                   {/* Full Name */}
                   <div className="form-group flex flex-col gap-1">
                     <label
                       htmlFor="download_full_name"
-                      className="text-[13px] text-[#333]"
+                      className="text-xs text-[#333]"
                     >
                       الاسم الكامل
                     </label>
@@ -356,7 +356,7 @@ export default function DownloadPopup() {
                         handleInputChange("fullName", e.target.value)
                       }
                       className={cn(
-                        "h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
+                        "text-sm placeholder:text-xs h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
                         errors.fullName && "border-red-500"
                       )}
                       required
@@ -387,7 +387,7 @@ export default function DownloadPopup() {
                   <div className="form-group flex flex-col gap-1">
                     <label
                       htmlFor="download_email"
-                      className="text-[13px] text-[#333]"
+                      className="text-xs text-[#333]"
                     >
                       البريد الإلكتروني
                     </label>
@@ -401,7 +401,7 @@ export default function DownloadPopup() {
                         handleInputChange("email", e.target.value)
                       }
                       className={cn(
-                        "h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
+                        "text-sm placeholder:text-xs h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
                         errors.email && "border-red-500"
                       )}
                       required
@@ -417,7 +417,7 @@ export default function DownloadPopup() {
                   <div className="form-group flex flex-col gap-1">
                     <label
                       htmlFor="download_company"
-                      className="text-[13px] text-[#333]"
+                      className="text-xs text-[#333]"
                     >
                       الشركة
                     </label>
@@ -431,7 +431,7 @@ export default function DownloadPopup() {
                         handleInputChange("company", e.target.value)
                       }
                       className={cn(
-                        "h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
+                        "text-sm placeholder:text-xs h-11 w-full px-4 border border-[#e2e8f0] rounded-xl outline-none transition-all duration-300 hover:border-[#314EA9] focus:outline-none focus:border-[#667eea] focus:shadow-[0_0_0_3px_rgba(102,126,234,0.1),0_4px_12px_rgba(102,126,234,0.15)] focus:-translate-y-0.5 max-md:h-10 max-md:px-3",
                         errors.company && "border-red-500"
                       )}
                       required
