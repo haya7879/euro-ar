@@ -260,7 +260,7 @@ export default function RegisterPopup() {
                 <h2 className="text-[#3E5EC0] font-semibold mb-4">
                   معلومات الشركة
                 </h2>
-                <div className="grid gap-2 md:grid-cols-3 max-md:grid-cols-1 max-md:gap-3">
+                <div className="grid gap-x-2 gap-y-4 md:grid-cols-3 max-md:grid-cols-1">
                   {/* Company Name */}
                   <div className="form-group flex flex-col gap-1">
                     <label
