@@ -125,14 +125,14 @@ export async function POST(request: NextRequest) {
       preferCSSPageSize: true,
       displayHeaderFooter: true,
       headerTemplate: `
-        <div style="font-family: 'Cairo', sans-serif !important; font-size: 10px; width: 100%; text-align: center; color: #3e5ec0; padding: 5px; border-bottom: 1px solid #e5e7eb; direction: rtl;">
+        <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 10px; width: 100%; text-align: center; color: #3e5ec0; padding: 5px; border-bottom: 1px solid #e5e7eb; direction: rtl;">
           <span style="font-weight: 600;">${
             course.title || "Training Course"
           }</span>
         </div>
       `,
       footerTemplate: `
-        <div style="font-family: 'Cairo', sans-serif !important; font-size: 9px; width: 100%; display: flex; justify-content: center; align-items: center; color: #6b7280; padding: 5px 7px; border-top: 1px solid #e5e7eb; direction: rtl; text-align: center;">
+        <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 9px; width: 100%; display: flex; justify-content: center; align-items: center; color: #6b7280; padding: 5px 7px; border-top: 1px solid #e5e7eb; direction: rtl; text-align: center;">
           <span>شانسوفا 3568/61 - نوفي ميستو - براتيسلافا 831 04 - سلوفاكيا</span>
         </div>
       `,

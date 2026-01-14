@@ -292,14 +292,6 @@ export default function DownloadPopup() {
 
   return (
     <>
-      {/* Success Message */}
-      <SuccessMessage
-        isVisible={showSuccessMessage}
-        onClose={() => setShowSuccessMessage(false)}
-        message="تم تحميل البروشور بنجاح!"
-        fileName={downloadedFileName}
-      />
-
       <div
         className="fixed top-0 left-0 z-[100] inset-0 bg-black/70 flex items-center justify-center p-4 overflow-y-auto md:p-4 max-md:pt-8 max-md:p-2"
         onClick={handleOverlayClick}

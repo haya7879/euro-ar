@@ -12,6 +12,34 @@ export default function SearchTimingCard({
   formatDate,
 }: SearchTimingCardProps) {
   const { openRegister, openInquire, openDownload } = usePopupStore();
+
+  // Build course and timing objects for PDF generation
+  const buildCourseAndTiming = () => {
+    const course: Course = {
+      id: timing.category_id,
+      slug: timing.course_slug,
+      title: timing.course_title,
+      code: "",
+      duration: timing.duration?.toString() || null,
+      duration_label: timing.duration ? `${timing.duration} أيام` : null,
+    };
+
+    const timingData: Timing = {
+      id: timing.id,
+      start_date: timing.start_date,
+      end_date: timing.end_date,
+      fees: parseFloat(timing.fees) || 0,
+      city: {
+        id: 0,
+        slug: timing.city_slug || "",
+        title: timing.city_title,
+        image: "",
+      },
+    };
+
+    return { course, timing: timingData };
+  };
+
   return (
     <Link
       href={`/training-course/${timing.course_slug}/${timing.city_slug}`}
@@ -73,7 +101,10 @@ export default function SearchTimingCard({
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
+            const { course, timing: timingData } = buildCourseAndTiming();
             openDownload({
+              course,
+              timing: timingData,
               courseTitle: timing.course_title,
               timingId: timing.id.toString(),
             });
