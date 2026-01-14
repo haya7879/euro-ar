@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
   try {
     const seoData = await getSeoData("cities");
     const seo = seoData.seo;
-    const baseUrl = "https://euroqst.com";
+    const baseUrl = "https://ar.euroqst.com";
 
     return {
       title: seo.meta_title,
@@ -66,7 +66,7 @@ export async function generateMetadata(): Promise<Metadata> {
     };
   } catch (error) {
     console.error("Error generating metadata for cities page:", error);
-    const baseUrl = "https://euroqst.com";
+    const baseUrl = "https://ar.euroqst.com";
 
     // SEO-optimized fallback metadata
     return {
@@ -99,7 +99,7 @@ interface CitiesPageProps {
 export default async function CitiesPage({ searchParams }: CitiesPageProps) {
   const params = await searchParams;
   const cities = await getCities();
-  const baseUrl = "https://euroqst.com";
+  const baseUrl = "https://ar.euroqst.com";
 
   // Breadcrumb configuration
   const breadcrumbs: BreadcrumbItem[] = [

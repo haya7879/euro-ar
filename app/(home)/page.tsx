@@ -63,10 +63,10 @@ export default async function HomePage() {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://euroqst.com/#organization",
+        "@id": "https://ar.euroqst.com/#organization",
         "name": "الدول التدريبية العالمية Training",
-        "url": "https://euroqst.com",
-        "logo": "https://euroqst.com/assets/images/logo.svg",
+        "url": "https://ar.euroqst.com",
+        "logo": "https://ar.euroqst.com/assets/images/logo.svg",
         "sameAs": [
           "https://www.facebook.com/euroquest.international"
         ],
@@ -310,25 +310,25 @@ export default async function HomePage() {
       },
       {
         "@type": "WebSite",
-        "@id": "https://euroqst.com/#website",
-        "url": "https://euroqst.com",
+        "@id": "https://ar.euroqst.com/#website",
+        "url": "https://ar.euroqst.com",
         "name": "الدول التدريبية العالمية Training",
         "description": "الدول التدريبية العالمية Training provides innovative training courses across multiple industries and global hubs.",
         "publisher": {
-          "@id": "https://euroqst.com/#organization"
+          "@id": "https://ar.euroqst.com/#organization"
         },
         "inLanguage": "en"
       },
       {
         "@type": "WebPage",
-        "@id": "https://euroqst.com/#webpage",
-        "url": "https://euroqst.com",
+        "@id": "https://ar.euroqst.com/#webpage",
+        "url": "https://ar.euroqst.com",
         "name": "الدول التدريبية العالمية Training",
         "isPartOf": {
-          "@id": "https://euroqst.com/#website"
+          "@id": "https://ar.euroqst.com/#website"
         },
         "mainEntity": {
-          "@id": "https://euroqst.com/#organization"
+          "@id": "https://ar.euroqst.com/#organization"
         },
         "description": "Explore الدول التدريبية العالمية Training – founded in 2015, delivering more than 1000 training courses to 15,000+ participants worldwide.",
         "breadcrumb": {
@@ -338,7 +338,7 @@ export default async function HomePage() {
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://euroqst.com"
+              "item": "https://ar.euroqst.com"
             }
           ]
         },

@@ -11,7 +11,7 @@ export default function Schema({
   pageType = "about", 
   pageTitle = "الدول التدريبية العالمية Training",
   pageDescription = "الدول التدريبية العالمية Training provides innovative training courses across multiple industries and global hubs.",
-  pageUrl = "https://euroqst.com"
+  pageUrl = "https://ar.euroqst.com"
 }: SchemaProps) {
   
   const baseSchema ={
@@ -19,11 +19,11 @@ export default function Schema({
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://euroqst.com/#organization",
+        "@id": "https://ar.euroqst.com/#organization",
         "name": "الدول التدريبية العالمية Training",
         "alternateName": "الدول التدريبية العالمية",
-        "url": "https://euroqst.com",
-        "logo": "https://euroqst.com/assets/images/logo.svg",
+        "url": "https://ar.euroqst.com",
+        "logo": "https://ar.euroqst.com/assets/images/logo.svg",
         "contactPoint": [
           {
             "@type": "ContactPoint",
@@ -43,11 +43,11 @@ export default function Schema({
       },
       {
         "@type": "WebSite",
-        "@id": "https://euroqst.com/#website",
-        "url": "https://euroqst.com",
+        "@id": "https://ar.euroqst.com/#website",
+        "url": "https://ar.euroqst.com",
         "name": "الدول التدريبية العالمية Training",
         "publisher": {
-          "@id": "https://euroqst.com/#organization"
+          "@id": "https://ar.euroqst.com/#organization"
         }
       }
     ]

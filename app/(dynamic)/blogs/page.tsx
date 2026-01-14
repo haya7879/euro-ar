@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
   try {
     const seoData = await getSeoData("blogs");
     const seo = seoData.seo;
-    const baseUrl = "https://euroqst.com";
+    const baseUrl = "https://ar.euroqst.com";
 
     return {
       title: seo.meta_title,
@@ -65,7 +65,7 @@ export async function generateMetadata(): Promise<Metadata> {
     };
   } catch (error) {
     console.error("Error generating metadata for blogs page:", error);
-    const baseUrl = "https://euroqst.com";
+    const baseUrl = "https://ar.euroqst.com";
 
     // SEO-optimized fallback metadata
     return {
@@ -100,7 +100,7 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
   const params = await searchParams;
   // Use searchBlogs for GET request with search parameters in query string
   const blogsData = await searchBlogs({});
-  const baseUrl = "https://euroqst.com";
+  const baseUrl = "https://ar.euroqst.com";
 
   const breadcrumbs = [
     {

@@ -18,7 +18,7 @@ export async function generateMetadata({
     const { citySlug, categorySlug } = await params;
     const categoryData = await getCityCategoryDetails(citySlug, categorySlug);
     const { city, category, seo } = categoryData;
-    const baseUrl = "https://euroqst.com";
+    const baseUrl = "https://ar.euroqst.com";
 
     return {
       title: seo.meta_title || `${category.title} Training Courses in ${city.title} | الدول التدريبية العالمية`,
@@ -72,7 +72,7 @@ export async function generateMetadata({
     };
   } catch (error) {
     console.error("Error generating metadata for city category page:", error);
-    const baseUrl = "https://euroqst.com";
+    const baseUrl = "https://ar.euroqst.com";
     
     // SEO-optimized fallback metadata
     return {
@@ -108,7 +108,7 @@ export default async function Page({
   const searchParamsData = await searchParams;
   const categoryData = await getCityCategoryDetails(citySlug, categorySlug);
   const { city, category, courses, seo } = categoryData;
-  const baseUrl = "https://euroqst.com";
+  const baseUrl = "https://ar.euroqst.com";
 
   // Breadcrumb configuration
   const breadcrumbs: BreadcrumbItem[] = [

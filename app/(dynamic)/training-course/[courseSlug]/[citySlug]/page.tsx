@@ -19,7 +19,7 @@ export async function generateMetadata({
     const { courseSlug, citySlug } = await params;
     const courseData = await getCityCourseDetails(courseSlug, citySlug);
     const { course, city, seo } = courseData;
-    const baseUrl = "https://euroqst.com";
+    const baseUrl = "https://ar.euroqst.com";
 
     return {
       title:
@@ -89,7 +89,7 @@ export async function generateMetadata({
     };
   } catch (error) {
     console.error("Error generating metadata for city course page:", error);
-    const baseUrl = "https://euroqst.com";
+    const baseUrl = "https://ar.euroqst.com";
 
     // SEO-optimized fallback metadata
     return {
@@ -120,7 +120,7 @@ export default async function Page({ params }: PageProps) {
   const { courseSlug, citySlug } = await params;
   const courseData = await getCityCourseDetails(courseSlug, citySlug);
   const { course, city, seo, timings } = courseData;
-  const baseUrl = "https://euroqst.com";
+  const baseUrl = "https://ar.euroqst.com";
 
   const breadcrumbs: BreadcrumbItem[] = [
     { href: "/", label: "", icon: <Home size={14} /> },

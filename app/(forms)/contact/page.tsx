@@ -25,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
           },
         ],
         type: "website",
-        url: seo.canonical || "https://euroqst.com/contact",
+        url: seo.canonical || "https://ar.euroqst.com/contact",
       },
       twitter: {
         card: "summary_large_image",
@@ -34,7 +34,7 @@ export async function generateMetadata(): Promise<Metadata> {
         images: [seo.meta_image || "/assets/images/contact-img.svg"],
       },
       alternates: {
-        canonical: seo.canonical || "https://euroqst.com/contact",
+        canonical: seo.canonical || "https://ar.euroqst.com/contact",
       },
     };
   } catch (error) {
@@ -56,7 +56,7 @@ export default function ContactPage() {
         pageType="contact"
         pageTitle="Contact Us | الدول التدريبية العالمية Training"
         pageDescription="Get in touch with الدول التدريبية العالمية for professional training courses. Contact our experts for inquiries about management, HSE, finance, HR, IT, and engineering training programs."
-        pageUrl="https://euroqst.com/contact"
+        pageUrl="https://ar.euroqst.com/contact"
       />
       <ContactPageClient />
     </>

@@ -75,7 +75,7 @@ export default function AboutPage() {
         pageType="about"
         pageTitle="عن يوركويست إنترناشيونال | التدريب والتطوير المهني عالميًا"
         pageDescription="تعرّف على يوركويست إنترناشيونال، مؤسسة تدريبية رائدة بخبرة تتجاوز 25 عامًا، قدمت أكثر من 1000 برنامج في القيادة، الموارد البشرية، المالية، النفط والغاز، الذكاء الاصطناعي، الاستدامة، والتحولات الرقمية في مدن عالمية."
-        pageUrl="https://euroqst.com/about"
+        pageUrl="https://ar.euroqst.com/about"
       />
       {/* Hero Banner */}
       <HeroBanner

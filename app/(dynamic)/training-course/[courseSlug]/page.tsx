@@ -19,7 +19,7 @@ export async function generateMetadata({
     const { courseSlug } = await params;
     const courseData = await getCourseDetails(courseSlug);
     const { course } = courseData;
-    const baseUrl = "https://euroqst.com";
+    const baseUrl = "https://ar.euroqst.com";
 
     return {
       title:
@@ -84,7 +84,7 @@ export async function generateMetadata({
     };
   } catch (error) {
     console.error("Error generating metadata for course page:", error);
-    const baseUrl = "https://euroqst.com";
+    const baseUrl = "https://ar.euroqst.com";
 
     // SEO-optimized fallback metadata
     return {
@@ -117,7 +117,7 @@ export default async function Page({
   const { courseSlug } = await params;
   const courseData = await getCourseDetails(courseSlug);
   const { course, timings } = courseData;
-  const baseUrl = "https://euroqst.com";
+  const baseUrl = "https://ar.euroqst.com";
 
   // Breadcrumb configuration
   const breadcrumbs: BreadcrumbItem[] = [

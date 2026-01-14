@@ -18,7 +18,7 @@ export async function generateMetadata({
 }: BlogDetailPageProps): Promise<Metadata> {
   const { slug } = await params;
   const blog = await getBlogBySlug(slug);
-  const baseUrl = "https://euroqst.com";
+  const baseUrl = "https://ar.euroqst.com";
 
   if (!blog) {
     return {
@@ -96,7 +96,7 @@ export async function generateMetadata({
 export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
   const { slug } = await params;
   const blog = await getBlogBySlug(slug);
-  const baseUrl = "https://euroqst.com";
+  const baseUrl = "https://ar.euroqst.com";
 
   if (!blog) {
     notFound();

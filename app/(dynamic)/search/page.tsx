@@ -15,7 +15,7 @@ export async function generateMetadata({
   }>;
 }): Promise<Metadata> {
   const params = await searchParams;
-  const baseUrl = "https://euroqst.com";
+  const baseUrl = "https://ar.euroqst.com";
 
   // Build dynamic title and description based on search params
   let title = "Search Training Courses | الدول التدريبية العالمية";
@@ -114,7 +114,7 @@ interface SearchPageProps {
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
   const params = await searchParams;
-  const baseUrl = "https://euroqst.com";
+  const baseUrl = "https://ar.euroqst.com";
 
   // Build search query for structured data
   const searchTerms: string[] = [];

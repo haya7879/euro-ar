@@ -20,7 +20,7 @@ export default function JoinPage() {
         pageType="join"
         pageTitle="Join Our Team | الدول التدريبية العالمية Professional Development"
         pageDescription="Join الدول التدريبية العالمية's team of professional trainers and consultants. We're looking for talented individuals passionate about training, development, and making an impact in professional education."
-        pageUrl="https://euroqst.com/join"
+        pageUrl="https://ar.euroqst.com/join"
       />
       <JoinPageClient />
     </>

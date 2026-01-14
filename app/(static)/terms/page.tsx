@@ -72,7 +72,7 @@ export default function TermsPage() {
         pageType="terms"
         pageTitle="الشروط والأحكام | الشروط القانونية واتفاقية الخدمة - يوروكويست إنترناشيونال"
         pageDescription="شروط وأحكام يوروكويست إنترناشيونال توضح القواعد والالتزامات والاتفاقيات القانونية التي تحكم استخدام موقعنا وخدمات التدريب الخاصة بنا."
-        pageUrl="https://euroqst.com/terms"
+        pageUrl="https://ar.euroqst.com/terms"
       />
       {/* Hero Banner */}
       <HeroBanner

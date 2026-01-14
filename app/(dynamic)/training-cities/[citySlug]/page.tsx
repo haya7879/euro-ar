@@ -19,7 +19,7 @@ export async function generateMetadata({
     const { citySlug } = await params;
     const cityData = await getCityDetails(citySlug);
     const { city } = cityData;
-    const baseUrl = "https://euroqst.com";
+    const baseUrl = "https://ar.euroqst.com";
 
     return {
       title:
@@ -92,7 +92,7 @@ export async function generateMetadata({
     };
   } catch (error) {
     console.error("Error generating metadata for city page:", error);
-    const baseUrl = "https://euroqst.com";
+    const baseUrl = "https://ar.euroqst.com";
 
     // SEO-optimized fallback metadata
     return {
@@ -128,7 +128,7 @@ export default async function Page({ params, searchParams }: CityPageProps) {
   const searchParamsData = await searchParams;
   const cityData = await getCityDetails(citySlug);
   const { city, courses, categories } = cityData;
-  const baseUrl = "https://euroqst.com";
+  const baseUrl = "https://ar.euroqst.com";
   console.log(city);
   // Breadcrumb configuration
   const breadcrumbs: BreadcrumbItem[] = [

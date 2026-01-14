@@ -50,7 +50,7 @@ export default async function SitemapPage() {
         pageType="sitemap"
         pageTitle="Sitemap | الدول التدريبية العالمية"
         pageDescription="خريطة موقع كاملة لدورات التدريب، التخصصات، المدن، وجميع الصفحات المتاحة في الدول التدريبية العالمية."
-        pageUrl="https://euroqst.com/sitemap"
+        pageUrl="https://ar.euroqst.com/sitemap"
       />
       {/* Hero Banner */}
       <HeroBanner

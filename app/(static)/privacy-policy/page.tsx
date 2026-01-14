@@ -72,7 +72,7 @@ export default function PrivacyPolicyPage() {
         pageType="privacy"
         pageTitle="سياسة الخصوصية | حماية البيانات والامتثال للائحة حماية البيانات العامة - يوروكويست إنترناشيونال"
         pageDescription="سياسة الخصوصية لدى يوروكويست إنترناشيونال توضح كيفية جمع واستخدام وحماية معلوماتك الشخصية وفقاً للائحة حماية البيانات العامة ومعايير حماية البيانات الدولية."
-        pageUrl="https://euroqst.com/privacy-policy"
+        pageUrl="https://ar.euroqst.com/privacy-policy"
       />
       {/* Hero Banner */}
       <HeroBanner

@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
   try {
     const seoData = await getSeoData("categories");
     const seo = seoData.seo;
-    const baseUrl = "https://euroqst.com";
+    const baseUrl = "https://ar.euroqst.com";
 
     return {
       title: seo.meta_title,
@@ -66,7 +66,7 @@ export async function generateMetadata(): Promise<Metadata> {
     };
   } catch (error) {
     console.error("Error generating metadata for categories page:", error);
-    const baseUrl = "https://euroqst.com";
+    const baseUrl = "https://ar.euroqst.com";
 
     // SEO-optimized fallback metadata
     return {
@@ -100,7 +100,7 @@ export default async function CategoriesPage({
 }: CategoriesPageProps) {
   const params = await searchParams;
   const categories = await getCategories();
-  const baseUrl = "https://euroqst.com";
+  const baseUrl = "https://ar.euroqst.com";
 
   // Breadcrumb configuration
   const breadcrumbs: BreadcrumbItem[] = [

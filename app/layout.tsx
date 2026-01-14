@@ -17,7 +17,7 @@ const cairo = Cairo({
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://euroqst.com"),
+  metadataBase: new URL("https://ar.euroqst.com"),
   title: "الدول التدريبية العالمية",
   description: "الدول التدريبية العالمية - Professional Training and Certification Courses",
   keywords: "training, certification, courses, professional development, EuroQuest",

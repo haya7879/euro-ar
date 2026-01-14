@@ -120,7 +120,7 @@ export default function Navbar() {
                 <Menu className="w-5 h-5 font-semibold text-blue-600" />
               </button>
             </div>
-            <Link href="https://euroqst.com" className="hidden md:block">
+            <Link href="https://ar.euroqst.com" className="hidden md:block">
               <button className="text-[#314EA9] border border-[#314EA9] py-2 px-4 rounded-full transition-colors duraton-300 font-medium text-sm relative cursor-pointer hover:bg-[#314ea9] hover:text-white">
                 English Courses
               </button>

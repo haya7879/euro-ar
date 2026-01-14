@@ -67,17 +67,17 @@ export const API_ENDPOINTS = {
 
 export const services = [
   {
-    icon: "https://euroqst.com/assets/images/service-icon3.svg",
+    icon: "https://ar.euroqst.com/assets/images/service-icon3.svg",
     title: "الدورات الداخلية",
     description: "تقدم يوروكويست إنترناشيونال دورات تدريبية مخصصة داخل المؤسسة."
   },
   {
-    icon: "https://euroqst.com/assets/images/service-icon2.svg",
+    icon: "https://ar.euroqst.com/assets/images/service-icon2.svg",
     title: "الدورات الحضورية", 
     description: "تقدم يوروكويست إنترناشيونال دورات تدريبية تُعقد في مواقع مختارة بعناية في المدن والعواصم حول العالم"
   },
   {
-    icon: "https://euroqst.com/assets/images/service-icon1.svg",
+    icon: "https://ar.euroqst.com/assets/images/service-icon1.svg",
     title: "الدورات الإلكترونية",
     description: "تقدم يوروكويست إنترناشيونال دورات تدريبية مرنة تُقدم عن بُعد."
   }
